@@ -1,0 +1,516 @@
+import {
+  ChitCatalogRow,
+  ChitContributionOption,
+  ChitPlanSummary,
+  FAQItem,
+  ProcessStep,
+  WhyChooseItem,
+} from '../types';
+
+export const COMPANY_DETAILS = {
+  companyName: 'ELITE GROUP',
+  businessName: 'SS CHIT FUNDS',
+  fullBrandName: 'ELITE GROUP – SS CHIT FUNDS',
+  tagline: 'Trusted Chit Investment Plans',
+  cin: 'U72900MH1995PLC095642',
+  managedBy: 'ELITE TURF',
+  phone1: '+91 7338736352',
+  phone2: '+91 9345836032',
+  phone1Clean: '+917338736352',
+  phone2Clean: '+919345836032',
+  whatsappNumber: '917338736352',
+  officeAddress: 'ELITE TURF, Ajandha Garden, Kuttaiyur, Mettupalayam – 641104',
+  locationCity: 'Mettupalayam',
+  pincode: '641104',
+  whatsappDefaultMsg: 'Hello ELITE GROUP SS CHIT FUNDS, I would like to know more about your chit plans.',
+};
+
+/**
+ * EXACT 21-row primary catalog data as specified in official catalog requirements.
+ * No modifications, no recalculations.
+ */
+export const OFFICIAL_CHIT_CATALOG: ChitCatalogRow[] = [
+  {
+    sNo: 1,
+    plan50k: 'Company',
+    plan100k: 'Company',
+    plan200k: 'Company',
+    plan300k: 'Company',
+    plan400k: 'Company',
+    plan500k: 'Company',
+  },
+  {
+    sNo: 2,
+    plan50k: '43,500',
+    plan100k: '87,000',
+    plan200k: '1,73,000',
+    plan300k: '2,60,000',
+    plan400k: '3,45,000',
+    plan500k: '4,53,000',
+  },
+  {
+    sNo: 3,
+    plan50k: '44,000',
+    plan100k: '88,000',
+    plan200k: '1,75,000',
+    plan300k: '2,65,000',
+    plan400k: '3,50,000',
+    plan500k: '4,56,000',
+  },
+  {
+    sNo: 4,
+    plan50k: '44,500',
+    plan100k: '89,000',
+    plan200k: '1,77,000',
+    plan300k: '2,67,000',
+    plan400k: '3,55,000',
+    plan500k: '4,58,000',
+  },
+  {
+    sNo: 5,
+    plan50k: '45,000',
+    plan100k: '90,000',
+    plan200k: '1,80,000',
+    plan300k: '2,69,000',
+    plan400k: '3,60,000',
+    plan500k: '4,60,000',
+  },
+  {
+    sNo: 6,
+    plan50k: '45,500',
+    plan100k: '91,000',
+    plan200k: '1,82,000',
+    plan300k: '2,72,000',
+    plan400k: '3,65,000',
+    plan500k: '4,63,000',
+  },
+  {
+    sNo: 7,
+    plan50k: '46,000',
+    plan100k: '92,000',
+    plan200k: '1,84,000',
+    plan300k: '2,75,000',
+    plan400k: '3,68,000',
+    plan500k: '4,65,000',
+  },
+  {
+    sNo: 8,
+    plan50k: '46,500',
+    plan100k: '93,000',
+    plan200k: '1,86,000',
+    plan300k: '2,78,000',
+    plan400k: '3,72,000',
+    plan500k: '4,68,000',
+  },
+  {
+    sNo: 9,
+    plan50k: '47,000',
+    plan100k: '94,000',
+    plan200k: '1,88,000',
+    plan300k: '2,81,000',
+    plan400k: '3,76,000',
+    plan500k: '4,70,000',
+  },
+  {
+    sNo: 10,
+    plan50k: '47,500',
+    plan100k: '95,000',
+    plan200k: '1,90,000',
+    plan300k: '2,85,000',
+    plan400k: '3,80,000',
+    plan500k: '4,73,000',
+  },
+  {
+    sNo: 11,
+    plan50k: '48,500',
+    plan100k: '96,000',
+    plan200k: '1,92,000',
+    plan300k: '2,88,000',
+    plan400k: '3,84,000',
+    plan500k: '4,75,000',
+  },
+  {
+    sNo: 12,
+    plan50k: '49,000',
+    plan100k: '97,000',
+    plan200k: '1,96,000',
+    plan300k: '2,95,000',
+    plan400k: '3,93,000',
+    plan500k: '4,80,000',
+  },
+  {
+    sNo: 13,
+    plan50k: '50,000',
+    plan100k: '1,00,000',
+    plan200k: '2,00,000',
+    plan300k: '3,00,000',
+    plan400k: '4,00,000',
+    plan500k: '4,90,000',
+  },
+  {
+    sNo: 14,
+    plan50k: '51,000',
+    plan100k: '1,03,000',
+    plan200k: '2,05,000',
+    plan300k: '3,06,000',
+    plan400k: '4,08,000',
+    plan500k: '5,00,000',
+  },
+  {
+    sNo: 15,
+    plan50k: '51,500',
+    plan100k: '1,04,000',
+    plan200k: '2,09,000',
+    plan300k: '3,10,000',
+    plan400k: '4,15,000',
+    plan500k: '5,12,000',
+  },
+  {
+    sNo: 16,
+    plan50k: '52,000',
+    plan100k: '1,05,000',
+    plan200k: '2,12,000',
+    plan300k: '3,17,000',
+    plan400k: '4,25,000',
+    plan500k: '5,20,000',
+  },
+  {
+    sNo: 17,
+    plan50k: '53,500',
+    plan100k: '1,07,000',
+    plan200k: '2,16,000',
+    plan300k: '3,25,000',
+    plan400k: '4,30,000',
+    plan500k: '5,30,000',
+  },
+  {
+    sNo: 18,
+    plan50k: '55,000',
+    plan100k: '1,12,000',
+    plan200k: '2,20,000',
+    plan300k: '3,35,000',
+    plan400k: '4,50,000',
+    plan500k: '5,46,000',
+  },
+  {
+    sNo: 19,
+    plan50k: '57,500',
+    plan100k: '1,12,000',
+    plan200k: '2,31,000',
+    plan300k: '3,48,000',
+    plan400k: '4,60,000',
+    plan500k: '5,68,000',
+  },
+  {
+    sNo: 20,
+    plan50k: '60,500',
+    plan100k: '1,20,000',
+    plan200k: '2,40,000',
+    plan300k: '3,60,000',
+    plan400k: '4,80,000',
+    plan500k: '5,89,000',
+  },
+  {
+    sNo: 21,
+    plan50k: '63,000',
+    plan100k: '1,26,000',
+    plan200k: '2,50,000',
+    plan300k: '3,75,000',
+    plan500k: '6,15,000',
+    plan400k: '5,00,000',
+  },
+];
+
+/**
+ * EXACT 5-row secondary payment table.
+ * Exactly these 5 rows as instructed.
+ */
+export const CHIT_CONTRIBUTION_OPTIONS: ChitContributionOption[] = [
+  {
+    sNo: 1,
+    chitValue: '₹50,000',
+    monthly: '₹2,500 × 21',
+    weekly: '₹625',
+    daily: '₹100',
+    numericValue: 50000,
+  },
+  {
+    sNo: 2,
+    chitValue: '₹1,00,000',
+    monthly: '₹5,000 × 21',
+    weekly: '₹1,250',
+    daily: '₹200',
+    numericValue: 100000,
+  },
+  {
+    sNo: 3,
+    chitValue: '₹2,00,000',
+    monthly: '₹10,000 × 21',
+    weekly: '₹3,750',
+    daily: '₹400',
+    numericValue: 200000,
+  },
+  {
+    sNo: 4,
+    chitValue: '₹4,00,000',
+    monthly: '₹15,000 × 21',
+    weekly: '₹5,000',
+    daily: '₹800',
+    numericValue: 400000,
+  },
+  {
+    sNo: 5,
+    chitValue: '₹5,00,000',
+    monthly: '₹25,000 × 21',
+    weekly: '₹6,250',
+    daily: '₹1,000',
+    numericValue: 500000,
+  },
+];
+
+/**
+ * Individual plan summaries for interactive cards
+ */
+export const CHIT_PLANS_SUMMARY: ChitPlanSummary[] = [
+  {
+    id: 'plan-50k',
+    value: '₹50,000',
+    numericValue: 50000,
+    monthlyContribution: '₹2,500 × 21',
+    weeklyContribution: '₹625',
+    dailyContribution: '₹100',
+    duration: '21 Installments',
+    minTakeHome: '₹43,500',
+    maxTakeHome: '₹63,000',
+    tagline: 'Ideal for small personal milestones & emergency savings',
+    features: [
+      'Accessible daily, weekly, or monthly contributions',
+      'Structured 21-installment duration',
+      'Clear progression schedule from ₹43,500 to ₹63,000',
+      'Dedicated local customer support in Mettupalayam',
+    ],
+  },
+  {
+    id: 'plan-100k',
+    value: '₹1,00,000',
+    numericValue: 100000,
+    monthlyContribution: '₹5,000 × 21',
+    weeklyContribution: '₹1,250',
+    dailyContribution: '₹200',
+    duration: '21 Installments',
+    minTakeHome: '₹87,000',
+    maxTakeHome: '₹1,26,000',
+    tagline: 'Popular choice for household planning & budget discipline',
+    features: [
+      'Flexible contribution schedule (Daily ₹200 / Weekly ₹1,250)',
+      'Monthly ₹5,000 contribution cycle',
+      'Catalog take-home bracket from ₹87,000 to ₹1,26,000',
+      'Transparent account documentation',
+    ],
+  },
+  {
+    id: 'plan-200k',
+    value: '₹2,00,000',
+    numericValue: 200000,
+    monthlyContribution: '₹10,000 × 21',
+    weeklyContribution: '₹3,750',
+    dailyContribution: '₹400',
+    duration: '21 Installments',
+    minTakeHome: '₹1,73,000',
+    maxTakeHome: '₹2,50,000',
+    tagline: 'Balanced plan for traders, professionals & family goals',
+    features: [
+      'Convenient ₹10,000 monthly commitment',
+      'Daily ₹400 or Weekly ₹3,750 contribution option',
+      'Structured catalog progression from ₹1,73,000 to ₹2,50,000',
+      'Direct WhatsApp and office coordination',
+    ],
+  },
+  {
+    id: 'plan-300k',
+    value: '₹3,00,000',
+    numericValue: 300000,
+    monthlyContribution: '₹15,000 × 21',
+    weeklyContribution: '₹5,000',
+    dailyContribution: '₹800',
+    duration: '21 Installments',
+    minTakeHome: '₹2,60,000',
+    maxTakeHome: '₹3,75,000',
+    tagline: 'Comprehensive plan for business expansion & mid-sized investments',
+    features: [
+      'Catalog take-home values from ₹2,60,000 to ₹3,75,000',
+      'Clear 21-tier auction progression',
+      'Professional account record keeping',
+      'Personalized assistance from Elite Turf management',
+    ],
+  },
+  {
+    id: 'plan-400k',
+    value: '₹4,00,000',
+    numericValue: 400000,
+    monthlyContribution: '₹15,000 × 21',
+    weeklyContribution: '₹5,000',
+    dailyContribution: '₹800',
+    duration: '21 Installments',
+    minTakeHome: '₹3,45,000',
+    maxTakeHome: '₹5,00,000',
+    tagline: 'Substantial capital for major ventures and long-term planning',
+    features: [
+      'Monthly ₹15,000 installment schedule',
+      'Weekly ₹5,000 or Daily ₹800 option',
+      'Catalog bracket from ₹3,45,000 to ₹5,00,000',
+      'Full procedural transparency throughout the cycle',
+    ],
+  },
+  {
+    id: 'plan-500k',
+    value: '₹5,00,000',
+    numericValue: 500000,
+    monthlyContribution: '₹25,000 × 21',
+    weeklyContribution: '₹6,250',
+    dailyContribution: '₹1,000',
+    duration: '21 Installments',
+    minTakeHome: '₹4,53,000',
+    maxTakeHome: '₹6,15,000',
+    tagline: 'High-value chit plan for enterprise funding & high net-worth goals',
+    features: [
+      'Monthly ₹25,000 installment schedule',
+      'Weekly ₹6,250 or Daily ₹1,000 option',
+      'Catalog values ranging from ₹4,53,000 to ₹6,15,000',
+      'Priority customer assistance and dedicated documentation',
+    ],
+  },
+];
+
+/**
+ * 5-Step visual process
+ */
+export const HOW_IT_WORKS_STEPS: ProcessStep[] = [
+  {
+    stepNumber: '01',
+    title: 'Choose Your Chit Plan',
+    description: 'Select a chit value according to your requirement.',
+    detail: 'Review available denominations ranging from ₹50,000 to ₹5,00,000 and select the plan that fits your financial goals and contribution capacity.',
+  },
+  {
+    stepNumber: '02',
+    title: 'Register',
+    description: 'Submit your details and complete the required process.',
+    detail: 'Provide your basic contact information, identification details, and complete standard enrollment paperwork with our team.',
+  },
+  {
+    stepNumber: '03',
+    title: 'Contribute Regularly',
+    description: 'Make contributions according to the applicable plan schedule.',
+    detail: 'Maintain disciplined savings through daily, weekly, or monthly contributions across the structured 21-installment period.',
+  },
+  {
+    stepNumber: '04',
+    title: 'Participate in the Chit Process',
+    description: 'Follow the applicable auction/draw process and terms.',
+    detail: 'Engage transparently in scheduled monthly auctions or draws as outlined in the chit agreement rules.',
+  },
+  {
+    stepNumber: '05',
+    title: 'Receive the Applicable Chit Amount',
+    description: 'Subject to the applicable rules, terms and conditions.',
+    detail: 'Receive the disbursed chit payout in accordance with procedural guidelines, verification, and company agreement terms.',
+  },
+];
+
+/**
+ * 7 Core Benefits / Why Choose ELITE GROUP
+ */
+export const WHY_CHOOSE_ITEMS: WhyChooseItem[] = [
+  {
+    title: 'TRUSTED COMPANY',
+    description: 'Professional customer-focused service backed by disciplined financial management and clear communication.',
+    iconName: 'ShieldCheck',
+  },
+  {
+    title: 'TRANSPARENT PROCESS',
+    description: 'Clear communication about applicable plan terms, auction rules, and contribution schedules with zero hidden ambiguities.',
+    iconName: 'Eye',
+  },
+  {
+    title: 'SECURE PROCESS',
+    description: 'Structured documentation, dedicated account handling, and systematic record keeping for every subscriber.',
+    iconName: 'Lock',
+  },
+  {
+    title: 'FLEXIBLE OPTIONS',
+    description: 'Different chit values from ₹50,000 to ₹5,00,000 designed to accommodate varied personal and business requirements.',
+    iconName: 'Sliders',
+  },
+  {
+    title: 'CUSTOMER SUPPORT',
+    description: 'Easy and immediate access to our team through direct phone lines (+91 7338736352 / +91 9345836032) and WhatsApp.',
+    iconName: 'Headphones',
+  },
+  {
+    title: 'CLEAR INFORMATION',
+    description: 'Complete plan details, installment tables, and take-home progression schedules presented openly for informed decisions.',
+    iconName: 'FileText',
+  },
+  {
+    title: 'CUSTOMER RELATIONSHIP',
+    description: 'A genuine focus on long-term customer service, fostering lasting relationships built on mutual respect and reliability.',
+    iconName: 'Users',
+  },
+];
+
+/**
+ * 10 Accurate & Compliant FAQs
+ */
+export const FAQS: FAQItem[] = [
+  {
+    question: 'What is a chit fund?',
+    answer: 'A chit fund is a traditional Indian financial mechanism that combines regular savings with access to credit. A group of individuals agree to contribute a fixed sum regularly over a set duration into a central pool, which is then made available to members through structured auctions or draws as per the applicable terms.',
+    category: 'General',
+  },
+  {
+    question: 'How do the chit plans work?',
+    answer: 'Members enroll in a designated chit group of a specific value (e.g., ₹50,000 up to ₹5,00,000). Every member contributes their designated installment (monthly, weekly, or daily) for the fixed duration of 21 installments. Each cycle, an auction or draw is conducted to determine the chit recipient according to company terms.',
+    category: 'Process',
+  },
+  {
+    question: 'What chit values are available?',
+    answer: 'ELITE GROUP – SS CHIT FUNDS provides 6 structured denominations: ₹50,000, ₹1,00,000, ₹2,00,000, ₹3,00,000, ₹4,00,000, and ₹5,00,000 with multiple contribution options tailored to individual financial plans.',
+    category: 'Plans',
+  },
+  {
+    question: 'How are monthly contributions determined?',
+    answer: 'Monthly contributions are based on the total chit value divided across the 21-installment schedule, along with any dividend discounts determined by the monthly auction process in accordance with the group agreement.',
+    category: 'Contributions',
+  },
+  {
+    question: 'What is the auction process?',
+    answer: 'In each cycle, members who have not yet taken the chit amount may participate in an auction. The member bidding the acceptable discount or chosen via the established process receives the prize amount after statutory deductions and documentation verification.',
+    category: 'Auction',
+  },
+  {
+    question: 'How can I join a chit plan?',
+    answer: 'You can express your interest through our online enquiry form, contact us directly via phone (+91 7338736352 / +91 9345836032), reach out on WhatsApp, or visit our office at ELITE TURF, Kuttaiyur, Mettupalayam. Our team will guide you through registration.',
+    category: 'Joining',
+  },
+  {
+    question: 'What documents are required?',
+    answer: 'Standard enrollment requires valid government photo identity proof (such as Aadhaar Card, PAN Card, or Voter ID), address proof, passport-sized photographs, and contact verification details.',
+    category: 'Documentation',
+  },
+  {
+    question: 'How can I contact ELITE GROUP?',
+    answer: 'You can contact us by calling +91 7338736352 or +91 9345836032, sending a WhatsApp message directly via the website widget, or writing through the online enquiry form. We are available during business hours to assist you.',
+    category: 'Contact',
+  },
+  {
+    question: 'Where is the office located?',
+    answer: 'Our official premises are located at ELITE TURF, Ajandha Garden, Kuttaiyur, Mettupalayam – 641104, Tamil Nadu.',
+    category: 'Location',
+  },
+  {
+    question: 'What are the applicable terms and conditions?',
+    answer: 'All chit subscriptions, contributions, auctions, and prize disbursements are strictly governed by the formal subscriber agreement and the terms set out by ELITE GROUP – SS CHIT FUNDS. Participation is subject to verification and regulatory requirements.',
+    category: 'Legal',
+  },
+];

@@ -1,0 +1,131 @@
+import React from 'react';
+import { X, ShieldAlert, FileText, Lock } from 'lucide-react';
+import { COMPANY_DETAILS } from '../data/chitPlansData';
+
+interface LegalModalProps {
+  type: 'terms' | 'privacy' | 'disclaimer' | null;
+  onClose: () => void;
+}
+
+export const LegalModals: React.FC<LegalModalProps> = ({ type, onClose }) => {
+  if (!type) return null;
+
+  const titles = {
+    terms: 'Terms & Conditions',
+    privacy: 'Privacy Policy',
+    disclaimer: 'Legal & Regulatory Disclaimer',
+  };
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-sm overflow-y-auto animate-in fade-in duration-150">
+      <div className="relative w-full max-w-2xl rounded-lg bg-[#001226] border border-[#C5A028]/40 p-5 sm:p-6 shadow-2xl my-6 max-h-[85vh] flex flex-col">
+        
+        {/* Header */}
+        <div className="flex items-center justify-between pb-3 border-b border-slate-800 shrink-0">
+          <div className="flex items-center gap-2">
+            <div className="w-7 h-7 rounded-md bg-[#00264d] border border-[#C5A028]/40 flex items-center justify-center text-[#C5A028]">
+              {type === 'disclaimer' ? <ShieldAlert className="w-4 h-4" /> : type === 'privacy' ? <Lock className="w-4 h-4" /> : <FileText className="w-4 h-4" />}
+            </div>
+            <h3 className="font-['Cinzel'] text-lg font-bold text-white">
+              {titles[type]}
+            </h3>
+          </div>
+          <button
+            onClick={onClose}
+            className="p-1 rounded-md bg-[#00264d] text-slate-300 hover:text-white transition-colors cursor-pointer"
+            aria-label="Close"
+          >
+            <X className="w-4 h-4" />
+          </button>
+        </div>
+
+        {/* Content Body */}
+        <div className="overflow-y-auto py-4 text-slate-300 text-xs leading-relaxed space-y-3 pr-2">
+          
+          {type === 'disclaimer' && (
+            <>
+              <div className="p-2.5 rounded-md bg-[#001A33] border border-amber-500/30 text-amber-200 text-xs">
+                <strong>Statutory Notice:</strong> Chit fund subscriptions and participation are subject to applicable terms, subscriber agreements, and regulations.
+              </div>
+
+              <h4 className="font-bold text-white text-xs sm:text-sm">1. Illustrative Catalog Information</h4>
+              <p>
+                All tables, catalog values, contribution schedules (daily/weekly/monthly), and progression figures displayed on this website are illustrative representations derived from our standard 21-installment plan structure. Actual dividend distributions, auction discounts, and net payout sums vary by monthly auction results and individual subscriber agreements.
+              </p>
+
+              <h4 className="font-bold text-white text-xs sm:text-sm">2. No Guaranteed Returns or Profits</h4>
+              <p>
+                ELITE GROUP – SS CHIT FUNDS does not offer guaranteed speculative profits or fixed investment return promises. Chit funds are structured rotating savings and credit instruments governed by periodic member contributions and procedural auctions.
+              </p>
+
+              <h4 className="font-bold text-white text-xs sm:text-sm">3. Company & Corporate Identity</h4>
+              <p>
+                Business operations are managed by <strong>ELITE TURF</strong> at Mettupalayam – 641104, Tamil Nadu. Corporate Reference CIN: <strong className="text-white font-mono">{COMPANY_DETAILS.cin}</strong>.
+              </p>
+            </>
+          )}
+
+          {type === 'terms' && (
+            <>
+              <h4 className="font-bold text-white text-xs sm:text-sm">1. Membership & Enrollment</h4>
+              <p>
+                Enrollment into any chit fund group offered by ELITE GROUP – SS CHIT FUNDS is subject to document verification (valid identity proof, address proof, photograph) and acceptance of the formal subscriber agreement.
+              </p>
+
+              <h4 className="font-bold text-white text-xs sm:text-sm">2. Contribution Discipline</h4>
+              <p>
+                Subscribers agree to contribute their designated installment (monthly, weekly, or daily) punctually across the full duration of 21 installments. Timely contributions ensure eligibility for periodic auction participation and dividend distributions.
+              </p>
+
+              <h4 className="font-bold text-white text-xs sm:text-sm">3. Auction & Prize Disbursement</h4>
+              <p>
+                Chit auctions and draws are conducted strictly in adherence to group bylaws. Successful prize takers must fulfill standard verification and security documentation prior to prize disbursement.
+              </p>
+
+              <h4 className="font-bold text-white text-xs sm:text-sm">4. Modifications & Governance</h4>
+              <p>
+                ELITE GROUP reserves the right to modify promotional materials, inquiry processes, and operational timings in accordance with business guidelines.
+              </p>
+            </>
+          )}
+
+          {type === 'privacy' && (
+            <>
+              <h4 className="font-bold text-white text-xs sm:text-sm">1. Information Collection</h4>
+              <p>
+                When you submit an enquiry through our website or contact us via phone/WhatsApp, we collect basic contact details including your full name, mobile number, email address, and preferred chit denomination.
+              </p>
+
+              <h4 className="font-bold text-white text-xs sm:text-sm">2. Purpose of Use</h4>
+              <p>
+                Collected contact data is used solely to respond to your specific chit fund inquiries, provide schedule details, verify eligibility, and facilitate enrollment coordination. We do not sell, trade, or share your contact details with external third-party marketing companies.
+              </p>
+
+              <h4 className="font-bold text-white text-xs sm:text-sm">3. Security & Access</h4>
+              <p>
+                We maintain appropriate administrative and physical security measures at our office premises to safeguard your subscriber records and documentation.
+              </p>
+
+              <h4 className="font-bold text-white text-xs sm:text-sm">4. Contact Inquiries</h4>
+              <p>
+                For any privacy questions or data modification requests, you can contact our office at ELITE TURF, Ajandha Garden, Kuttaiyur, Mettupalayam – 641104 or call +91 7338736352.
+              </p>
+            </>
+          )}
+
+        </div>
+
+        {/* Footer */}
+        <div className="pt-3 border-t border-slate-800 shrink-0 flex justify-end">
+          <button
+            onClick={onClose}
+            className="px-4 py-1.5 rounded-md bg-[#C5A028] text-[#001A33] font-bold text-xs uppercase hover:bg-[#e0b83e] transition-colors cursor-pointer"
+          >
+            I Understand
+          </button>
+        </div>
+
+      </div>
+    </div>
+  );
+};

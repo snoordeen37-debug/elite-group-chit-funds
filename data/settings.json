@@ -1,0 +1,11 @@
+{
+  "provider": "none",
+  "callmebotApiKey1": "",
+  "callmebotApiKey2": "",
+  "ultramsgInstanceId": "",
+  "ultramsgToken": "",
+  "metaToken": "",
+  "metaPhoneId": "",
+  "webhookUrl": "",
+  "autoOpenClient": true
+}

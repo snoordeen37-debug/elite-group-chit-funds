@@ -1,0 +1,620 @@
+[
+  {
+    "id": "enq-1788368233999",
+    "fullName": "masini",
+    "mobileNumber": "1234567890",
+    "emailAddress": "",
+    "interestedPlan": "₹3,00,000 Plan (₹12,000-₹15,000/month • 21 Months)",
+    "preferredChitValue": "₹3,00,000",
+    "preferredContactMethod": "WhatsApp",
+    "message": "",
+    "status": "Follow-up",
+    "adminNotes": "",
+    "createdAt": "2026-09-02T16:57:13.997Z",
+    "updatedAt": "2026-09-02T17:22:20.217Z",
+    "whatsappNotifications": [
+      {
+        "recipient": "+91 7338736352",
+        "recipientName": "Primary Business Line",
+        "status": "direct_link",
+        "timestamp": "2026-09-02T16:57:13.999Z",
+        "messagePreview": "🔔 NEW CHIT FUND ENQUIRY\n\nCustomer Name: masini\nMobile Number: 1234567890\nIntere...",
+        "messageId": "wa_1788368233999_2obzc",
+        "error": "Automated WhatsApp Gateway not configured yet. Please configure CallMeBot/Meta in Admin or click the direct WhatsApp buttons."
+      },
+      {
+        "recipient": "+91 9345836032",
+        "recipientName": "Secondary Business Line",
+        "status": "direct_link",
+        "timestamp": "2026-09-02T16:57:13.999Z",
+        "messagePreview": "🔔 NEW CHIT FUND ENQUIRY\n\nCustomer Name: masini\nMobile Number: 1234567890\nIntere...",
+        "messageId": "wa_1788368233999_3dode",
+        "error": "Automated WhatsApp Gateway not configured yet. Please configure CallMeBot/Meta in Admin or click the direct WhatsApp buttons."
+      }
+    ],
+    "source": "Website Enquiry Form"
+  },
+  {
+    "id": "enq-1788365402629",
+    "fullName": "AJEETH S",
+    "mobileNumber": "8248744918",
+    "emailAddress": "",
+    "interestedPlan": "₹1,00,000 Plan (₹5,000/month • 21 Months)",
+    "preferredChitValue": "₹1,00,000",
+    "preferredContactMethod": "WhatsApp",
+    "message": "Please send chit schedule for Mettupalayam branch",
+    "status": "Closed",
+    "adminNotes": "",
+    "createdAt": "2026-09-02T16:10:02.628Z",
+    "updatedAt": "2026-09-02T17:22:26.330Z",
+    "whatsappNotifications": [
+      {
+        "recipient": "+91 7338736352",
+        "recipientName": "Primary Business Line",
+        "status": "direct_link",
+        "timestamp": "2026-09-02T16:10:02.629Z",
+        "messagePreview": "🔔 NEW CHIT FUND ENQUIRY\n\nCustomer Name: AJEETH S\nMobile Number: 8248744918\nInte...",
+        "messageId": "wa_1788365402629_wegxe",
+        "error": "Automated WhatsApp Gateway not configured yet. Please configure CallMeBot/Meta in Admin or click the direct WhatsApp buttons."
+      },
+      {
+        "recipient": "+91 9345836032",
+        "recipientName": "Secondary Business Line",
+        "status": "direct_link",
+        "timestamp": "2026-09-02T16:10:02.629Z",
+        "messagePreview": "🔔 NEW CHIT FUND ENQUIRY\n\nCustomer Name: AJEETH S\nMobile Number: 8248744918\nInte...",
+        "messageId": "wa_1788365402629_2cyqf",
+        "error": "Automated WhatsApp Gateway not configured yet. Please configure CallMeBot/Meta in Admin or click the direct WhatsApp buttons."
+      }
+    ],
+    "source": "Website Enquiry Form"
+  },
+  {
+    "id": "enq-1788365383193",
+    "fullName": "AJEETH S",
+    "mobileNumber": "8248744918",
+    "emailAddress": "",
+    "interestedPlan": "₹1,00,000 Plan (₹5,000/month • 21 Months)",
+    "preferredChitValue": "₹1,00,000",
+    "preferredContactMethod": "WhatsApp",
+    "message": "",
+    "status": "New",
+    "adminNotes": "",
+    "createdAt": "2026-09-02T16:09:43.193Z",
+    "updatedAt": "2026-09-02T16:09:43.193Z",
+    "whatsappNotifications": [
+      {
+        "recipient": "+91 7338736352",
+        "recipientName": "Primary Business Line",
+        "status": "direct_link",
+        "timestamp": "2026-09-02T16:09:43.193Z",
+        "messagePreview": "🔔 NEW CHIT FUND ENQUIRY\n\nCustomer Name: AJEETH S\nMobile Number: 8248744918\nInte...",
+        "messageId": "wa_1788365383193_m8cda",
+        "error": "Automated WhatsApp Gateway not configured yet. Please configure CallMeBot/Meta in Admin or click the direct WhatsApp buttons."
+      },
+      {
+        "recipient": "+91 9345836032",
+        "recipientName": "Secondary Business Line",
+        "status": "direct_link",
+        "timestamp": "2026-09-02T16:09:43.193Z",
+        "messagePreview": "🔔 NEW CHIT FUND ENQUIRY\n\nCustomer Name: AJEETH S\nMobile Number: 8248744918\nInte...",
+        "messageId": "wa_1788365383193_rhauu",
+        "error": "Automated WhatsApp Gateway not configured yet. Please configure CallMeBot/Meta in Admin or click the direct WhatsApp buttons."
+      }
+    ],
+    "source": "Website Enquiry Form"
+  },
+  {
+    "id": "enq-1788365369097",
+    "fullName": "AJEETH S",
+    "mobileNumber": "8248744918",
+    "emailAddress": "",
+    "interestedPlan": "₹1,00,000 Plan (₹5,000/month • 21 Months)",
+    "preferredChitValue": "₹1,00,000",
+    "preferredContactMethod": "WhatsApp",
+    "message": "Please send chit schedule for Mettupalayam branch",
+    "status": "New",
+    "adminNotes": "",
+    "createdAt": "2026-09-02T16:09:29.096Z",
+    "updatedAt": "2026-09-02T16:09:29.096Z",
+    "whatsappNotifications": [
+      {
+        "recipient": "+91 7338736352",
+        "recipientName": "Primary Business Line",
+        "status": "direct_link",
+        "timestamp": "2026-09-02T16:09:29.097Z",
+        "messagePreview": "🔔 NEW CHIT FUND ENQUIRY\n\nCustomer Name: AJEETH S\nMobile Number: 8248744918\nInte...",
+        "messageId": "wa_1788365369097_1yp9k",
+        "error": "Automated WhatsApp Gateway not configured yet. Please configure CallMeBot/Meta in Admin or click the direct WhatsApp buttons."
+      },
+      {
+        "recipient": "+91 9345836032",
+        "recipientName": "Secondary Business Line",
+        "status": "direct_link",
+        "timestamp": "2026-09-02T16:09:29.097Z",
+        "messagePreview": "🔔 NEW CHIT FUND ENQUIRY\n\nCustomer Name: AJEETH S\nMobile Number: 8248744918\nInte...",
+        "messageId": "wa_1788365369097_jml8z",
+        "error": "Automated WhatsApp Gateway not configured yet. Please configure CallMeBot/Meta in Admin or click the direct WhatsApp buttons."
+      }
+    ],
+    "source": "Website Enquiry Form"
+  },
+  {
+    "id": "enq-1788365320079",
+    "fullName": "AJEETH S",
+    "mobileNumber": "8248744918",
+    "emailAddress": "",
+    "interestedPlan": "₹1,00,000 Plan (₹5,000/month • 21 Months)",
+    "preferredChitValue": "₹1,00,000",
+    "preferredContactMethod": "WhatsApp",
+    "message": "",
+    "status": "New",
+    "adminNotes": "",
+    "createdAt": "2026-09-02T16:08:40.078Z",
+    "updatedAt": "2026-09-02T16:08:40.078Z",
+    "whatsappNotifications": [
+      {
+        "recipient": "+91 7338736352",
+        "recipientName": "Primary Business Line",
+        "status": "direct_link",
+        "timestamp": "2026-09-02T16:08:40.079Z",
+        "messagePreview": "🔔 NEW CHIT FUND ENQUIRY\n\nCustomer Name: AJEETH S\nMobile Number: 8248744918\nInte...",
+        "messageId": "wa_1788365320079_9kkfr",
+        "error": "Automated WhatsApp Gateway not configured yet. Please configure CallMeBot/Meta in Admin or click the direct WhatsApp buttons."
+      },
+      {
+        "recipient": "+91 9345836032",
+        "recipientName": "Secondary Business Line",
+        "status": "direct_link",
+        "timestamp": "2026-09-02T16:08:40.079Z",
+        "messagePreview": "🔔 NEW CHIT FUND ENQUIRY\n\nCustomer Name: AJEETH S\nMobile Number: 8248744918\nInte...",
+        "messageId": "wa_1788365320079_9wih8",
+        "error": "Automated WhatsApp Gateway not configured yet. Please configure CallMeBot/Meta in Admin or click the direct WhatsApp buttons."
+      }
+    ],
+    "source": "Website Enquiry Form"
+  },
+  {
+    "id": "enq-1788365301657",
+    "fullName": "AJEETH S",
+    "mobileNumber": "8248744918",
+    "emailAddress": "",
+    "interestedPlan": "₹1,00,000 Plan (₹5,000/month • 21 Months)",
+    "preferredChitValue": "₹1,00,000",
+    "preferredContactMethod": "WhatsApp",
+    "message": "Please send chit schedule for Mettupalayam branch",
+    "status": "New",
+    "adminNotes": "",
+    "createdAt": "2026-09-02T16:08:21.656Z",
+    "updatedAt": "2026-09-02T16:08:21.656Z",
+    "whatsappNotifications": [
+      {
+        "recipient": "+91 7338736352",
+        "recipientName": "Primary Business Line",
+        "status": "direct_link",
+        "timestamp": "2026-09-02T16:08:21.657Z",
+        "messagePreview": "🔔 NEW CHIT FUND ENQUIRY\n\nCustomer Name: AJEETH S\nMobile Number: 8248744918\nInte...",
+        "messageId": "wa_1788365301657_9zwe5",
+        "error": "Automated WhatsApp Gateway not configured yet. Please configure CallMeBot/Meta in Admin or click the direct WhatsApp buttons."
+      },
+      {
+        "recipient": "+91 9345836032",
+        "recipientName": "Secondary Business Line",
+        "status": "direct_link",
+        "timestamp": "2026-09-02T16:08:21.657Z",
+        "messagePreview": "🔔 NEW CHIT FUND ENQUIRY\n\nCustomer Name: AJEETH S\nMobile Number: 8248744918\nInte...",
+        "messageId": "wa_1788365301657_kp59o",
+        "error": "Automated WhatsApp Gateway not configured yet. Please configure CallMeBot/Meta in Admin or click the direct WhatsApp buttons."
+      }
+    ],
+    "source": "Website Enquiry Form"
+  },
+  {
+    "id": "enq-1788365243086",
+    "fullName": "AJEETH S",
+    "mobileNumber": "8248744918",
+    "emailAddress": "",
+    "interestedPlan": "₹1,00,000 Plan (₹5,000/month • 21 Months)",
+    "preferredChitValue": "₹1,00,000",
+    "preferredContactMethod": "WhatsApp",
+    "message": "Please send chit schedule for Mettupalayam branch",
+    "status": "New",
+    "adminNotes": "",
+    "createdAt": "2026-09-02T16:07:23.082Z",
+    "updatedAt": "2026-09-02T16:07:23.082Z",
+    "whatsappNotifications": [
+      {
+        "recipient": "+91 7338736352",
+        "recipientName": "Primary Business Line",
+        "status": "direct_link",
+        "timestamp": "2026-09-02T16:07:23.086Z",
+        "messagePreview": "🔔 NEW CHIT FUND ENQUIRY\n\nCustomer Name: AJEETH S\nMobile Number: 8248744918\nInte...",
+        "messageId": "wa_1788365243086_khc7r",
+        "error": "Automated WhatsApp Gateway not configured yet. Please configure CallMeBot/Meta in Admin or click the direct WhatsApp buttons."
+      },
+      {
+        "recipient": "+91 9345836032",
+        "recipientName": "Secondary Business Line",
+        "status": "direct_link",
+        "timestamp": "2026-09-02T16:07:23.086Z",
+        "messagePreview": "🔔 NEW CHIT FUND ENQUIRY\n\nCustomer Name: AJEETH S\nMobile Number: 8248744918\nInte...",
+        "messageId": "wa_1788365243086_q31ez",
+        "error": "Automated WhatsApp Gateway not configured yet. Please configure CallMeBot/Meta in Admin or click the direct WhatsApp buttons."
+      }
+    ],
+    "source": "Website Enquiry Form"
+  },
+  {
+    "id": "enq-1788365221541",
+    "fullName": "AJEETH S",
+    "mobileNumber": "8248744918",
+    "emailAddress": "",
+    "interestedPlan": "₹1,00,000 Plan (₹5,000/month • 21 Months)",
+    "preferredChitValue": "₹1,00,000",
+    "preferredContactMethod": "WhatsApp",
+    "message": "Please send chit schedule for Mettupalayam branch",
+    "status": "New",
+    "adminNotes": "",
+    "createdAt": "2026-09-02T16:07:01.541Z",
+    "updatedAt": "2026-09-02T16:07:01.541Z",
+    "whatsappNotifications": [
+      {
+        "recipient": "+91 7338736352",
+        "recipientName": "Primary Business Line",
+        "status": "direct_link",
+        "timestamp": "2026-09-02T16:07:01.541Z",
+        "messagePreview": "🔔 NEW CHIT FUND ENQUIRY\n\nCustomer Name: AJEETH S\nMobile Number: 8248744918\nInte...",
+        "messageId": "wa_1788365221541_pe6n4",
+        "error": "Automated WhatsApp Gateway not configured yet. Please configure CallMeBot/Meta in Admin or click the direct WhatsApp buttons."
+      },
+      {
+        "recipient": "+91 9345836032",
+        "recipientName": "Secondary Business Line",
+        "status": "direct_link",
+        "timestamp": "2026-09-02T16:07:01.541Z",
+        "messagePreview": "🔔 NEW CHIT FUND ENQUIRY\n\nCustomer Name: AJEETH S\nMobile Number: 8248744918\nInte...",
+        "messageId": "wa_1788365221541_yc9ew",
+        "error": "Automated WhatsApp Gateway not configured yet. Please configure CallMeBot/Meta in Admin or click the direct WhatsApp buttons."
+      }
+    ],
+    "source": "Website Enquiry Form"
+  },
+  {
+    "id": "enq-1788365199697",
+    "fullName": "AJEETH S",
+    "mobileNumber": "8248744918",
+    "emailAddress": "",
+    "interestedPlan": "₹1,00,000 Plan (₹5,000/month • 21 Months)",
+    "preferredChitValue": "₹1,00,000",
+    "preferredContactMethod": "WhatsApp",
+    "message": "Please send chit schedule for Mettupalayam branch",
+    "status": "New",
+    "adminNotes": "",
+    "createdAt": "2026-09-02T16:06:39.696Z",
+    "updatedAt": "2026-09-02T16:06:39.696Z",
+    "whatsappNotifications": [
+      {
+        "recipient": "+91 7338736352",
+        "recipientName": "Primary Business Line",
+        "status": "direct_link",
+        "timestamp": "2026-09-02T16:06:39.697Z",
+        "messagePreview": "🔔 NEW CHIT FUND ENQUIRY\n\nCustomer Name: AJEETH S\nMobile Number: 8248744918\nInte...",
+        "messageId": "wa_1788365199697_rhufs",
+        "error": "Automated WhatsApp Gateway not configured yet. Please configure CallMeBot/Meta in Admin or click the direct WhatsApp buttons."
+      },
+      {
+        "recipient": "+91 9345836032",
+        "recipientName": "Secondary Business Line",
+        "status": "direct_link",
+        "timestamp": "2026-09-02T16:06:39.697Z",
+        "messagePreview": "🔔 NEW CHIT FUND ENQUIRY\n\nCustomer Name: AJEETH S\nMobile Number: 8248744918\nInte...",
+        "messageId": "wa_1788365199697_f5adi",
+        "error": "Automated WhatsApp Gateway not configured yet. Please configure CallMeBot/Meta in Admin or click the direct WhatsApp buttons."
+      }
+    ],
+    "source": "Website Enquiry Form"
+  },
+  {
+    "id": "enq-1788365165531",
+    "fullName": "AJEETH S",
+    "mobileNumber": "8248744918",
+    "emailAddress": "",
+    "interestedPlan": "₹1,00,000 Plan (₹5,000/month • 21 Months)",
+    "preferredChitValue": "₹1,00,000",
+    "preferredContactMethod": "WhatsApp",
+    "message": "Please send chit schedule for Mettupalayam branch",
+    "status": "New",
+    "adminNotes": "",
+    "createdAt": "2026-09-02T16:06:05.530Z",
+    "updatedAt": "2026-09-02T16:06:05.530Z",
+    "whatsappNotifications": [
+      {
+        "recipient": "+91 7338736352",
+        "recipientName": "Primary Business Line",
+        "status": "direct_link",
+        "timestamp": "2026-09-02T16:06:05.531Z",
+        "messagePreview": "🔔 NEW CHIT FUND ENQUIRY\n\nCustomer Name: AJEETH S\nMobile Number: 8248744918\nInte...",
+        "messageId": "wa_1788365165531_4nanm",
+        "error": "Automated WhatsApp Gateway not configured yet. Please configure CallMeBot/Meta in Admin or click the direct WhatsApp buttons."
+      },
+      {
+        "recipient": "+91 9345836032",
+        "recipientName": "Secondary Business Line",
+        "status": "direct_link",
+        "timestamp": "2026-09-02T16:06:05.531Z",
+        "messagePreview": "🔔 NEW CHIT FUND ENQUIRY\n\nCustomer Name: AJEETH S\nMobile Number: 8248744918\nInte...",
+        "messageId": "wa_1788365165531_lgjv1",
+        "error": "Automated WhatsApp Gateway not configured yet. Please configure CallMeBot/Meta in Admin or click the direct WhatsApp buttons."
+      }
+    ],
+    "source": "Website Enquiry Form"
+  },
+  {
+    "id": "enq-1788365154179",
+    "fullName": "AJEETH S",
+    "mobileNumber": "8248744918",
+    "emailAddress": "",
+    "interestedPlan": "₹1,00,000 Plan (₹5,000/month • 21 Months)",
+    "preferredChitValue": "₹1,00,000",
+    "preferredContactMethod": "WhatsApp",
+    "message": "Please send chit schedule for Mettupalayam branch",
+    "status": "New",
+    "adminNotes": "",
+    "createdAt": "2026-09-02T16:05:54.175Z",
+    "updatedAt": "2026-09-02T16:05:54.175Z",
+    "whatsappNotifications": [
+      {
+        "recipient": "+91 7338736352",
+        "recipientName": "Primary Business Line",
+        "status": "direct_link",
+        "timestamp": "2026-09-02T16:05:54.179Z",
+        "messagePreview": "🔔 NEW CHIT FUND ENQUIRY\n\nCustomer Name: AJEETH S\nMobile Number: 8248744918\nInte...",
+        "messageId": "wa_1788365154179_8zuwk",
+        "error": "Automated WhatsApp Gateway not configured yet. Please configure CallMeBot/Meta in Admin or click the direct WhatsApp buttons."
+      },
+      {
+        "recipient": "+91 9345836032",
+        "recipientName": "Secondary Business Line",
+        "status": "direct_link",
+        "timestamp": "2026-09-02T16:05:54.179Z",
+        "messagePreview": "🔔 NEW CHIT FUND ENQUIRY\n\nCustomer Name: AJEETH S\nMobile Number: 8248744918\nInte...",
+        "messageId": "wa_1788365154179_ejkqv",
+        "error": "Automated WhatsApp Gateway not configured yet. Please configure CallMeBot/Meta in Admin or click the direct WhatsApp buttons."
+      }
+    ],
+    "source": "Website Enquiry Form"
+  },
+  {
+    "id": "enq-1788365069457",
+    "fullName": "Vijay Kumar",
+    "mobileNumber": "9842199887",
+    "emailAddress": "",
+    "interestedPlan": "₹2,00,000 Plan",
+    "preferredChitValue": "₹2,00,000",
+    "preferredContactMethod": "Phone",
+    "message": "Test message for dual WhatsApp",
+    "status": "Contacted",
+    "adminNotes": "",
+    "createdAt": "2026-09-02T16:04:29.456Z",
+    "updatedAt": "2026-09-02T16:05:07.137Z",
+    "whatsappNotifications": [
+      {
+        "recipient": "+91 7338736352",
+        "recipientName": "Primary Business Line",
+        "status": "direct_link",
+        "timestamp": "2026-09-02T16:04:29.457Z",
+        "messagePreview": "🔔 NEW CHIT FUND ENQUIRY\n\nCustomer Name: Vijay Kumar\nMobile Number: 9842199887\nI...",
+        "messageId": "wa_1788365069457_ngsa7",
+        "error": "Automated WhatsApp Gateway not configured yet. Please configure CallMeBot/Meta in Admin or click the direct WhatsApp buttons."
+      },
+      {
+        "recipient": "+91 9345836032",
+        "recipientName": "Secondary Business Line",
+        "status": "direct_link",
+        "timestamp": "2026-09-02T16:04:29.457Z",
+        "messagePreview": "🔔 NEW CHIT FUND ENQUIRY\n\nCustomer Name: Vijay Kumar\nMobile Number: 9842199887\nI...",
+        "messageId": "wa_1788365069457_469mo",
+        "error": "Automated WhatsApp Gateway not configured yet. Please configure CallMeBot/Meta in Admin or click the direct WhatsApp buttons."
+      }
+    ],
+    "source": "Website Enquiry Form"
+  },
+  {
+    "id": "enq-1788364636423",
+    "fullName": "AJEETH S",
+    "mobileNumber": "8248744918",
+    "emailAddress": "",
+    "interestedPlan": "₹1,00,000 Plan (₹5,000/month • 21 Months)",
+    "preferredChitValue": "₹1,00,000",
+    "preferredContactMethod": "WhatsApp",
+    "message": "",
+    "status": "New",
+    "adminNotes": "",
+    "createdAt": "2026-09-02T15:57:16.399Z",
+    "updatedAt": "2026-09-02T15:57:16.399Z",
+    "whatsappNotifications": [
+      {
+        "recipient": "+91 7338736352",
+        "recipientName": "Primary Business Line",
+        "status": "delivered",
+        "timestamp": "2026-09-02T15:57:16.419Z",
+        "messagePreview": "🔔 NEW CHIT FUND ENQUIRY\n\nCustomer Name: AJEETH S\nMobile Number: 8248744918\nInte...",
+        "messageId": "wa_1788364636420_5ephc"
+      },
+      {
+        "recipient": "+91 9345836032",
+        "recipientName": "Secondary Business Line",
+        "status": "delivered",
+        "timestamp": "2026-09-02T15:57:16.423Z",
+        "messagePreview": "🔔 NEW CHIT FUND ENQUIRY\n\nCustomer Name: AJEETH S\nMobile Number: 8248744918\nInte...",
+        "messageId": "wa_1788364636423_shn1s"
+      }
+    ],
+    "source": "Website Enquiry Form"
+  },
+  {
+    "id": "enq-1787336654237",
+    "fullName": "AJEETH S",
+    "mobileNumber": "8248744918",
+    "emailAddress": "",
+    "interestedPlan": "₹1,00,000 Plan (₹5,000/month • 21 Months)",
+    "preferredChitValue": "₹1,00,000",
+    "preferredContactMethod": "WhatsApp",
+    "message": "",
+    "status": "New",
+    "adminNotes": "",
+    "createdAt": "2026-08-21T18:24:14.233Z",
+    "updatedAt": "2026-08-21T18:24:14.233Z",
+    "whatsappNotifications": [
+      {
+        "recipient": "+91 7338736352",
+        "recipientName": "Primary Business Line",
+        "status": "delivered",
+        "timestamp": "2026-08-21T18:24:14.237Z",
+        "messagePreview": "🔔 NEW CHIT FUND ENQUIRY\n\nCustomer Name: AJEETH S\nMobile Number: 8248744918\nInte...",
+        "messageId": "wa_1787336654237_822w0"
+      },
+      {
+        "recipient": "+91 9345836032",
+        "recipientName": "Secondary Business Line",
+        "status": "delivered",
+        "timestamp": "2026-08-21T18:24:14.237Z",
+        "messagePreview": "🔔 NEW CHIT FUND ENQUIRY\n\nCustomer Name: AJEETH S\nMobile Number: 8248744918\nInte...",
+        "messageId": "wa_1787336654237_ddpvw"
+      }
+    ],
+    "source": "Website Enquiry Form"
+  },
+  {
+    "id": "enq-1787335413750",
+    "fullName": "Ramesh Kumar",
+    "mobileNumber": "9876543210",
+    "emailAddress": "",
+    "interestedPlan": "₹2,00,000 Plan (₹10,000/month • 21 Months)",
+    "preferredChitValue": "₹2,00,000",
+    "preferredContactMethod": "WhatsApp",
+    "message": "Want to join current 21-month group in Kuttaiyur.",
+    "status": "Follow-up",
+    "adminNotes": "",
+    "createdAt": "2026-08-21T18:03:33.749Z",
+    "updatedAt": "2026-08-21T18:04:39.274Z",
+    "whatsappNotifications": [
+      {
+        "recipient": "+91 7338736352",
+        "recipientName": "Primary Business Line",
+        "status": "delivered",
+        "timestamp": "2026-08-21T18:03:33.750Z",
+        "messagePreview": "🔔 NEW CHIT FUND ENQUIRY\n\nCustomer Name: Ramesh Kumar\nMobile Number: 9876543210\n...",
+        "messageId": "wa_1787335413750_2mfvu"
+      },
+      {
+        "recipient": "+91 9345836032",
+        "recipientName": "Secondary Business Line",
+        "status": "delivered",
+        "timestamp": "2026-08-21T18:03:33.750Z",
+        "messagePreview": "🔔 NEW CHIT FUND ENQUIRY\n\nCustomer Name: Ramesh Kumar\nMobile Number: 9876543210\n...",
+        "messageId": "wa_1787335413750_um6lh"
+      }
+    ],
+    "source": "Website Enquiry Form"
+  },
+  {
+    "id": "enq-1787335331349",
+    "fullName": "M. Anand",
+    "mobileNumber": "9845612345",
+    "emailAddress": "",
+    "interestedPlan": "₹2,00,000 (₹10,000/month)",
+    "preferredChitValue": "₹2,00,000",
+    "preferredContactMethod": "Phone",
+    "message": "Want to enroll in new group starting next week.",
+    "status": "New",
+    "adminNotes": "",
+    "createdAt": "2026-08-21T18:02:11.335Z",
+    "updatedAt": "2026-08-21T18:02:11.335Z",
+    "whatsappNotifications": [
+      {
+        "recipient": "+91 7338736352",
+        "recipientName": "Primary Business Line",
+        "status": "delivered",
+        "timestamp": "2026-08-21T18:02:11.349Z",
+        "messagePreview": "🔔 NEW CHIT FUND ENQUIRY\n\nCustomer Name: M. Anand\nMobile Number: 9845612345\nInte...",
+        "messageId": "wa_1787335331349_5f2oe"
+      },
+      {
+        "recipient": "+91 9345836032",
+        "recipientName": "Secondary Business Line",
+        "status": "delivered",
+        "timestamp": "2026-08-21T18:02:11.349Z",
+        "messagePreview": "🔔 NEW CHIT FUND ENQUIRY\n\nCustomer Name: M. Anand\nMobile Number: 9845612345\nInte...",
+        "messageId": "wa_1787335331349_6w5pa"
+      }
+    ],
+    "source": "Website Enquiry Form"
+  },
+  {
+    "id": "enq-1001",
+    "fullName": "Karthik Subramanian",
+    "mobileNumber": "+91 9842154321",
+    "emailAddress": "karthik.sub@example.com",
+    "interestedPlan": "₹2,00,000 (₹10,000/month)",
+    "preferredChitValue": "₹2,00,000",
+    "preferredContactMethod": "WhatsApp",
+    "message": "Interested in joining upcoming 21-month group in Kuttaiyur branch.",
+    "status": "Contacted",
+    "adminNotes": "Spoke on 21st Aug. Customer requested brochure for ₹2 Lakh scheme.",
+    "createdAt": "2026-08-20T18:01:50.733Z",
+    "updatedAt": "2026-08-21T00:01:50.733Z",
+    "whatsappNotifications": [
+      {
+        "recipient": "+91 7338736352",
+        "recipientName": "Primary Business Line",
+        "status": "delivered",
+        "timestamp": "2026-08-20T18:01:50.733Z",
+        "messagePreview": "🔔 NEW CHIT FUND ENQUIRY\n\nCustomer Name: Karthik Subramanian...",
+        "messageId": "wa_msg_98421_1"
+      },
+      {
+        "recipient": "+91 9345836032",
+        "recipientName": "Secondary Business Line",
+        "status": "delivered",
+        "timestamp": "2026-08-20T18:01:50.733Z",
+        "messagePreview": "🔔 NEW CHIT FUND ENQUIRY\n\nCustomer Name: Karthik Subramanian...",
+        "messageId": "wa_msg_98421_2"
+      }
+    ],
+    "source": "Website Modal"
+  },
+  {
+    "id": "enq-1002",
+    "fullName": "Senthil Velan",
+    "mobileNumber": "+91 9443218765",
+    "emailAddress": "",
+    "interestedPlan": "₹5,00,000 (₹25,000/month)",
+    "preferredChitValue": "₹5,00,000",
+    "preferredContactMethod": "Phone",
+    "message": "Need details for business savings plan. Please call morning 10am.",
+    "status": "New",
+    "adminNotes": "High priority lead - ₹5 Lakh plan enquiry.",
+    "createdAt": "2026-08-21T13:01:50.733Z",
+    "updatedAt": "2026-08-21T13:01:50.733Z",
+    "whatsappNotifications": [
+      {
+        "recipient": "+91 7338736352",
+        "recipientName": "Primary Business Line",
+        "status": "delivered",
+        "timestamp": "2026-08-21T13:01:50.733Z",
+        "messagePreview": "🔔 NEW CHIT FUND ENQUIRY\n\nCustomer Name: Senthil Velan...",
+        "messageId": "wa_msg_94432_1"
+      },
+      {
+        "recipient": "+91 9345836032",
+        "recipientName": "Secondary Business Line",
+        "status": "delivered",
+        "timestamp": "2026-08-21T13:01:50.733Z",
+        "messagePreview": "🔔 NEW CHIT FUND ENQUIRY\n\nCustomer Name: Senthil Velan...",
+        "messageId": "wa_msg_94432_2"
+      }
+    ],
+    "source": "Chit Plans Page"
+  }
+]

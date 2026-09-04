@@ -1,0 +1,7 @@
+# Robots.txt for ELITE GROUP – SS CHIT FUNDS
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /#admin
+
+Sitemap: https://ss-chit-funds.com/sitemap.xml
