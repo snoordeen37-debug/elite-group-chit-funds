@@ -61,8 +61,8 @@ This repository contains the complete production-ready web application, customer
 
 ### 1. Installation
 ```bash
-git clone https://github.com/snoordeen37-debug/SSCHITFUNDS.git
-cd SSCHITFUNDS
+git clone https://github.com/snoordeen37-debug/elite-group-chit-funds.git
+cd elite-group-chit-funds
 npm install
 ```
 
