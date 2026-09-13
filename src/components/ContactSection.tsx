@@ -119,7 +119,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
           <h2 className="font-['Cinzel'] text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight mb-2.5">
             Contact ELITE GROUP
           </h2>
-          <p className="text-slate-300 text-xs sm:text-sm md:text-base leading-relaxed">
+          <p className="text-slate-300 text-sm sm:text-base md:text-lg leading-relaxed">
             Reach out to our team for plan details, current group enrollment, or visit our office at Mettupalayam.
           </p>
         </div>
@@ -136,24 +136,24 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
                   <Phone className="w-4 h-4" />
                 </div>
                 <div>
-                  <h3 className="font-['Cinzel'] text-sm font-bold text-white uppercase tracking-wider">
+                  <h3 className="font-['Cinzel'] text-sm sm:text-base font-bold text-white uppercase tracking-wider">
                     Direct Phone Support
                   </h3>
-                  <p className="text-[11px] text-slate-400">Available Mon – Sat, 9:00 AM – 7:30 PM</p>
+                  <p className="text-xs sm:text-sm text-slate-400">Available Mon – Sat, 9:00 AM – 7:30 PM</p>
                 </div>
               </div>
 
-              <div className="space-y-2 text-xs">
+              <div className="space-y-2 text-xs sm:text-sm">
                 <div className="flex items-center justify-between p-2.5 rounded bg-[#001A33] border border-slate-800">
                   <div>
-                    <div className="text-[10px] text-slate-400 font-bold uppercase">Primary Line</div>
-                    <a href={`tel:${COMPANY_DETAILS.phone1Clean}`} className="text-white hover:text-[#C5A028] font-bold text-xs sm:text-sm">
+                    <div className="text-xs text-slate-400 font-bold uppercase">Primary Line</div>
+                    <a href={`tel:${COMPANY_DETAILS.phone1Clean}`} className="text-white hover:text-[#C5A028] font-bold text-sm sm:text-base">
                       {COMPANY_DETAILS.phone1}
                     </a>
                   </div>
                   <a
                     href={`tel:${COMPANY_DETAILS.phone1Clean}`}
-                    className="px-2.5 py-1 rounded bg-[#C5A028] hover:bg-[#e0b83e] text-[#001A33] font-bold text-[11px] uppercase tracking-wider"
+                    className="px-2.5 py-1 rounded bg-[#C5A028] hover:bg-[#e0b83e] text-[#001A33] font-bold text-xs sm:text-sm uppercase tracking-wider"
                   >
                     Call
                   </a>
@@ -161,14 +161,14 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
 
                 <div className="flex items-center justify-between p-2.5 rounded bg-[#001A33] border border-slate-800">
                   <div>
-                    <div className="text-[10px] text-slate-400 font-bold uppercase">Secondary Line</div>
-                    <a href={`tel:${COMPANY_DETAILS.phone2Clean}`} className="text-white hover:text-[#C5A028] font-bold text-xs sm:text-sm">
+                    <div className="text-xs text-slate-400 font-bold uppercase">Secondary Line</div>
+                    <a href={`tel:${COMPANY_DETAILS.phone2Clean}`} className="text-white hover:text-[#C5A028] font-bold text-sm sm:text-base">
                       {COMPANY_DETAILS.phone2}
                     </a>
                   </div>
                   <a
                     href={`tel:${COMPANY_DETAILS.phone2Clean}`}
-                    className="px-2.5 py-1 rounded bg-[#C5A028] hover:bg-[#e0b83e] text-[#001A33] font-bold text-[11px] uppercase tracking-wider"
+                    className="px-2.5 py-1 rounded bg-[#C5A028] hover:bg-[#e0b83e] text-[#001A33] font-bold text-xs sm:text-sm uppercase tracking-wider"
                   >
                     Call
                   </a>
@@ -184,10 +184,10 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
                     <MapPin className="w-4 h-4" />
                   </div>
                   <div>
-                    <h3 className="font-['Cinzel'] text-sm font-bold text-white uppercase tracking-wider">
+                    <h3 className="font-['Cinzel'] text-sm sm:text-base font-bold text-white uppercase tracking-wider">
                       Office Headquarters
                     </h3>
-                    <p className="text-[11px] text-slate-400">Direct In-Person Consultation</p>
+                    <p className="text-xs sm:text-sm text-slate-400">Direct In-Person Consultation</p>
                   </div>
                 </div>
 
@@ -195,7 +195,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
                   href="https://www.google.com/maps/search/?api=1&query=ELITE+TURF,+Ajandha+Garden,+Kuttaiyur,+Mettupalayam+-+641104"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#C5A028] hover:bg-[#e0b83e] text-[#001A33] font-bold text-[11px] uppercase tracking-wider transition-all shadow cursor-pointer"
+                  className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#C5A028] hover:bg-[#e0b83e] text-[#001A33] font-bold text-xs sm:text-sm uppercase tracking-wider transition-all shadow cursor-pointer"
                   id="view-google-maps-btn-header"
                 >
                   <MapPin className="w-3.5 h-3.5" />
@@ -205,16 +205,16 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
               </div>
 
               {/* Exact Address Details */}
-              <div className="p-3 rounded bg-[#001A33] border border-slate-800 text-xs space-y-1.5">
+              <div className="p-3 rounded bg-[#001A33] border border-slate-800 text-xs sm:text-sm space-y-1.5">
                 <div className="font-bold text-white leading-relaxed flex items-start gap-2">
                   <MapPin className="w-3.5 h-3.5 text-[#C5A028] shrink-0 mt-0.5" />
                   <span>{COMPANY_DETAILS.officeAddress}</span>
                 </div>
-                <div className="text-[11px] text-[#C5A028] flex items-center gap-1.5 pt-1 pl-5">
+                <div className="text-xs sm:text-sm text-[#C5A028] flex items-center gap-1.5 pt-1 pl-5">
                   <Building2 className="w-3.5 h-3.5" />
                   <span>Managed by {COMPANY_DETAILS.managedBy}</span>
                 </div>
-                <div className="text-[10px] text-slate-400 font-mono pt-1 border-t border-slate-800 flex items-center justify-between">
+                <div className="text-xs text-slate-400 font-mono pt-1 border-t border-slate-800 flex items-center justify-between">
                   <span>CIN: {COMPANY_DETAILS.cin}</span>
                   <span className="text-slate-400 font-sans">Kuttaiyur, Mettupalayam</span>
                 </div>
@@ -224,7 +224,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
               <div className="relative rounded-lg overflow-hidden border border-slate-800 hover:border-[#C5A028]/40 transition-colors bg-[#001A33] shadow-inner">
                 {/* Gold Pin Badge in top corner */}
                 <div className="absolute top-2.5 left-2.5 z-10 pointer-events-none">
-                  <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#001226]/90 backdrop-blur-md border border-[#C5A028]/60 text-[#C5A028] text-[10px] font-bold shadow-lg">
+                  <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#001226]/90 backdrop-blur-md border border-[#C5A028]/60 text-[#C5A028] text-xs font-bold shadow-lg">
                     <MapPin className="w-3 h-3 text-red-500 fill-red-500" />
                     <span>ELITE TURF • Kuttaiyur</span>
                   </div>
@@ -245,7 +245,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
                 href="https://www.google.com/maps/search/?api=1&query=ELITE+TURF,+Ajandha+Garden,+Kuttaiyur,+Mettupalayam+-+641104"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-2.5 px-4 rounded-md bg-[#00264d] hover:bg-[#C5A028] text-[#C5A028] hover:text-[#001A33] border border-[#C5A028]/50 font-bold text-xs uppercase tracking-wider transition-all duration-150 flex items-center justify-center gap-2 cursor-pointer shadow-md group"
+                className="w-full py-2.5 px-4 rounded-md bg-[#00264d] hover:bg-[#C5A028] text-[#C5A028] hover:text-[#001A33] border border-[#C5A028]/50 font-bold text-xs sm:text-sm uppercase tracking-wider transition-all duration-150 flex items-center justify-center gap-2 cursor-pointer shadow-md group"
                 id="view-google-maps-btn"
               >
                 <MapPin className="w-4 h-4 text-[#C5A028] group-hover:text-[#001A33] transition-colors" />
@@ -257,14 +257,14 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
             {/* Quick WhatsApp Support Card */}
             <div className="p-4 rounded-lg bg-emerald-950/40 border border-emerald-500/40 flex items-center justify-between gap-3 shadow-lg">
               <div>
-                <div className="text-xs font-bold text-emerald-400 uppercase tracking-wider">Fast Response</div>
-                <div className="text-white text-xs font-semibold">Chat on WhatsApp Instantly</div>
+                <div className="text-xs sm:text-sm font-bold text-emerald-400 uppercase tracking-wider">Fast Response</div>
+                <div className="text-white text-xs sm:text-sm font-semibold">Chat on WhatsApp Instantly</div>
               </div>
               <a
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-3 py-1.5 rounded-md bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs uppercase flex items-center gap-1.5 shadow"
+                className="px-3 py-1.5 rounded-md bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs sm:text-sm uppercase flex items-center gap-1.5 shadow"
               >
                 <MessageCircle className="w-3.5 h-3.5" />
                 <span>Open Chat</span>
@@ -281,7 +281,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
                 <h3 className="font-['Cinzel'] text-lg sm:text-xl font-bold text-white">
                   Send Your Plan Enquiry
                 </h3>
-                <p className="text-xs text-slate-400 mt-0.5">
+                <p className="text-xs sm:text-sm text-slate-400 mt-0.5">
                   Our official team will automatically receive your request on both business lines.
                 </p>
               </div>
@@ -305,15 +305,15 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
                   {directUrls && (
                     <div className="p-4 rounded-xl bg-[#001A33] border border-emerald-500/40 text-left max-w-md mx-auto space-y-2.5 shadow-lg">
                       <div className="flex items-center justify-between border-b border-slate-800 pb-1.5">
-                        <span className="text-xs font-bold text-emerald-300 flex items-center gap-1.5">
+                        <span className="text-xs sm:text-sm font-bold text-emerald-300 flex items-center gap-1.5">
                           <MessageCircle className="w-3.5 h-3.5 text-emerald-400" />
                           Send Instant WhatsApp Notification
                         </span>
-                        <span className="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-500/40">
+                        <span className="text-xs uppercase font-mono px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-500/40">
                           1-Click Send
                         </span>
                       </div>
-                      <p className="text-[11px] text-slate-300">
+                      <p className="text-xs sm:text-sm text-slate-300">
                         Click below to deliver this enquiry directly to our business lines on WhatsApp:
                       </p>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -321,7 +321,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
                           href={directUrls.line1}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center justify-center gap-1.5 p-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition-all shadow"
+                          className="flex items-center justify-center gap-1.5 p-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm transition-all shadow"
                         >
                           <ExternalLink className="w-3 h-3" />
                           <span>Line 1 (+91 7338736352)</span>
@@ -330,7 +330,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
                           href={directUrls.line2}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center justify-center gap-1.5 p-2 rounded-lg bg-emerald-700 hover:bg-emerald-600 text-white font-bold text-xs transition-all shadow"
+                          className="flex items-center justify-center gap-1.5 p-2 rounded-lg bg-emerald-700 hover:bg-emerald-600 text-white font-bold text-xs sm:text-sm transition-all shadow"
                         >
                           <ExternalLink className="w-3 h-3" />
                           <span>Line 2 (+91 9345836032)</span>
@@ -341,7 +341,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
                           window.open(directUrls.line1, '_blank');
                           setTimeout(() => window.open(directUrls.line2, '_blank'), 600);
                         }}
-                        className="w-full py-2 rounded-lg bg-[#001226] hover:bg-slate-800 border border-emerald-500/50 text-emerald-300 hover:text-white font-bold text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer"
+                        className="w-full py-2 rounded-lg bg-[#001226] hover:bg-slate-800 border border-emerald-500/50 text-emerald-300 hover:text-white font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-1.5 cursor-pointer"
                       >
                         <Sparkles className="w-3.5 h-3.5 text-[#C5A028]" />
                         <span>Send to BOTH WhatsApp Numbers</span>
@@ -350,18 +350,18 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
                   )}
 
                   {/* Dual WhatsApp Dispatch Status */}
-                  <div className="p-3.5 rounded-lg bg-[#001A33] border border-slate-800 text-xs text-left max-w-md mx-auto space-y-1.5">
-                    <div className="text-[11px] font-bold text-[#C5A028] uppercase flex items-center gap-1.5 pb-1 border-b border-slate-800">
+                  <div className="p-3.5 rounded-lg bg-[#001A33] border border-slate-800 text-xs sm:text-sm text-left max-w-md mx-auto space-y-1.5">
+                    <div className="text-xs sm:text-sm font-bold text-[#C5A028] uppercase flex items-center gap-1.5 pb-1 border-b border-slate-800">
                       <ShieldCheck className="w-3.5 h-3.5" />
                       Database Record Stored
                     </div>
-                    <div className="flex items-center justify-between text-[11px] text-slate-300">
+                    <div className="flex items-center justify-between text-xs sm:text-sm text-slate-300">
                       <span>Primary Line (+91 7338736352):</span>
                       <span className="text-emerald-400 font-semibold flex items-center gap-1">
                         <Check className="w-3 h-3" /> Registered & Ready
                       </span>
                     </div>
-                    <div className="flex items-center justify-between text-[11px] text-slate-300">
+                    <div className="flex items-center justify-between text-xs sm:text-sm text-slate-300">
                       <span>Secondary Line (+91 9345836032):</span>
                       <span className="text-emerald-400 font-semibold flex items-center gap-1">
                         <Check className="w-3 h-3" /> Registered & Ready
@@ -402,7 +402,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
 
                   {/* Full Name */}
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1" htmlFor="field-fullName">
+                    <label className="block text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-300 mb-1" htmlFor="field-fullName">
                       Full Name <span className="text-[#C5A028]">*</span>
                     </label>
                     <input
@@ -413,14 +413,14 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
                       placeholder="e.g. R. Senthil Kumar"
                       value={formData.fullName}
                       onChange={handleChange}
-                      className="w-full px-3 py-2.5 rounded-md bg-[#001A33] border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-[#C5A028] text-xs sm:text-sm"
+                      className="w-full px-3 py-2.5 rounded-md bg-[#001A33] border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-[#C5A028] text-sm sm:text-base"
                     />
                   </div>
 
                   {/* Mobile Number & Email Grid */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div>
-                      <label className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1" htmlFor="field-mobileNumber">
+                      <label className="block text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-300 mb-1" htmlFor="field-mobileNumber">
                         Mobile Number <span className="text-[#C5A028]">*</span>
                       </label>
                       <input
@@ -431,12 +431,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
                         placeholder="10-digit mobile number"
                         value={formData.mobileNumber}
                         onChange={handleChange}
-                        className="w-full px-3 py-2.5 rounded-md bg-[#001A33] border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-[#C5A028] text-xs sm:text-sm"
+                        className="w-full px-3 py-2.5 rounded-md bg-[#001A33] border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-[#C5A028] text-sm sm:text-base"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1" htmlFor="field-emailAddress">
+                      <label className="block text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-300 mb-1" htmlFor="field-emailAddress">
                         Email Address (Optional)
                       </label>
                       <input
@@ -446,7 +446,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
                         placeholder="name@example.com"
                         value={formData.emailAddress}
                         onChange={handleChange}
-                        className="w-full px-3 py-2.5 rounded-md bg-[#001A33] border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-[#C5A028] text-xs sm:text-sm"
+                        className="w-full px-3 py-2.5 rounded-md bg-[#001A33] border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-[#C5A028] text-sm sm:text-base"
                       />
                     </div>
                   </div>
@@ -454,14 +454,14 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
                   {/* Preferred Chit Value Dropdown */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div>
-                      <label className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1" htmlFor="field-preferredChitValue">
+                      <label className="block text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-300 mb-1" htmlFor="field-preferredChitValue">
                         Chit Plan Interested In
                       </label>
                       <select
                         id="field-preferredChitValue"
                         value={formData.interestedPlan}
                         onChange={handlePlanChange}
-                        className="w-full px-3 py-2.5 rounded-md bg-[#001A33] border border-slate-700 text-white focus:outline-none focus:border-[#C5A028] text-xs sm:text-sm cursor-pointer"
+                        className="w-full px-3 py-2.5 rounded-md bg-[#001A33] border border-slate-700 text-white focus:outline-none focus:border-[#C5A028] text-sm sm:text-base cursor-pointer"
                       >
                         <option value="₹50,000 (₹2,500 × 21)">₹50,000 (₹2,500 × 21)</option>
                         <option value="₹1,00,000 (₹5,000 × 21)">₹1,00,000 (₹5,000 × 21)</option>
@@ -474,7 +474,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
                     </div>
 
                     <div>
-                      <label className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1" htmlFor="field-preferredContactMethod">
+                      <label className="block text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-300 mb-1" htmlFor="field-preferredContactMethod">
                         Preferred Contact Method
                       </label>
                       <select
@@ -482,7 +482,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
                         name="preferredContactMethod"
                         value={formData.preferredContactMethod}
                         onChange={handleChange}
-                        className="w-full px-3 py-2.5 rounded-md bg-[#001A33] border border-slate-700 text-white focus:outline-none focus:border-[#C5A028] text-xs sm:text-sm cursor-pointer"
+                        className="w-full px-3 py-2.5 rounded-md bg-[#001A33] border border-slate-700 text-white focus:outline-none focus:border-[#C5A028] text-sm sm:text-base cursor-pointer"
                       >
                         <option value="WhatsApp">WhatsApp Message</option>
                         <option value="Phone">Phone Call</option>
@@ -492,7 +492,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
 
                   {/* Message */}
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1" htmlFor="field-message">
+                    <label className="block text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-300 mb-1" htmlFor="field-message">
                       Message / Enquiry (Optional)
                     </label>
                     <textarea
@@ -502,12 +502,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
                       placeholder="Ask any question about start dates, documentation, or contribution schedule..."
                       value={formData.message}
                       onChange={handleChange}
-                      className="w-full px-3 py-2 rounded-md bg-[#001A33] border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-[#C5A028] text-xs sm:text-sm resize-none"
+                      className="w-full px-3 py-2 rounded-md bg-[#001A33] border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-[#C5A028] text-sm sm:text-base resize-none"
                     />
                   </div>
 
                   {/* Automated Dual Notification Note */}
-                  <div className="text-[10px] text-slate-400 flex items-center gap-1.5">
+                  <div className="text-xs text-slate-400 flex items-center gap-1.5">
                     <ShieldCheck className="w-3.5 h-3.5 text-[#C5A028]" />
                     <span>Auto-dispatches notification to both official lines (+91 7338736352 & +91 9345836032).</span>
                   </div>
@@ -516,7 +516,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-3 rounded-md bg-[#C5A028] hover:bg-[#e0b83e] text-[#001A33] font-bold text-xs uppercase tracking-wider transition-all duration-150 shadow-md flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+                    className="w-full py-3 rounded-md bg-[#C5A028] hover:bg-[#e0b83e] text-[#001A33] font-bold text-xs sm:text-sm uppercase tracking-wider transition-all duration-150 shadow-md flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
                     id="enquiry-submit-btn"
                   >
                     {isSubmitting ? (

@@ -28,7 +28,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onOpenEnquiry }) => {
           <h2 className="font-['Cinzel'] text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight mb-2.5">
             FREQUENTLY ASKED QUESTIONS
           </h2>
-          <p className="text-slate-300 text-xs sm:text-sm md:text-base leading-relaxed">
+          <p className="text-slate-300 text-sm sm:text-base md:text-lg leading-relaxed">
             Essential information regarding chit fund mechanics, documentation, contribution schedules, and auction procedures.
           </p>
         </div>
@@ -52,8 +52,8 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onOpenEnquiry }) => {
                   className="w-full py-3 px-4 sm:px-5 flex items-center justify-between text-left focus:outline-none rounded-lg cursor-pointer"
                   aria-expanded={isOpen}
                 >
-                  <span className="font-['Cinzel'] font-bold text-xs sm:text-sm text-white flex items-center gap-2.5">
-                    <span className="text-[#C5A028] font-mono text-xs font-bold">
+                  <span className="font-['Cinzel'] font-bold text-sm sm:text-base text-white flex items-center gap-2.5">
+                    <span className="text-[#C5A028] font-mono text-xs sm:text-sm font-bold">
                       {String(index + 1).padStart(2, '0')}
                     </span>
                     <span>{faq.question}</span>
@@ -61,12 +61,12 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onOpenEnquiry }) => {
                   <div className={`p-1 rounded-md bg-[#00264d] text-[#C5A028] transition-transform duration-150 shrink-0 ml-3 ${
                     isOpen ? 'rotate-180 bg-[#C5A028] text-[#001A33]' : ''
                   }`}>
-                    <ChevronDown className="w-3.5 h-3.5" />
+                    <ChevronDown className="w-4 h-4" />
                   </div>
                 </button>
 
                 {isOpen && (
-                  <div className="px-4 sm:px-5 pb-3.5 pt-1 text-slate-300 text-xs leading-relaxed border-t border-slate-800 animate-in fade-in duration-150">
+                  <div className="px-4 sm:px-5 pb-3.5 pt-1 text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-800 animate-in fade-in duration-150">
                     <p>{faq.answer}</p>
                   </div>
                 )}
@@ -78,8 +78,8 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onOpenEnquiry }) => {
         {/* Bottom Help Box */}
         <div className="mt-8 p-4 sm:p-5 rounded-lg bg-[#001226] border border-[#C5A028]/35 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
-            <div className="text-xs sm:text-sm font-bold text-white">Still have more specific questions?</div>
-            <div className="text-xs text-slate-400 mt-0.5">
+            <div className="text-sm sm:text-base font-bold text-white">Still have more specific questions?</div>
+            <div className="text-xs sm:text-sm text-slate-400 mt-0.5">
               Contact our team directly on WhatsApp or call us during business hours.
             </div>
           </div>
@@ -89,7 +89,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onOpenEnquiry }) => {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3 py-1.5 rounded-md bg-emerald-950/80 hover:bg-emerald-900 border border-emerald-500/40 text-emerald-300 text-xs font-semibold flex items-center gap-1.5 transition-colors"
+              className="px-3.5 py-2 rounded-md bg-emerald-950/80 hover:bg-emerald-900 border border-emerald-500/40 text-emerald-300 text-xs sm:text-sm font-semibold flex items-center gap-1.5 transition-colors"
               id="faq-whatsapp-btn"
             >
               <MessageCircle className="w-3.5 h-3.5" />
@@ -97,7 +97,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onOpenEnquiry }) => {
             </a>
             <button
               onClick={onOpenEnquiry}
-              className="px-3.5 py-1.5 rounded-md bg-[#C5A028] hover:bg-[#e0b83e] text-[#001A33] text-xs font-bold uppercase transition-all shadow-sm cursor-pointer"
+              className="px-4 py-2 rounded-md bg-[#C5A028] hover:bg-[#e0b83e] text-[#001A33] text-xs sm:text-sm font-bold uppercase transition-all shadow-sm cursor-pointer"
               id="faq-enquire-btn"
             >
               Send Enquiry

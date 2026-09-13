@@ -35,45 +35,45 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenEnquiry, onNav
               {/* Verified Credentials Block */}
               <div className="space-y-2.5">
                 <div className="p-3 rounded-md bg-[#001A33] border border-slate-800">
-                  <div className="text-[10px] uppercase tracking-wider text-slate-400 font-bold mb-0.5">
+                  <div className="text-xs uppercase tracking-wider text-slate-400 font-bold mb-1">
                     Corporate Identification Number (CIN)
                   </div>
-                  <div className="font-mono text-xs sm:text-sm font-bold text-white tracking-wide select-all">
+                  <div className="font-mono text-sm sm:text-base font-bold text-white tracking-wide select-all">
                     {COMPANY_DETAILS.cin}
                   </div>
                 </div>
 
                 <div className="p-3 rounded-md bg-[#001A33] border border-slate-800">
-                  <div className="text-[10px] uppercase tracking-wider text-slate-400 font-bold mb-0.5">
+                  <div className="text-xs uppercase tracking-wider text-slate-400 font-bold mb-1">
                     Operating Entity
                   </div>
-                  <div className="text-xs sm:text-sm font-bold text-[#C5A028]">
+                  <div className="text-sm sm:text-base font-bold text-[#C5A028]">
                     Managed by {COMPANY_DETAILS.managedBy}
                   </div>
-                  <div className="text-xs text-slate-400 mt-1 flex items-start gap-1.5">
-                    <MapPin className="w-3.5 h-3.5 text-[#C5A028] shrink-0 mt-0.5" />
+                  <div className="text-xs sm:text-sm text-slate-300 mt-1 flex items-start gap-1.5">
+                    <MapPin className="w-4 h-4 text-[#C5A028] shrink-0 mt-0.5" />
                     <span>{COMPANY_DETAILS.officeAddress}</span>
                   </div>
                 </div>
 
                 <div className="p-3 rounded-md bg-[#001A33] border border-slate-800">
-                  <div className="text-[10px] uppercase tracking-wider text-slate-400 font-bold mb-0.5">
+                  <div className="text-xs uppercase tracking-wider text-slate-400 font-bold mb-1">
                     Direct Contact Lines
                   </div>
-                  <div className="flex flex-col gap-1 text-xs text-slate-200">
+                  <div className="flex flex-col gap-1.5 text-xs sm:text-sm text-slate-200">
                     <a href={`tel:${COMPANY_DETAILS.phone1Clean}`} className="hover:text-[#C5A028] flex items-center gap-1.5 font-medium">
-                      <Phone className="w-3.5 h-3.5 text-[#C5A028]" /> {COMPANY_DETAILS.phone1}
+                      <Phone className="w-4 h-4 text-[#C5A028]" /> {COMPANY_DETAILS.phone1}
                     </a>
                     <a href={`tel:${COMPANY_DETAILS.phone2Clean}`} className="hover:text-[#C5A028] flex items-center gap-1.5 font-medium">
-                      <Phone className="w-3.5 h-3.5 text-[#C5A028]" /> {COMPANY_DETAILS.phone2}
+                      <Phone className="w-4 h-4 text-[#C5A028]" /> {COMPANY_DETAILS.phone2}
                     </a>
                   </div>
                 </div>
               </div>
 
               {/* Bottom Assurance */}
-              <div className="mt-4 pt-3 border-t border-slate-800 flex items-center gap-2 text-xs text-slate-400">
-                <ShieldCheck className="w-4 h-4 text-[#C5A028]" />
+              <div className="mt-4 pt-3 border-t border-slate-800 flex items-center gap-2 text-xs sm:text-sm text-slate-300">
+                <ShieldCheck className="w-4 h-4 text-[#C5A028] shrink-0" />
                 <span>Dedicated to procedural compliance and subscriber clarity</span>
               </div>
             </div>
@@ -83,7 +83,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenEnquiry, onNav
           <div className="lg:col-span-7 order-1 lg:order-2 flex flex-col items-start">
             
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#001226] border border-[#C5A028]/40 text-[#C5A028] text-xs font-semibold uppercase tracking-wider mb-3">
-              <Landmark className="w-3.5 h-3.5 text-[#C5A028]" />
+              <Landmark className="w-4 h-4 text-[#C5A028]" />
               Company Background
             </div>
 
@@ -91,16 +91,16 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenEnquiry, onNav
               About <span className="text-[#C5A028]">ELITE GROUP</span> – SS CHIT FUNDS
             </h2>
 
-            <div className="space-y-3 text-slate-300 text-xs sm:text-sm md:text-base leading-relaxed mb-6">
+            <div className="space-y-3.5 text-slate-200 text-sm sm:text-base md:text-lg leading-relaxed mb-6">
               <p className="font-semibold text-white">
                 ELITE GROUP – SS CHIT FUNDS provides structured chit-fund plans designed to give members a disciplined way to contribute regularly while providing access to different chit values according to their financial requirements.
               </p>
               
-              <p>
+              <p className="text-slate-300">
                 Operating in Mettupalayam under the stewardship of <strong>ELITE TURF</strong>, we believe that transparency, structured planning, and prompt customer communication form the bedrock of sustainable financial relationships.
               </p>
 
-              <p>
+              <p className="text-slate-300">
                 Whether you are looking to cultivate systematic savings habits or require timely access to capital for personal, agricultural, trade, or business aspirations, our structured 21-installment plans offer clear schedules and predictable processes.
               </p>
             </div>
@@ -115,11 +115,11 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenEnquiry, onNav
                 { title: 'Customer Communication', desc: 'Direct accessibility via phone, WhatsApp and office.' },
                 { title: 'Financial Discipline', desc: 'Daily, weekly, and monthly payment convenience.' },
               ].map((item, idx) => (
-                <div key={idx} className="flex items-start gap-2 p-2.5 rounded-md bg-[#001226] border border-slate-800">
+                <div key={idx} className="flex items-start gap-2.5 p-3 rounded-md bg-[#001226] border border-slate-800">
                   <CheckCircle2 className="w-4 h-4 text-[#C5A028] shrink-0 mt-0.5" />
                   <div>
-                    <div className="text-xs font-bold text-white">{item.title}</div>
-                    <div className="text-[11px] text-slate-400">{item.desc}</div>
+                    <div className="text-sm font-bold text-white">{item.title}</div>
+                    <div className="text-xs sm:text-sm text-slate-400 mt-0.5">{item.desc}</div>
                   </div>
                 </div>
               ))}
@@ -129,16 +129,16 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenEnquiry, onNav
             <div className="flex flex-wrap items-center gap-3">
               <button
                 onClick={onOpenEnquiry}
-                className="px-5 py-2.5 rounded-md bg-[#C5A028] hover:bg-[#e0b83e] text-[#001A33] font-bold text-xs uppercase tracking-wider transition-all shadow-md flex items-center gap-2 cursor-pointer"
+                className="w-full sm:w-auto px-5 py-3 rounded-md bg-[#C5A028] hover:bg-[#e0b83e] text-[#001A33] font-bold text-sm uppercase tracking-wider transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer"
                 id="about-enquire-btn"
               >
                 <span>Enquire With Our Team</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <ArrowRight className="w-4 h-4" />
               </button>
 
               <button
                 onClick={() => onNavigate('chit-plans')}
-                className="px-4 py-2.5 rounded-md bg-[#001226] hover:bg-[#00264d] text-slate-200 border border-slate-700 hover:border-[#C5A028]/50 font-semibold text-xs uppercase tracking-wider transition-all cursor-pointer"
+                className="w-full sm:w-auto px-4 py-3 rounded-md bg-[#001226] hover:bg-[#00264d] text-slate-200 border border-slate-700 hover:border-[#C5A028]/50 font-semibold text-sm uppercase tracking-wider transition-all flex items-center justify-center cursor-pointer"
                 id="about-view-catalog-btn"
               >
                 <span>View Full Catalog</span>

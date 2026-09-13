@@ -45,7 +45,7 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
 
       {/* Optional Managed by text */}
       {showManagedBy && (
-        <div className="mt-1 pl-1 flex items-center gap-1.5 text-[10px] sm:text-[11px] text-slate-300 font-medium tracking-wide">
+        <div className="mt-1 pl-1 flex items-center gap-1.5 text-xs sm:text-sm text-slate-300 font-medium tracking-wide">
           <span>Managed by</span>
           <span className="text-[#C5A028] font-bold tracking-wider">ELITE TURF</span>
         </div>

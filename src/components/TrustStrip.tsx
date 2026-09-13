@@ -14,8 +14,8 @@ export const TrustStrip: React.FC = () => {
               <Building2 className="w-4 h-4" />
             </div>
             <div>
-              <div className="text-[10px] uppercase tracking-wider text-slate-400 font-semibold">Company</div>
-              <div className="text-xs sm:text-sm font-bold text-white tracking-tight">{COMPANY_DETAILS.companyName}</div>
+              <div className="text-xs uppercase tracking-wider text-slate-400 font-semibold">Company</div>
+              <div className="text-sm sm:text-base font-bold text-white tracking-tight">{COMPANY_DETAILS.companyName}</div>
             </div>
           </div>
 
@@ -25,8 +25,8 @@ export const TrustStrip: React.FC = () => {
               <Landmark className="w-4 h-4" />
             </div>
             <div>
-              <div className="text-[10px] uppercase tracking-wider text-slate-400 font-semibold">Business</div>
-              <div className="text-xs sm:text-sm font-bold text-[#C5A028] tracking-tight">{COMPANY_DETAILS.businessName}</div>
+              <div className="text-xs uppercase tracking-wider text-slate-400 font-semibold">Business</div>
+              <div className="text-sm sm:text-base font-bold text-[#C5A028] tracking-tight">{COMPANY_DETAILS.businessName}</div>
             </div>
           </div>
 
@@ -36,8 +36,8 @@ export const TrustStrip: React.FC = () => {
               <ShieldCheck className="w-4 h-4" />
             </div>
             <div>
-              <div className="text-[10px] uppercase tracking-wider text-slate-400 font-semibold">CIN Reference</div>
-              <div className="text-xs font-mono font-bold text-slate-200 select-all">{COMPANY_DETAILS.cin}</div>
+              <div className="text-xs uppercase tracking-wider text-slate-400 font-semibold">CIN Reference</div>
+              <div className="text-xs sm:text-sm font-mono font-bold text-slate-200 select-all">{COMPANY_DETAILS.cin}</div>
             </div>
           </div>
 
@@ -47,10 +47,10 @@ export const TrustStrip: React.FC = () => {
               <CheckCircle2 className="w-4 h-4 stroke-[2.5]" />
             </div>
             <div>
-              <div className="text-[10px] uppercase tracking-wider text-slate-400 font-semibold">Operating Entity</div>
-              <div className="text-xs sm:text-sm font-bold text-white tracking-tight flex items-center gap-1.5">
+              <div className="text-xs uppercase tracking-wider text-slate-400 font-semibold">Operating Entity</div>
+              <div className="text-sm sm:text-base font-bold text-white tracking-tight flex items-center gap-1.5">
                 <span>{COMPANY_DETAILS.managedBy}</span>
-                <span className="text-[9px] px-1.5 py-0.2 rounded bg-[#C5A028]/20 text-[#C5A028] font-bold border border-[#C5A028]/40">Verified</span>
+                <span className="text-[10px] px-1.5 py-0.5 rounded bg-[#C5A028]/20 text-[#C5A028] font-bold border border-[#C5A028]/40">Verified</span>
               </div>
             </div>
           </div>

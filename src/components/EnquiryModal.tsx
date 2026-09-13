@@ -204,16 +204,16 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
             {directUrls && (
               <div className="p-4 rounded-xl bg-[#001A33] border border-emerald-500/40 text-left max-w-md mx-auto space-y-3 shadow-lg">
                 <div className="flex items-center justify-between border-b border-slate-800 pb-2">
-                  <span className="text-xs font-bold text-emerald-300 flex items-center gap-1.5">
+                  <span className="text-xs sm:text-sm font-bold text-emerald-300 flex items-center gap-1.5">
                     <MessageSquare className="w-4 h-4 text-emerald-400" />
                     Direct WhatsApp Notification
                   </span>
-                  <span className="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-500/40">
+                  <span className="text-xs uppercase font-mono px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-500/40">
                     {whatsappResult?.number1?.status === 'delivered' ? 'Gateway Sent' : '1-Click Send'}
                   </span>
                 </div>
 
-                <p className="text-[11px] text-slate-300 leading-normal">
+                <p className="text-xs sm:text-sm text-slate-300 leading-normal">
                   Tap below to immediately send this enquiry to our business WhatsApp numbers:
                 </p>
 
@@ -222,7 +222,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
                     href={directUrls.line1}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-1.5 p-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition-all shadow-md hover:shadow-emerald-600/50"
+                    className="flex items-center justify-center gap-1.5 p-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm transition-all shadow-md hover:shadow-emerald-600/50"
                     id="enquiry-notify-line1-btn"
                   >
                     <ExternalLink className="w-3.5 h-3.5" />
@@ -232,7 +232,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
                     href={directUrls.line2}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-1.5 p-2.5 rounded-lg bg-emerald-700 hover:bg-emerald-600 text-white font-bold text-xs transition-all shadow-md hover:shadow-emerald-700/50"
+                    className="flex items-center justify-center gap-1.5 p-2.5 rounded-lg bg-emerald-700 hover:bg-emerald-600 text-white font-bold text-xs sm:text-sm transition-all shadow-md hover:shadow-emerald-700/50"
                     id="enquiry-notify-line2-btn"
                   >
                     <ExternalLink className="w-3.5 h-3.5" />
@@ -242,7 +242,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
 
                 <button
                   onClick={handleNotifyBoth}
-                  className="w-full py-2 rounded-lg bg-[#001226] hover:bg-slate-800 border border-emerald-500/50 text-emerald-300 hover:text-white font-bold text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer"
+                  className="w-full py-2.5 rounded-lg bg-[#001226] hover:bg-slate-800 border border-emerald-500/50 text-emerald-300 hover:text-white font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-1.5 cursor-pointer"
                   id="enquiry-notify-both-btn"
                 >
                   <Sparkles className="w-3.5 h-3.5 text-[#C5A028]" />
@@ -252,18 +252,18 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
             )}
 
             {/* Dual WhatsApp Status Details */}
-            <div className="p-3.5 rounded-lg bg-[#001A33] border border-slate-800 text-xs text-left max-w-md mx-auto space-y-2">
+            <div className="p-3.5 rounded-lg bg-[#001A33] border border-slate-800 text-xs sm:text-sm text-left max-w-md mx-auto space-y-2">
               <div className="flex items-center justify-between text-slate-300 font-bold border-b border-slate-800 pb-1.5">
                 <span className="flex items-center gap-1.5 text-[#C5A028]">
                   <ShieldCheck className="w-4 h-4" />
                   Database Record Stored
                 </span>
-                <span className="text-[10px] text-emerald-400 font-mono">
+                <span className="text-xs text-emerald-400 font-mono">
                   Saved Securely
                 </span>
               </div>
               
-              <div className="space-y-1 text-[11px]">
+              <div className="space-y-1 text-xs sm:text-sm">
                 <div className="flex items-center justify-between">
                   <span className="text-slate-400">Primary Business Line (+91 7338736352):</span>
                   <span className={whatsappResult?.number1?.status === 'delivered' ? 'text-emerald-400 font-semibold flex items-center gap-1' : 'text-emerald-300 font-semibold flex items-center gap-1'}>
@@ -286,7 +286,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
                 </div>
               </div>
 
-              <div className="pt-2 border-t border-slate-800/80 text-[10px] text-slate-400 flex items-center gap-1.5">
+              <div className="pt-2 border-t border-slate-800/80 text-xs text-slate-400 flex items-center gap-1.5">
                 <Building2 className="w-3.5 h-3.5 text-[#C5A028]" />
                 <span>ELITE GROUP – SS CHIT FUNDS (Managed by ELITE TURF)</span>
               </div>
@@ -295,7 +295,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
             <div className="pt-2 max-w-xs mx-auto">
               <button
                 onClick={handleResetAndClose}
-                className="w-full py-3 rounded-lg bg-[#C5A028] hover:bg-[#e0b83e] text-[#001A33] font-bold text-xs uppercase tracking-wider transition-all shadow-lg cursor-pointer"
+                className="w-full py-3 rounded-lg bg-[#C5A028] hover:bg-[#e0b83e] text-[#001A33] font-bold text-xs sm:text-sm uppercase tracking-wider transition-all shadow-lg cursor-pointer"
                 id="enquiry-success-done-btn"
               >
                 Done / Close Window
@@ -308,14 +308,14 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
             {/* Header */}
             <div className="mb-5 pb-4 border-b border-slate-800 flex items-start justify-between">
               <div>
-                <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded bg-[#001A33] border border-[#C5A028]/40 text-[#C5A028] text-[10px] font-bold uppercase tracking-wider mb-1.5">
+                <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded bg-[#001A33] border border-[#C5A028]/40 text-[#C5A028] text-xs font-bold uppercase tracking-wider mb-1.5">
                   <Sparkles className="w-3.5 h-3.5 text-[#C5A028]" />
                   Instant Plan Information
                 </div>
                 <h3 className="font-['Cinzel'] text-xl sm:text-2xl font-bold text-white tracking-tight">
                   Enquire About Chit Plans
                 </h3>
-                <p className="text-xs text-slate-400 mt-1">
+                <p className="text-xs sm:text-sm text-slate-400 mt-1">
                   Submit your details below to receive complete plan catalog & enrollment options.
                 </p>
               </div>
@@ -332,7 +332,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
             <form onSubmit={handleSubmit} className="space-y-4" id="chit-enquiry-form">
               {/* Full Name */}
               <div>
-                <label className="block text-xs font-semibold text-slate-200 uppercase tracking-wider mb-1.5">
+                <label className="block text-xs sm:text-sm font-bold text-slate-200 uppercase tracking-wider mb-1.5">
                   Full Name <span className="text-amber-400">*</span>
                 </label>
                 <input
@@ -348,7 +348,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
 
               {/* Mobile Number */}
               <div>
-                <label className="block text-xs font-semibold text-slate-200 uppercase tracking-wider mb-1.5">
+                <label className="block text-xs sm:text-sm font-bold text-slate-200 uppercase tracking-wider mb-1.5">
                   Mobile Number (WhatsApp) <span className="text-amber-400">*</span>
                 </label>
                 <div className="relative">
@@ -366,7 +366,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
                     id="enquiry-mobile-input"
                   />
                 </div>
-                <p className="text-[11px] text-slate-400 mt-1 flex items-center gap-1">
+                <p className="text-xs text-slate-400 mt-1 flex items-center gap-1">
                   <Phone className="w-3 h-3 text-[#C5A028]" />
                   We will contact you directly on this number.
                 </p>
@@ -374,7 +374,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
 
               {/* Chit Plan Selection */}
               <div>
-                <label className="block text-xs font-semibold text-slate-200 uppercase tracking-wider mb-1.5">
+                <label className="block text-xs sm:text-sm font-bold text-slate-200 uppercase tracking-wider mb-1.5">
                   Chit Plan Interested In
                 </label>
                 <select
@@ -394,7 +394,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
               {/* Preferred Chit Value (or custom input if Custom is selected) */}
               {interestedPlan.includes('Custom') ? (
                 <div>
-                  <label className="block text-xs font-semibold text-slate-200 uppercase tracking-wider mb-1.5">
+                  <label className="block text-xs sm:text-sm font-bold text-slate-200 uppercase tracking-wider mb-1.5">
                     Preferred Chit Value (Custom Amount)
                   </label>
                   <input
@@ -408,7 +408,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
                 </div>
               ) : (
                 <div>
-                  <label className="block text-xs font-semibold text-slate-200 uppercase tracking-wider mb-1.5">
+                  <label className="block text-xs sm:text-sm font-bold text-slate-200 uppercase tracking-wider mb-1.5">
                     Preferred Chit Value
                   </label>
                   <input
@@ -423,7 +423,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
 
               {/* Message / Enquiry */}
               <div>
-                <label className="block text-xs font-semibold text-slate-200 uppercase tracking-wider mb-1.5">
+                <label className="block text-xs sm:text-sm font-bold text-slate-200 uppercase tracking-wider mb-1.5">
                   Message / Enquiry <span className="text-slate-500 font-normal">(Optional)</span>
                 </label>
                 <textarea
@@ -437,7 +437,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
               </div>
 
               {/* Notification Notice */}
-              <div className="p-3 rounded-lg bg-[#001A33] border border-slate-800 text-[11px] text-slate-300 flex items-start gap-2">
+              <div className="p-3 rounded-lg bg-[#001A33] border border-slate-800 text-xs sm:text-sm text-slate-300 flex items-start gap-2">
                 <ShieldCheck className="w-4 h-4 text-[#C5A028] shrink-0 mt-0.5" />
                 <div>
                   <span className="font-semibold text-white">Dual Business Alert:</span> Submitting sends your enquiry to both official business numbers (+91 7338736352 & +91 9345836032) independently.

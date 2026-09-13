@@ -59,17 +59,17 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
           <h2 className="font-['Cinzel'] text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight mb-3">
             AVAILABLE CHIT PLANS
           </h2>
-          <p className="text-slate-300 text-xs sm:text-sm md:text-base leading-relaxed">
+          <p className="text-slate-200 text-sm sm:text-base md:text-lg leading-relaxed">
             Explore our complete range of structured chit fund options from ₹50,000 to ₹5,00,000. 
             All plans feature transparent 21-installment schedules and flexible contribution modes.
           </p>
         </div>
 
         {/* View Switcher Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-8">
+        <div className="flex flex-wrap items-center justify-center gap-2.5 mb-8">
           <button
             onClick={() => setActiveTab('cards')}
-            className={`inline-flex items-center gap-2 px-4 py-2 rounded-md text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
+            className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-md text-sm sm:text-base font-semibold transition-all cursor-pointer ${
               activeTab === 'cards'
                 ? 'bg-[#C5A028] text-[#001A33] shadow-md font-bold'
                 : 'bg-[#001226] text-slate-300 hover:bg-[#00264d] hover:text-white border border-slate-800'
@@ -82,7 +82,7 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
 
           <button
             onClick={() => setActiveTab('catalog')}
-            className={`inline-flex items-center gap-2 px-4 py-2 rounded-md text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
+            className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-md text-sm sm:text-base font-semibold transition-all cursor-pointer ${
               activeTab === 'catalog'
                 ? 'bg-[#C5A028] text-[#001A33] shadow-md font-bold'
                 : 'bg-[#001226] text-slate-300 hover:bg-[#00264d] hover:text-white border border-slate-800'
@@ -95,7 +95,7 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
 
           <button
             onClick={() => setActiveTab('contributions')}
-            className={`inline-flex items-center gap-2 px-4 py-2 rounded-md text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
+            className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-md text-sm sm:text-base font-semibold transition-all cursor-pointer ${
               activeTab === 'contributions'
                 ? 'bg-[#C5A028] text-[#001A33] shadow-md font-bold'
                 : 'bg-[#001226] text-slate-300 hover:bg-[#00264d] hover:text-white border border-slate-800'
@@ -142,37 +142,37 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
                     {/* Plan Top Header */}
                     <div className="flex items-center justify-between pb-3.5 border-b border-slate-800 mb-3.5">
                       <div>
-                        <span className="text-[10px] font-bold text-[#C5A028] uppercase tracking-wider">
+                        <span className="text-xs font-bold text-[#C5A028] uppercase tracking-wider">
                           Chit Value
                         </span>
-                        <h3 className="font-['Cinzel'] text-xl sm:text-2xl font-bold text-white group-hover:text-[#C5A028] transition-colors">
+                        <h3 className="font-['Cinzel'] text-2xl sm:text-3xl font-bold text-white group-hover:text-[#C5A028] transition-colors">
                           {plan.value}
                         </h3>
                       </div>
-                      <div className="px-2.5 py-1 rounded bg-[#00264d] border border-[#C5A028]/40 text-[#C5A028] text-xs font-mono font-bold">
+                      <div className="px-2.5 py-1 rounded bg-[#00264d] border border-[#C5A028]/40 text-[#C5A028] text-xs sm:text-sm font-mono font-bold">
                         {plan.duration}
                       </div>
                     </div>
 
-                    <p className="text-xs text-slate-300 italic mb-4 leading-relaxed min-h-[32px]">
+                    <p className="text-sm text-slate-300 italic mb-4 leading-relaxed min-h-[32px]">
                       "{plan.tagline}"
                     </p>
 
                     {/* Contribution Breakdown Grid */}
-                    <div className="bg-[#001A33] rounded-md p-3 border border-slate-800 mb-4 space-y-2">
-                      <div className="flex items-center justify-between text-xs">
+                    <div className="bg-[#001A33] rounded-md p-3.5 border border-slate-800 mb-4 space-y-2 text-xs sm:text-sm">
+                      <div className="flex items-center justify-between">
                         <span className="text-slate-400">Monthly Contribution:</span>
                         <span className="font-bold text-white">{plan.monthlyContribution}</span>
                       </div>
-                      <div className="flex items-center justify-between text-xs">
+                      <div className="flex items-center justify-between">
                         <span className="text-slate-400">Weekly Option:</span>
                         <span className="font-semibold text-slate-200">{plan.weeklyContribution}</span>
                       </div>
-                      <div className="flex items-center justify-between text-xs">
+                      <div className="flex items-center justify-between">
                         <span className="text-slate-400">Daily Option:</span>
                         <span className="font-semibold text-slate-200">{plan.dailyContribution}</span>
                       </div>
-                      <div className="pt-2 border-t border-slate-800 flex items-center justify-between text-xs">
+                      <div className="pt-2 border-t border-slate-800 flex items-center justify-between">
                         <span className="text-slate-400">Catalog Progression:</span>
                         <span className="font-mono text-[#C5A028] font-bold">
                           {plan.minTakeHome} – {plan.maxTakeHome}
@@ -182,12 +182,12 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
 
                     {/* Feature Bullets */}
                     <div className="space-y-1.5 mb-5">
-                      <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
+                      <div className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">
                         Key Highlights:
                       </div>
                       {plan.features.map((feat, fIdx) => (
-                        <div key={fIdx} className="flex items-start gap-2 text-xs text-slate-300">
-                          <CheckCircle className="w-3.5 h-3.5 text-[#C5A028] shrink-0 mt-0.5" />
+                        <div key={fIdx} className="flex items-start gap-2 text-xs sm:text-sm text-slate-300">
+                          <CheckCircle className="w-4 h-4 text-[#C5A028] shrink-0 mt-0.5" />
                           <span>{feat}</span>
                         </div>
                       ))}
@@ -197,11 +197,11 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
                   {/* Enquire Button */}
                   <button
                     onClick={() => onOpenEnquiry(plan.value)}
-                    className="w-full py-2.5 rounded-md bg-[#00264d] hover:bg-[#C5A028] text-slate-200 hover:text-[#001A33] border border-[#C5A028]/40 font-bold text-xs uppercase tracking-wider transition-all duration-150 flex items-center justify-center gap-2 cursor-pointer shadow-sm group-hover:border-[#C5A028]"
+                    className="w-full py-3 rounded-md bg-[#00264d] hover:bg-[#C5A028] text-slate-200 hover:text-[#001A33] border border-[#C5A028]/40 font-bold text-xs sm:text-sm uppercase tracking-wider transition-all duration-150 flex items-center justify-center gap-2 cursor-pointer shadow-sm group-hover:border-[#C5A028]"
                     id={`enquire-btn-${plan.id}`}
                   >
                     <span>ENQUIRE ABOUT THIS PLAN</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
+                    <ArrowRight className="w-4 h-4" />
                   </button>
                 </div>
               ))}

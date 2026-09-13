@@ -178,7 +178,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           id="mobile-drawer-menu"
         >
           <div className="flex flex-col gap-2">
-            <div className="pb-3 border-b border-slate-800 text-xs text-slate-400 font-medium">
+            <div className="pb-3 border-b border-slate-800 text-xs sm:text-sm text-slate-400 font-medium">
               Navigation Menu
             </div>
             {navLinks.map((link) => {
@@ -188,7 +188,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   key={link.id}
                   onClick={() => handleLinkClick(link.id)}
                   id={`mobile-nav-link-${link.id}`}
-                  className={`flex items-center justify-between w-full px-4 py-3 rounded-lg text-sm font-semibold transition-all ${
+                  className={`flex items-center justify-between w-full px-4 py-3 rounded-lg text-base font-semibold transition-all ${
                     isActive
                       ? 'bg-[#00264d] text-[#C5A028] border border-[#C5A028]/40'
                       : 'text-slate-200 hover:bg-[#001A33] hover:text-white'
@@ -208,23 +208,23 @@ export const Navbar: React.FC<NavbarProps> = ({
                 setMobileMenuOpen(false);
                 onOpenEnquiry();
               }}
-              className="w-full py-3 text-center font-bold text-xs tracking-wider uppercase text-[#001A33] bg-[#C5A028] hover:bg-[#e0b83e] rounded-md shadow-lg"
+              className="w-full py-3 text-center font-bold text-sm tracking-wider uppercase text-[#001A33] bg-[#C5A028] hover:bg-[#e0b83e] rounded-md shadow-lg"
               id="mobile-menu-enquire-btn"
             >
               ENQUIRE NOW
             </button>
 
-            <div className="flex flex-col gap-2 bg-[#001A33] p-4 rounded-lg border border-slate-800 text-xs text-slate-300">
+            <div className="flex flex-col gap-2 bg-[#001A33] p-4 rounded-lg border border-slate-800 text-sm text-slate-300">
               <div className="font-semibold text-[#C5A028]">Direct Call Support:</div>
               <div className="flex flex-col gap-1.5">
-                <a href={`tel:${COMPANY_DETAILS.phone1Clean}`} className="flex items-center gap-2 text-white hover:text-[#C5A028]">
+                <a href={`tel:${COMPANY_DETAILS.phone1Clean}`} className="flex items-center gap-2 text-sm text-white hover:text-[#C5A028] font-medium">
                   <Phone className="w-3.5 h-3.5 text-[#C5A028]" /> {COMPANY_DETAILS.phone1}
                 </a>
-                <a href={`tel:${COMPANY_DETAILS.phone2Clean}`} className="flex items-center gap-2 text-white hover:text-[#C5A028]">
+                <a href={`tel:${COMPANY_DETAILS.phone2Clean}`} className="flex items-center gap-2 text-sm text-white hover:text-[#C5A028] font-medium">
                   <Phone className="w-3.5 h-3.5 text-[#C5A028]" /> {COMPANY_DETAILS.phone2}
                 </a>
               </div>
-              <div className="text-[11px] text-slate-400 pt-2 border-t border-slate-800 flex items-center justify-between">
+              <div className="text-xs sm:text-sm text-slate-400 pt-2 border-t border-slate-800 flex items-center justify-between">
                 <span>CIN: {COMPANY_DETAILS.cin}</span>
                 {onOpenAdmin && (
                   <button

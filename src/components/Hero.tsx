@@ -53,7 +53,7 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate, onOpenEnquiry }) => {
             </h1>
 
             {/* Supporting Text */}
-            <p className="text-slate-300 text-sm sm:text-base md:text-lg font-normal leading-relaxed max-w-2xl mb-6">
+            <p className="text-slate-200 text-[15px] sm:text-base md:text-lg font-normal leading-relaxed max-w-2xl mb-6">
               Plan your finances with structured chit plans designed to meet different financial needs.
             </p>
 
@@ -62,7 +62,7 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate, onOpenEnquiry }) => {
               {/* Primary CTA */}
               <button
                 onClick={() => onNavigate('chit-plans')}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-md font-bold text-xs sm:text-sm uppercase tracking-wider text-[#001A33] bg-[#C5A028] hover:bg-[#e0b83e] shadow-md transform hover:-translate-y-0.5 active:translate-y-0 transition-all duration-150 border border-[#f0c842] cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-md font-bold text-sm uppercase tracking-wider text-[#001A33] bg-[#C5A028] hover:bg-[#e0b83e] shadow-md transform hover:-translate-y-0.5 active:translate-y-0 transition-all duration-150 border border-[#f0c842] cursor-pointer"
                 id="hero-view-plans-btn"
               >
                 <span>View Chit Plans</span>
@@ -72,10 +72,10 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate, onOpenEnquiry }) => {
               {/* Secondary CTA */}
               <button
                 onClick={() => onNavigate('contact')}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-md font-semibold text-xs sm:text-sm text-slate-200 bg-[#001226] hover:bg-[#00264d] border border-slate-700 hover:border-[#C5A028]/50 transition-all duration-150 cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-3 rounded-md font-semibold text-sm text-slate-200 bg-[#001226] hover:bg-[#00264d] border border-slate-700 hover:border-[#C5A028]/50 transition-all duration-150 cursor-pointer"
                 id="hero-contact-us-btn"
               >
-                <PhoneCall className="w-3.5 h-3.5 text-[#C5A028]" />
+                <PhoneCall className="w-4 h-4 text-[#C5A028]" />
                 <span>Contact Us</span>
               </button>
 
@@ -84,26 +84,26 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate, onOpenEnquiry }) => {
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-md font-semibold text-xs sm:text-sm text-emerald-300 bg-emerald-950/70 hover:bg-emerald-900/80 border border-emerald-500/40 transition-all duration-150 shadow-sm"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-3 rounded-md font-semibold text-sm text-emerald-300 bg-emerald-950/70 hover:bg-emerald-900/80 border border-emerald-500/40 transition-all duration-150 shadow-sm"
                 id="hero-whatsapp-btn"
               >
-                <MessageCircle className="w-3.5 h-3.5 text-emerald-400" />
+                <MessageCircle className="w-4 h-4 text-emerald-400" />
                 <span>Chat on WhatsApp</span>
               </a>
             </div>
 
             {/* Quick Micro-Trust Signals */}
-            <div className="flex flex-wrap items-center gap-y-2 gap-x-5 text-xs text-slate-400 pt-3 border-t border-slate-800 w-full">
+            <div className="flex flex-wrap items-center gap-y-2.5 gap-x-5 text-xs sm:text-sm text-slate-300 pt-3 border-t border-slate-800 w-full">
               <div className="flex items-center gap-1.5">
-                <Shield className="w-3.5 h-3.5 text-[#C5A028]" />
+                <Shield className="w-4 h-4 text-[#C5A028] shrink-0" />
                 <span>Structured 21-Month Plans</span>
               </div>
               <div className="flex items-center gap-1.5">
-                <TrendingUp className="w-3.5 h-3.5 text-[#C5A028]" />
+                <TrendingUp className="w-4 h-4 text-[#C5A028] shrink-0" />
                 <span>₹50,000 to ₹5,00,000</span>
               </div>
               <div className="flex items-center gap-1.5">
-                <Sparkles className="w-3.5 h-3.5 text-[#C5A028]" />
+                <Sparkles className="w-4 h-4 text-[#C5A028] shrink-0" />
                 <span>Managed by Elite Turf</span>
               </div>
             </div>
@@ -143,26 +143,26 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate, onOpenEnquiry }) => {
                       onClick={() => onOpenEnquiry(p.label)}
                       className="p-2.5 rounded-md bg-[#001A33] hover:bg-[#00264d] border border-slate-800 hover:border-[#C5A028]/50 text-left transition-all group cursor-pointer"
                     >
-                      <div className="text-xs sm:text-sm font-bold text-white group-hover:text-[#C5A028] transition-colors">
+                      <div className="text-sm font-bold text-white group-hover:text-[#C5A028] transition-colors">
                         {p.label}
                       </div>
-                      <div className="text-[10px] text-slate-400 font-medium">{p.monthly}</div>
+                      <div className="text-xs text-slate-400 font-medium">{p.monthly}</div>
                     </button>
                   ))}
                 </div>
               </div>
 
               {/* Verified Company Credentials Box */}
-              <div className="p-3.5 rounded-md bg-[#000d1a] border border-slate-800 flex flex-col gap-1.5">
-                <div className="flex items-center justify-between text-xs">
+              <div className="p-3.5 rounded-md bg-[#000d1a] border border-slate-800 flex flex-col gap-2">
+                <div className="flex items-center justify-between text-xs sm:text-sm">
                   <span className="text-slate-400">Corporate Identity:</span>
                   <span className="font-mono text-slate-200 font-bold select-all">{COMPANY_DETAILS.cin}</span>
                 </div>
-                <div className="flex items-center justify-between text-xs">
+                <div className="flex items-center justify-between text-xs sm:text-sm">
                   <span className="text-slate-400">Operational Entity:</span>
                   <span className="text-[#C5A028] font-semibold">Managed by ELITE TURF</span>
                 </div>
-                <div className="flex items-center justify-between text-xs">
+                <div className="flex items-center justify-between text-xs sm:text-sm">
                   <span className="text-slate-400">Headquarters:</span>
                   <span className="text-slate-300">Mettupalayam – 641104</span>
                 </div>
@@ -172,7 +172,7 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate, onOpenEnquiry }) => {
               <div className="mt-4">
                 <button
                   onClick={() => onOpenEnquiry()}
-                  className="w-full py-2.5 rounded-md bg-[#C5A028] hover:bg-[#e0b83e] text-[#001A33] font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm"
+                  className="w-full py-3 rounded-md bg-[#C5A028] hover:bg-[#e0b83e] text-[#001A33] font-bold text-xs sm:text-sm uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm"
                   id="hero-card-enquire-btn"
                 >
                   <Award className="w-4 h-4" />

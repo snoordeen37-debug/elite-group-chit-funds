@@ -11,10 +11,10 @@ export const WhatsAppFloatingButton: React.FC = () => {
     <div className="fixed bottom-5 right-5 z-40 flex flex-col items-end gap-2" id="whatsapp-floating-container">
       {/* Friendly Tooltip Bubble */}
       {showTooltip && (
-        <div className="relative bg-[#001226] text-white text-xs px-3 py-2 rounded-lg border border-emerald-500/40 shadow-xl max-w-[210px] flex items-start justify-between gap-2 animate-in fade-in slide-in-from-bottom-2 duration-200">
+        <div className="relative bg-[#001226] text-white text-xs sm:text-sm px-3.5 py-2.5 rounded-lg border border-emerald-500/40 shadow-xl max-w-[220px] flex items-start justify-between gap-2 animate-in fade-in slide-in-from-bottom-2 duration-200">
           <div className="leading-snug">
-            <span className="font-bold text-emerald-400 block text-xs">Chat With Us</span>
-            <span className="text-[10px] text-slate-300">Quick answers about chit plans on WhatsApp</span>
+            <span className="font-bold text-emerald-400 block text-xs sm:text-sm">Chat With Us</span>
+            <span className="text-xs text-slate-300">Quick answers about chit plans on WhatsApp</span>
           </div>
           <button
             onClick={(e) => {
@@ -24,7 +24,7 @@ export const WhatsAppFloatingButton: React.FC = () => {
             className="text-slate-400 hover:text-white p-0.5 cursor-pointer"
             aria-label="Dismiss tooltip"
           >
-            <X className="w-3 h-3" />
+            <X className="w-3.5 h-3.5" />
           </button>
         </div>
       )}
@@ -34,7 +34,7 @@ export const WhatsAppFloatingButton: React.FC = () => {
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="group flex items-center gap-2 px-3.5 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-[#001A33] rounded-md shadow-lg border border-emerald-300/40 font-bold text-xs uppercase tracking-wider transition-all duration-150"
+        className="group flex items-center gap-2 px-3.5 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-[#001A33] rounded-md shadow-lg border border-emerald-300/40 font-bold text-xs sm:text-sm uppercase tracking-wider transition-all duration-150"
         aria-label="Chat with ELITE GROUP SS CHIT FUNDS on WhatsApp"
         id="floating-whatsapp-btn"
       >
