@@ -195,7 +195,7 @@ export const OFFICIAL_CHIT_CATALOG: ChitCatalogRow[] = [
   {
     sNo: 19,
     plan50k: '57,500',
-    plan100k: '1,12,000',
+    plan100k: '1,15,000',
     plan200k: '2,31,000',
     plan300k: '3,48,000',
     plan400k: '4,60,000',
