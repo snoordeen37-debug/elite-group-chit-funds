@@ -26,73 +26,73 @@ export const WhyChooseSection: React.FC = () => {
   };
 
   return (
-    <section className="py-12 md:py-16 bg-[#001A33] relative border-t border-slate-800" id="benefits">
+    <section className="py-12 md:py-16 bg-white relative border-t border-slate-200" id="benefits">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-8">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#001226] border border-[#C5A028]/40 text-[#C5A028] text-xs font-semibold uppercase tracking-wider mb-2.5">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#001A33]/5 border border-[#001A33]/15 text-[#001A33] text-xs font-bold uppercase tracking-wider mb-3">
             Core Principles & Advantages
           </div>
-          <h2 className="font-['Cinzel'] text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight mb-2.5">
+          <h2 className="font-['Cinzel'] text-2xl sm:text-3xl lg:text-4xl font-bold text-[#001A33] tracking-tight mb-2.5">
             WHY CHOOSE ELITE GROUP?
           </h2>
-          <p className="text-slate-200 text-sm sm:text-base md:text-lg leading-relaxed">
+          <p className="text-slate-600 text-sm sm:text-base md:text-lg leading-relaxed">
             Built upon principles of systematic financial discipline, open communication, and long-term customer relationships.
           </p>
         </div>
 
         {/* 7 Feature Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3.5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {WHY_CHOOSE_ITEMS.map((item, index) => {
             const isFeatured = index === 0;
             return (
               <div
                 key={item.title}
-                className={`rounded-lg p-4 sm:p-5 flex flex-col justify-between transition-all group border ${
+                className={`rounded-xl p-5 flex flex-col justify-between transition-all group border ${
                   isFeatured 
-                    ? 'bg-[#001226] border-[#C5A028]/60 shadow-lg' 
-                    : 'bg-[#001226] border-slate-800 hover:border-[#C5A028]/50 hover:bg-[#001c3d]'
+                    ? 'bg-white border-2 border-[#C5A028] shadow-md' 
+                    : 'bg-white border-slate-200 hover:border-[#C5A028] hover:shadow-md shadow-sm'
                 }`}
                 id={`benefit-card-${index + 1}`}
               >
                 <div>
                   {/* Icon Box */}
-                  <div className="w-9 h-9 rounded-md bg-[#00264d] border border-[#C5A028]/40 flex items-center justify-center mb-3">
+                  <div className="w-10 h-10 rounded-lg bg-[#001A33]/5 border border-[#001A33]/10 flex items-center justify-center mb-3.5">
                     {getIcon(item.iconName)}
                   </div>
 
-                  <h3 className="font-['Cinzel'] text-base font-bold text-white group-hover:text-[#C5A028] transition-colors mb-2">
+                  <h3 className="font-['Cinzel'] text-base font-bold text-slate-900 group-hover:text-[#001A33] transition-colors mb-2">
                     {item.title}
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                     {item.description}
                   </p>
                 </div>
 
-                <div className="mt-4 pt-2.5 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
+                <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-medium">
                   <span>Standard of Service</span>
-                  <span className="text-[#C5A028] font-bold">0{index + 1}</span>
+                  <span className="text-[#b48616] font-bold">0{index + 1}</span>
                 </div>
               </div>
             );
           })}
 
           {/* Quick Contact Highlight Card */}
-          <div className="rounded-lg p-4 sm:p-5 bg-[#001226] border border-[#C5A028]/50 flex flex-col justify-between shadow-lg">
+          <div className="rounded-xl p-5 bg-white border border-slate-200 hover:border-[#C5A028] flex flex-col justify-between shadow-sm hover:shadow-md transition-all">
             <div>
-              <div className="w-9 h-9 rounded-md bg-[#00264d] border border-[#C5A028]/60 flex items-center justify-center mb-3 text-[#C5A028]">
+              <div className="w-10 h-10 rounded-lg bg-[#001A33]/5 border border-[#001A33]/10 flex items-center justify-center mb-3.5 text-[#001A33]">
                 <Headphones className="w-5 h-5" />
               </div>
-              <h3 className="font-['Cinzel'] text-base font-bold text-white mb-2">
+              <h3 className="font-['Cinzel'] text-base font-bold text-slate-900 mb-2">
                 PERSONALIZED ASSISTANCE
               </h3>
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                 Connect directly with our dedicated coordinators in Mettupalayam for plan guidance and enrollment support.
               </p>
             </div>
-            <div className="mt-4 pt-2.5 border-t border-slate-800 text-sm font-bold text-[#C5A028]">
+            <div className="mt-4 pt-3 border-t border-slate-100 text-sm font-bold text-[#b48616]">
               +91 7338736352 / +91 9345836032
             </div>
           </div>

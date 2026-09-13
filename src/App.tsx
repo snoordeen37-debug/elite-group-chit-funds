@@ -128,7 +128,7 @@ export default function App() {
 
   // Public Website View
   return (
-    <div className="min-h-screen bg-[#001A33] text-white flex flex-col relative selection:bg-[#C5A028] selection:text-[#001A33]">
+    <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col relative selection:bg-[#C5A028] selection:text-[#001A33]">
       
       {/* Sticky High Density Navbar */}
       <Navbar

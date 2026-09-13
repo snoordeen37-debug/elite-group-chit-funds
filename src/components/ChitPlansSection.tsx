@@ -47,19 +47,19 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
   });
 
   return (
-    <section className="py-12 md:py-16 bg-[#001A33] relative border-t border-slate-800" id="chit-plans">
+    <section className="py-12 md:py-16 bg-slate-50 relative border-t border-slate-200" id="chit-plans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-8">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#001226] border border-[#C5A028]/40 text-[#C5A028] text-xs font-semibold uppercase tracking-wider mb-2.5">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-slate-200 shadow-sm text-[#001A33] text-xs font-bold uppercase tracking-wider mb-2.5">
             <Sparkles className="w-3.5 h-3.5 text-[#C5A028]" />
             Official Structure Catalog
           </div>
-          <h2 className="font-['Cinzel'] text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight mb-3">
+          <h2 className="font-['Cinzel'] text-2xl sm:text-3xl lg:text-4xl font-bold text-[#001A33] tracking-tight mb-3">
             AVAILABLE CHIT PLANS
           </h2>
-          <p className="text-slate-200 text-sm sm:text-base md:text-lg leading-relaxed">
+          <p className="text-slate-600 text-sm sm:text-base md:text-lg leading-relaxed">
             Explore our complete range of structured chit fund options from ₹50,000 to ₹5,00,000. 
             All plans feature transparent 21-installment schedules and flexible contribution modes.
           </p>
@@ -71,12 +71,12 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
             onClick={() => setActiveTab('cards')}
             className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-md text-sm sm:text-base font-semibold transition-all cursor-pointer ${
               activeTab === 'cards'
-                ? 'bg-[#C5A028] text-[#001A33] shadow-md font-bold'
-                : 'bg-[#001226] text-slate-300 hover:bg-[#00264d] hover:text-white border border-slate-800'
+                ? 'bg-[#001A33] text-white shadow-md font-bold'
+                : 'bg-white text-slate-700 hover:bg-slate-100 hover:text-slate-900 border border-slate-200 shadow-sm'
             }`}
             id="tab-interactive-cards"
           >
-            <Layers className="w-4 h-4" />
+            <Layers className="w-4 h-4 text-[#C5A028]" />
             <span>Interactive Plan Cards</span>
           </button>
 
@@ -84,12 +84,12 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
             onClick={() => setActiveTab('catalog')}
             className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-md text-sm sm:text-base font-semibold transition-all cursor-pointer ${
               activeTab === 'catalog'
-                ? 'bg-[#C5A028] text-[#001A33] shadow-md font-bold'
-                : 'bg-[#001226] text-slate-300 hover:bg-[#00264d] hover:text-white border border-slate-800'
+                ? 'bg-[#001A33] text-white shadow-md font-bold'
+                : 'bg-white text-slate-700 hover:bg-slate-100 hover:text-slate-900 border border-slate-200 shadow-sm'
             }`}
             id="tab-official-catalog"
           >
-            <Table className="w-4 h-4" />
+            <Table className="w-4 h-4 text-[#C5A028]" />
             <span>Full 21-Row Official Table</span>
           </button>
 
@@ -97,12 +97,12 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
             onClick={() => setActiveTab('contributions')}
             className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-md text-sm sm:text-base font-semibold transition-all cursor-pointer ${
               activeTab === 'contributions'
-                ? 'bg-[#C5A028] text-[#001A33] shadow-md font-bold'
-                : 'bg-[#001226] text-slate-300 hover:bg-[#00264d] hover:text-white border border-slate-800'
+                ? 'bg-[#001A33] text-white shadow-md font-bold'
+                : 'bg-white text-slate-700 hover:bg-slate-100 hover:text-slate-900 border border-slate-200 shadow-sm'
             }`}
             id="tab-contribution-options"
           >
-            <Calendar className="w-4 h-4" />
+            <Calendar className="w-4 h-4 text-[#C5A028]" />
             <span>Contribution Options (Daily / Weekly / Monthly)</span>
           </button>
         </div>
@@ -112,7 +112,7 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
           <div className="space-y-6 animate-in fade-in duration-200">
             {/* Filter Pills */}
             <div className="flex flex-wrap items-center justify-center gap-2 pb-1">
-              <span className="text-xs text-slate-400 font-semibold mr-1 flex items-center gap-1">
+              <span className="text-xs text-slate-500 font-semibold mr-1 flex items-center gap-1">
                 <SlidersHorizontal className="w-3.5 h-3.5 text-[#C5A028]" /> Filter Value:
               </span>
               {['all', '₹50,000', '₹1,00,000', '₹2,00,000', '₹3,00,000', '₹4,00,000', '₹5,00,000'].map((val) => (
@@ -121,8 +121,8 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
                   onClick={() => setSelectedDenomination(val)}
                   className={`px-3 py-1 rounded-md text-xs font-semibold transition-all cursor-pointer ${
                     selectedDenomination === val
-                      ? 'bg-[#C5A028] text-[#001A33] font-bold shadow-sm'
-                      : 'bg-[#001226] text-slate-300 hover:bg-[#00264d] border border-slate-800'
+                      ? 'bg-[#001A33] text-[#C5A028] font-bold shadow-sm'
+                      : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200 shadow-sm'
                   }`}
                 >
                   {val === 'all' ? 'All 6 Plans' : val}
@@ -135,46 +135,46 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
               {filteredCards.map((plan) => (
                 <div
                   key={plan.id}
-                  className="rounded-lg bg-[#001226] border border-slate-800 hover:border-[#C5A028]/60 p-5 flex flex-col justify-between transition-all duration-200 hover:bg-[#001730] hover:shadow-lg group"
+                  className="rounded-xl bg-white border border-slate-200 hover:border-[#C5A028]/60 p-5 flex flex-col justify-between transition-all duration-200 hover:shadow-lg shadow-sm group"
                   id={`plan-card-${plan.id}`}
                 >
                   <div>
                     {/* Plan Top Header */}
-                    <div className="flex items-center justify-between pb-3.5 border-b border-slate-800 mb-3.5">
+                    <div className="flex items-center justify-between pb-3.5 border-b border-slate-200 mb-3.5">
                       <div>
                         <span className="text-xs font-bold text-[#C5A028] uppercase tracking-wider">
                           Chit Value
                         </span>
-                        <h3 className="font-['Cinzel'] text-2xl sm:text-3xl font-bold text-white group-hover:text-[#C5A028] transition-colors">
+                        <h3 className="font-['Cinzel'] text-2xl sm:text-3xl font-bold text-[#001A33] group-hover:text-[#C5A028] transition-colors">
                           {plan.value}
                         </h3>
                       </div>
-                      <div className="px-2.5 py-1 rounded bg-[#00264d] border border-[#C5A028]/40 text-[#C5A028] text-xs sm:text-sm font-mono font-bold">
+                      <div className="px-2.5 py-1 rounded bg-slate-100 border border-slate-300 text-[#001A33] text-xs sm:text-sm font-mono font-bold">
                         {plan.duration}
                       </div>
                     </div>
 
-                    <p className="text-sm text-slate-300 italic mb-4 leading-relaxed min-h-[32px]">
+                    <p className="text-sm text-slate-600 italic mb-4 leading-relaxed min-h-[32px]">
                       "{plan.tagline}"
                     </p>
 
                     {/* Contribution Breakdown Grid */}
-                    <div className="bg-[#001A33] rounded-md p-3.5 border border-slate-800 mb-4 space-y-2 text-xs sm:text-sm">
+                    <div className="bg-slate-50 rounded-lg p-3.5 border border-slate-200 mb-4 space-y-2 text-xs sm:text-sm">
                       <div className="flex items-center justify-between">
-                        <span className="text-slate-400">Monthly Contribution:</span>
-                        <span className="font-bold text-white">{plan.monthlyContribution}</span>
+                        <span className="text-slate-500">Monthly Contribution:</span>
+                        <span className="font-bold text-slate-900">{plan.monthlyContribution}</span>
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="text-slate-400">Weekly Option:</span>
-                        <span className="font-semibold text-slate-200">{plan.weeklyContribution}</span>
+                        <span className="text-slate-500">Weekly Option:</span>
+                        <span className="font-semibold text-slate-700">{plan.weeklyContribution}</span>
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="text-slate-400">Daily Option:</span>
-                        <span className="font-semibold text-slate-200">{plan.dailyContribution}</span>
+                        <span className="text-slate-500">Daily Option:</span>
+                        <span className="font-semibold text-slate-700">{plan.dailyContribution}</span>
                       </div>
-                      <div className="pt-2 border-t border-slate-800 flex items-center justify-between">
-                        <span className="text-slate-400">Catalog Progression:</span>
-                        <span className="font-mono text-[#C5A028] font-bold">
+                      <div className="pt-2 border-t border-slate-200 flex items-center justify-between">
+                        <span className="text-slate-500 font-medium">Catalog Progression:</span>
+                        <span className="font-mono text-[#001A33] font-bold">
                           {plan.minTakeHome} – {plan.maxTakeHome}
                         </span>
                       </div>
@@ -182,11 +182,11 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
 
                     {/* Feature Bullets */}
                     <div className="space-y-1.5 mb-5">
-                      <div className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">
+                      <div className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">
                         Key Highlights:
                       </div>
                       {plan.features.map((feat, fIdx) => (
-                        <div key={fIdx} className="flex items-start gap-2 text-xs sm:text-sm text-slate-300">
+                        <div key={fIdx} className="flex items-start gap-2 text-xs sm:text-sm text-slate-600">
                           <CheckCircle className="w-4 h-4 text-[#C5A028] shrink-0 mt-0.5" />
                           <span>{feat}</span>
                         </div>
@@ -197,24 +197,24 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
                   {/* Enquire Button */}
                   <button
                     onClick={() => onOpenEnquiry(plan.value)}
-                    className="w-full py-3 rounded-md bg-[#00264d] hover:bg-[#C5A028] text-slate-200 hover:text-[#001A33] border border-[#C5A028]/40 font-bold text-xs sm:text-sm uppercase tracking-wider transition-all duration-150 flex items-center justify-center gap-2 cursor-pointer shadow-sm group-hover:border-[#C5A028]"
+                    className="w-full py-3 rounded-md bg-[#001A33] hover:bg-[#C5A028] text-white hover:text-[#001A33] border border-[#001A33] font-bold text-xs sm:text-sm uppercase tracking-wider transition-all duration-150 flex items-center justify-center gap-2 cursor-pointer shadow-sm group-hover:border-[#C5A028]"
                     id={`enquire-btn-${plan.id}`}
                   >
                     <span>ENQUIRE ABOUT THIS PLAN</span>
-                    <ArrowRight className="w-4 h-4" />
+                    <ArrowRight className="w-4 h-4 text-[#C5A028] group-hover:text-[#001A33]" />
                   </button>
                 </div>
               ))}
             </div>
 
             {/* Quick Helper Note */}
-            <div className="p-3.5 rounded-md bg-[#001226] border border-slate-800 text-xs text-slate-300 flex items-start gap-2.5">
+            <div className="p-3.5 rounded-lg bg-white border border-slate-200 shadow-sm text-xs sm:text-sm text-slate-600 flex items-start gap-2.5">
               <Info className="w-4 h-4 text-[#C5A028] shrink-0 mt-0.5" />
               <div>
                 Looking for the full row-by-row installment schedule? Switch to the{' '}
                 <button
                   onClick={() => setActiveTab('catalog')}
-                  className="text-[#C5A028] underline font-bold hover:text-white cursor-pointer"
+                  className="text-[#001A33] underline font-bold hover:text-[#C5A028] cursor-pointer"
                 >
                   Full 21-Row Official Table
                 </button>{' '}
@@ -229,13 +229,13 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
           <div className="space-y-4 animate-in fade-in duration-200" id="official-catalog-table-view">
             
             {/* Table Control & Search Bar */}
-            <div className="flex flex-wrap items-center justify-between gap-3 p-3.5 rounded-md bg-[#001226] border border-slate-800">
+            <div className="flex flex-wrap items-center justify-between gap-3 p-3.5 rounded-lg bg-white border border-slate-200 shadow-sm">
               <div>
-                <h3 className="text-sm font-bold text-white flex items-center gap-2">
+                <h3 className="text-sm sm:text-base font-bold text-[#001A33] flex items-center gap-2">
                   <FileSpreadsheet className="w-4 h-4 text-[#C5A028]" />
                   Official 21-Tier Schedule
                 </h3>
-                <p className="text-xs text-slate-400">
+                <p className="text-xs text-slate-500">
                   Exact catalog records for S.NO 1 through 21 across all 6 chit values.
                 </p>
               </div>
@@ -247,17 +247,17 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
                   placeholder="Search value or row..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-8 pr-3 py-1.5 text-xs rounded-md bg-[#001A33] border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-[#C5A028]"
+                  className="w-full pl-8 pr-3 py-1.5 text-xs rounded-md bg-slate-50 border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#C5A028] focus:bg-white"
                 />
               </div>
             </div>
 
-            {/* Responsive Table Container with High Density Gold Headers */}
-            <div className="overflow-x-auto rounded-md border border-[#C5A028]/40 bg-[#001226] shadow-xl">
-              <table className="w-full text-left border-collapse min-w-[700px] text-xs">
+            {/* Responsive Table Container with High Density Deep Blue Headers */}
+            <div className="overflow-x-auto rounded-lg border border-slate-200 bg-white shadow-sm">
+              <table className="w-full text-left border-collapse min-w-[700px] text-xs sm:text-sm">
                 <thead>
-                  <tr className="bg-[#C5A028] text-[#001A33] border-b border-[#001A33]">
-                    <th className="py-2.5 px-3 font-bold text-center w-16 uppercase tracking-wider sticky left-0 bg-[#C5A028] z-10">
+                  <tr className="bg-[#001A33] text-white border-b border-slate-300">
+                    <th className="py-2.5 px-3 font-bold text-center w-16 uppercase tracking-wider sticky left-0 bg-[#001A33] z-10 text-[#C5A028]">
                       S.NO
                     </th>
                     <th className="py-2.5 px-3 font-bold uppercase tracking-wider text-right">
@@ -280,7 +280,7 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
                     </th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-slate-800">
+                <tbody className="divide-y divide-slate-200">
                   {filteredCatalogRows.map((row) => {
                     const isFirstRow = row.sNo === 1;
                     const isHighlighted = highlightedRow === row.sNo;
@@ -292,33 +292,33 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
                         onMouseLeave={() => setHighlightedRow(null)}
                         className={`transition-colors ${
                           isFirstRow
-                            ? 'bg-[#00264d] font-bold text-[#C5A028]'
+                            ? 'bg-amber-50 font-bold text-[#001A33]'
                             : isHighlighted
-                            ? 'bg-[#00264d] text-white'
+                            ? 'bg-slate-100 text-slate-900'
                             : row.sNo % 2 === 0
-                            ? 'bg-[#001226]'
-                            : 'bg-[#001A33]'
+                            ? 'bg-slate-50/60 text-slate-800'
+                            : 'bg-white text-slate-800'
                         }`}
                       >
-                        <td className="py-2 px-3 font-mono font-bold text-center text-slate-300 sticky left-0 bg-inherit border-r border-slate-800">
+                        <td className="py-2.5 px-3 font-mono font-bold text-center text-[#001A33] sticky left-0 bg-inherit border-r border-slate-200">
                           {row.sNo}
                         </td>
-                        <td className="py-2 px-3 text-right font-mono text-slate-200">
+                        <td className="py-2.5 px-3 text-right font-mono font-semibold text-slate-900">
                           {row.plan50k}
                         </td>
-                        <td className="py-2 px-3 text-right font-mono text-slate-200">
+                        <td className="py-2.5 px-3 text-right font-mono font-semibold text-slate-900">
                           {row.plan100k}
                         </td>
-                        <td className="py-2 px-3 text-right font-mono text-slate-200">
+                        <td className="py-2.5 px-3 text-right font-mono font-semibold text-slate-900">
                           {row.plan200k}
                         </td>
-                        <td className="py-2 px-3 text-right font-mono text-slate-200">
+                        <td className="py-2.5 px-3 text-right font-mono font-semibold text-slate-900">
                           {row.plan300k}
                         </td>
-                        <td className="py-2 px-3 text-right font-mono text-slate-200">
+                        <td className="py-2.5 px-3 text-right font-mono font-semibold text-slate-900">
                           {row.plan400k}
                         </td>
-                        <td className="py-2 px-3 text-right font-mono text-slate-200">
+                        <td className="py-2.5 px-3 text-right font-mono font-semibold text-slate-900">
                           {row.plan500k}
                         </td>
                       </tr>
@@ -329,10 +329,10 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
             </div>
 
             {/* Catalog Disclaimer */}
-            <div className="p-3.5 rounded-md bg-[#000d1a] border border-slate-800 text-xs text-slate-400 flex items-start gap-2.5">
+            <div className="p-3.5 rounded-lg bg-white border border-slate-200 shadow-sm text-xs text-slate-600 flex items-start gap-2.5">
               <Info className="w-4 h-4 text-[#C5A028] shrink-0 mt-0.5" />
               <p>
-                <strong className="text-slate-200">Important Note:</strong> Exact data from official catalog. Row 1 represents the initial company contribution/start cycle as per chit fund procedures. S.NO 2 through 21 illustrate the progression tiers. Subject to the subscriber agreement and auction terms.
+                <strong className="text-slate-900 font-bold">Important Note:</strong> Exact data from official catalog. Row 1 represents the initial company contribution/start cycle as per chit fund procedures. S.NO 2 through 21 illustrate the progression tiers. Subject to the subscriber agreement and auction terms.
               </p>
             </div>
           </div>
@@ -342,25 +342,25 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
         {activeTab === 'contributions' && (
           <div className="space-y-4 animate-in fade-in duration-200" id="secondary-contribution-table-view">
             
-            <div className="p-5 rounded-lg bg-[#001226] border border-[#C5A028]/40 shadow-xl">
+            <div className="p-5 rounded-xl bg-white border border-slate-200 shadow-sm">
               <div className="mb-4">
                 <div className="text-xs uppercase tracking-wider text-[#C5A028] font-bold mb-1">
                   Flexible Payment Schedules
                 </div>
-                <h3 className="font-['Cinzel'] text-xl sm:text-2xl font-bold text-white">
+                <h3 className="font-['Cinzel'] text-xl sm:text-2xl font-bold text-[#001A33]">
                   CHIT CONTRIBUTION OPTIONS
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-300 mt-1">
+                <p className="text-xs sm:text-sm text-slate-600 mt-1">
                   Choose the contribution frequency that matches your cash flow — Monthly, Weekly, or Daily across 21 installments.
                 </p>
               </div>
 
-              {/* Exact 5-Row Secondary Table with High Density Gold Headers */}
-              <div className="overflow-x-auto rounded-md border border-slate-800">
+              {/* Exact 5-Row Secondary Table with Deep Blue Headers */}
+              <div className="overflow-x-auto rounded-lg border border-slate-200">
                 <table className="w-full text-left border-collapse text-xs sm:text-sm min-w-[540px]">
                   <thead>
-                    <tr className="bg-[#C5A028] text-[#001A33] font-bold uppercase tracking-wider">
-                      <th className="py-2.5 px-3 font-bold text-center w-16">S.NO</th>
+                    <tr className="bg-[#001A33] text-white font-bold uppercase tracking-wider">
+                      <th className="py-2.5 px-3 font-bold text-center w-16 text-[#C5A028]">S.NO</th>
                       <th className="py-2.5 px-3 font-bold">CHIT VALUE</th>
                       <th className="py-2.5 px-3 font-bold">MONTHLY</th>
                       <th className="py-2.5 px-3 font-bold">WEEKLY</th>
@@ -368,31 +368,31 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
                       <th className="py-2.5 px-3 font-bold text-right">ACTION</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-slate-800">
+                  <tbody className="divide-y divide-slate-200">
                     {CHIT_CONTRIBUTION_OPTIONS.map((opt, idx) => (
                       <tr 
                         key={opt.sNo} 
-                        className={`transition-colors hover:bg-[#00264d] ${idx % 2 === 0 ? 'bg-[#001226]' : 'bg-[#001A33]'}`}
+                        className={`transition-colors hover:bg-slate-100 ${idx % 2 === 0 ? 'bg-slate-50/60' : 'bg-white'}`}
                       >
-                        <td className="py-2.5 px-3 text-center font-mono font-bold text-slate-300">
+                        <td className="py-2.5 px-3 text-center font-mono font-bold text-[#001A33]">
                           {opt.sNo}
                         </td>
-                        <td className="py-2.5 px-3 font-bold text-white text-xs sm:text-sm">
+                        <td className="py-2.5 px-3 font-bold text-slate-900 text-xs sm:text-sm">
                           {opt.chitValue}
                         </td>
-                        <td className="py-2.5 px-3 font-semibold text-[#C5A028] font-mono">
+                        <td className="py-2.5 px-3 font-bold text-[#001A33] font-mono">
                           {opt.monthly}
                         </td>
-                        <td className="py-2.5 px-3 font-medium text-slate-200 font-mono">
+                        <td className="py-2.5 px-3 font-semibold text-slate-700 font-mono">
                           {opt.weekly}
                         </td>
-                        <td className="py-2.5 px-3 font-medium text-slate-200 font-mono">
+                        <td className="py-2.5 px-3 font-semibold text-slate-700 font-mono">
                           {opt.daily}
                         </td>
                         <td className="py-2.5 px-3 text-right">
                           <button
                             onClick={() => onOpenEnquiry(opt.chitValue)}
-                            className="px-3 py-1 rounded-md bg-[#C5A028] hover:bg-[#e0b83e] text-[#001A33] font-bold text-xs uppercase transition-all cursor-pointer shadow-sm"
+                            className="px-3 py-1.5 rounded-md bg-[#C5A028] hover:bg-[#e0b83e] text-[#001A33] font-bold text-xs uppercase transition-all cursor-pointer shadow-sm"
                           >
                             Enquire
                           </button>
@@ -404,7 +404,7 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
               </div>
 
               {/* Note on 5 plans */}
-              <div className="mt-3 text-xs text-slate-400 italic">
+              <div className="mt-3 text-xs text-slate-500 italic">
                 * Note: 21 installments schedule. Contact our Mettupalayam office for custom arrangements or higher ticket denominations.
               </div>
             </div>

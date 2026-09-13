@@ -6,6 +6,7 @@ interface BrandLogoProps {
   showManagedBy?: boolean;
   className?: string;
   imgClassName?: string;
+  managedByClassName?: string;
 }
 
 export const BrandLogo: React.FC<BrandLogoProps> = ({
@@ -13,6 +14,7 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
   showManagedBy = false,
   className = '',
   imgClassName = '',
+  managedByClassName = 'text-slate-400',
 }) => {
   // Height sizing for responsive display while keeping exact aspect ratio
   const sizeClasses = {
@@ -45,7 +47,7 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
 
       {/* Optional Managed by text */}
       {showManagedBy && (
-        <div className="mt-1 pl-1 flex items-center gap-1.5 text-xs sm:text-sm text-slate-300 font-medium tracking-wide">
+        <div className={`mt-1 pl-1 flex items-center gap-1.5 text-xs sm:text-sm font-medium tracking-wide ${managedByClassName}`}>
           <span>Managed by</span>
           <span className="text-[#C5A028] font-bold tracking-wider">ELITE TURF</span>
         </div>

@@ -65,11 +65,11 @@ export const AdminLoginModal: React.FC<AdminLoginModalProps> = ({
 
   return (
     <div 
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/90 backdrop-blur-md animate-in fade-in duration-150"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-900/60 backdrop-blur-sm animate-in fade-in duration-150"
       id="admin-login-modal-backdrop"
     >
       <div 
-        className="relative w-full max-w-md rounded-2xl bg-[#001226] border border-[#C5A028]/50 p-6 sm:p-8 shadow-2xl shadow-black overflow-hidden"
+        className="relative w-full max-w-md rounded-2xl bg-white border border-slate-200 p-6 sm:p-8 shadow-2xl overflow-hidden"
         onClick={(e) => e.stopPropagation()}
         id="admin-login-card"
       >
@@ -79,7 +79,7 @@ export const AdminLoginModal: React.FC<AdminLoginModalProps> = ({
         {/* Close Button */}
         <button
           onClick={handleClose}
-          className="absolute top-4 right-4 p-2 rounded-lg bg-[#001A33] text-slate-400 hover:text-white hover:bg-slate-800 transition-colors cursor-pointer border border-slate-700/60"
+          className="absolute top-4 right-4 p-2 rounded-lg bg-slate-100 text-slate-500 hover:text-slate-800 hover:bg-slate-200 transition-colors cursor-pointer border border-slate-200"
           aria-label="Close modal"
           id="admin-login-close-btn"
         >
@@ -87,20 +87,20 @@ export const AdminLoginModal: React.FC<AdminLoginModalProps> = ({
         </button>
 
         {/* Header Icon */}
-        <div className="w-14 h-14 rounded-full bg-[#001A33] border-2 border-[#C5A028] flex items-center justify-center text-[#C5A028] mx-auto mb-4 shadow-lg shadow-black/80">
-          <Lock className="w-6 h-6 text-[#C5A028]" />
+        <div className="w-14 h-14 rounded-full bg-[#001A33]/5 border-2 border-[#001A33] flex items-center justify-center text-[#001A33] mx-auto mb-4 shadow-sm">
+          <Lock className="w-6 h-6 text-[#001A33]" />
         </div>
 
         {/* Title */}
         <div className="text-center space-y-1.5 mb-6">
-          <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-[#001A33] border border-[#C5A028]/40 text-[#C5A028] text-[10px] font-bold uppercase tracking-wider">
-            <ShieldCheck className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-[#001A33]/5 border border-[#001A33]/15 text-[#001A33] text-[10px] font-bold uppercase tracking-wider">
+            <ShieldCheck className="w-3.5 h-3.5 text-[#C5A028]" />
             Authorized Access Only
           </div>
-          <h3 className="font-['Cinzel'] text-xl sm:text-2xl font-bold text-white tracking-tight">
+          <h3 className="font-['Cinzel'] text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
             Admin Portal Login
           </h3>
-          <p className="text-xs text-slate-400 max-w-xs mx-auto">
+          <p className="text-xs text-slate-500 max-w-xs mx-auto">
             Please enter your management credentials to access the enquiry records & settings.
           </p>
         </div>
@@ -108,10 +108,10 @@ export const AdminLoginModal: React.FC<AdminLoginModalProps> = ({
         {/* Error Alert */}
         {errorMessage && (
           <div 
-            className="mb-4 p-3 rounded-lg bg-red-950/80 border border-red-500/50 text-red-300 text-xs flex items-center gap-2.5 animate-in fade-in"
+            className="mb-4 p-3 rounded-lg bg-red-50 border border-red-200 text-red-700 text-xs flex items-center gap-2.5 animate-in fade-in"
             id="admin-login-error"
           >
-            <AlertCircle className="w-4 h-4 text-red-400 shrink-0" />
+            <AlertCircle className="w-4 h-4 text-red-500 shrink-0" />
             <span className="font-medium">{errorMessage}</span>
           </div>
         )}
@@ -119,7 +119,7 @@ export const AdminLoginModal: React.FC<AdminLoginModalProps> = ({
         {/* Login Form */}
         <form onSubmit={handleSubmit} className="space-y-4" id="admin-login-form">
           <div>
-            <label className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">
+            <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
               Admin Password
             </label>
             <div className="relative">
@@ -130,21 +130,21 @@ export const AdminLoginModal: React.FC<AdminLoginModalProps> = ({
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Enter password"
-                className="w-full px-4 py-3 rounded-lg bg-[#001A33] border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-[#C5A028] text-sm pr-11 transition-colors tracking-wide"
+                className="w-full px-4 py-3 rounded-lg bg-white border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#C5A028] focus:ring-1 focus:ring-[#C5A028] text-sm pr-11 transition-colors tracking-wide shadow-xs"
                 id="admin-password-input"
               />
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-3 top-1/2 -translate-y-1/2 p-1 text-slate-400 hover:text-white transition-colors cursor-pointer"
+                className="absolute right-3 top-1/2 -translate-y-1/2 p-1 text-slate-400 hover:text-slate-700 transition-colors cursor-pointer"
                 title={showPassword ? 'Hide password' : 'Show password'}
                 id="admin-toggle-password-btn"
                 tabIndex={-1}
               >
                 {showPassword ? (
-                  <EyeOff className="w-4 h-4 text-slate-300" />
+                  <EyeOff className="w-4 h-4 text-slate-600" />
                 ) : (
-                  <Eye className="w-4 h-4 text-slate-400" />
+                  <Eye className="w-4 h-4 text-slate-500" />
                 )}
               </button>
             </div>
@@ -153,7 +153,7 @@ export const AdminLoginModal: React.FC<AdminLoginModalProps> = ({
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full py-3 rounded-lg bg-[#C5A028] hover:bg-[#e0b83e] text-[#001A33] font-bold text-xs uppercase tracking-wider transition-all duration-150 shadow-lg shadow-[#C5A028]/20 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 mt-2"
+            className="w-full py-3.5 rounded-lg bg-[#C5A028] hover:bg-[#b59020] text-[#001A33] font-bold text-xs uppercase tracking-wider transition-all duration-150 shadow-sm hover:shadow-md flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 mt-2"
             id="admin-login-submit-btn"
           >
             {isLoading ? (
@@ -171,7 +171,7 @@ export const AdminLoginModal: React.FC<AdminLoginModalProps> = ({
         </form>
 
         {/* Corporate Legal Note */}
-        <div className="mt-6 pt-4 border-t border-slate-800/80 text-center text-[10px] text-slate-500 flex items-center justify-center gap-1.5">
+        <div className="mt-6 pt-4 border-t border-slate-100 text-center text-[10px] text-slate-500 flex items-center justify-center gap-1.5">
           <Building2 className="w-3 h-3 text-[#C5A028]" />
           <span>ELITE GROUP – SS CHIT FUNDS • Management Console</span>
         </div>

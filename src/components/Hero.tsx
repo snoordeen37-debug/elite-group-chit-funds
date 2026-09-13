@@ -12,11 +12,11 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate, onOpenEnquiry }) => {
   const whatsappUrl = `https://wa.me/${COMPANY_DETAILS.whatsappNumber}?text=${encodeURIComponent(COMPANY_DETAILS.whatsappDefaultMsg)}`;
 
   return (
-    <section className="relative w-full overflow-hidden bg-[#001A33] pt-6 pb-12 md:pt-12 md:pb-16 lg:pt-14 lg:pb-20" id="hero-section">
+    <section className="relative w-full overflow-hidden bg-gradient-to-b from-slate-100/90 via-slate-50 to-white pt-6 pb-12 md:pt-12 md:pb-16 lg:pt-14 lg:pb-20 border-b border-slate-200" id="hero-section">
       {/* Background Aesthetic Grid Pattern */}
       <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
         <svg
-          className="absolute inset-0 w-full h-full opacity-[0.05] stroke-slate-400"
+          className="absolute inset-0 w-full h-full opacity-[0.06] stroke-slate-500"
           xmlns="http://www.w3.org/2000/svg"
         >
           <defs>
@@ -35,17 +35,17 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate, onOpenEnquiry }) => {
           <div className="lg:col-span-7 flex flex-col items-start text-left">
             
             {/* Top Verified Brand Tag */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#001226] border border-[#C5A028]/40 shadow-sm mb-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-slate-200 shadow-sm mb-4">
               <span className="flex h-2 w-2 rounded-full bg-[#C5A028] animate-pulse"></span>
-              <span className="text-xs font-semibold text-[#C5A028] uppercase tracking-wider">
+              <span className="text-xs font-bold text-[#001A33] uppercase tracking-wider">
                 ELITE GROUP • SS CHIT FUNDS
               </span>
-              <span className="text-[11px] text-slate-500 hidden sm:inline">|</span>
-              <span className="text-[11px] text-slate-300 hidden sm:inline">Mettupalayam</span>
+              <span className="text-[11px] text-slate-300 hidden sm:inline">|</span>
+              <span className="text-[11px] text-slate-600 hidden sm:inline font-medium">Mettupalayam</span>
             </div>
 
             {/* Official Primary Heading */}
-            <h1 className="font-['Cinzel'] text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-[1.15] mb-3">
+            <h1 className="font-['Cinzel'] text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#001A33] tracking-tight leading-[1.15] mb-3">
               Trusted Chit <br className="hidden sm:block" />
               <span className="text-[#C5A028]">
                 Investment Plans
@@ -53,7 +53,7 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate, onOpenEnquiry }) => {
             </h1>
 
             {/* Supporting Text */}
-            <p className="text-slate-200 text-[15px] sm:text-base md:text-lg font-normal leading-relaxed max-w-2xl mb-6">
+            <p className="text-slate-600 text-[15px] sm:text-base md:text-lg font-normal leading-relaxed max-w-2xl mb-6">
               Plan your finances with structured chit plans designed to meet different financial needs.
             </p>
 
@@ -72,7 +72,7 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate, onOpenEnquiry }) => {
               {/* Secondary CTA */}
               <button
                 onClick={() => onNavigate('contact')}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-3 rounded-md font-semibold text-sm text-slate-200 bg-[#001226] hover:bg-[#00264d] border border-slate-700 hover:border-[#C5A028]/50 transition-all duration-150 cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-3 rounded-md font-semibold text-sm text-[#001A33] bg-white hover:bg-slate-100 border border-slate-300 hover:border-[#C5A028]/60 shadow-sm transition-all duration-150 cursor-pointer"
                 id="hero-contact-us-btn"
               >
                 <PhoneCall className="w-4 h-4 text-[#C5A028]" />
@@ -84,16 +84,16 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate, onOpenEnquiry }) => {
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-3 rounded-md font-semibold text-sm text-emerald-300 bg-emerald-950/70 hover:bg-emerald-900/80 border border-emerald-500/40 transition-all duration-150 shadow-sm"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-3 rounded-md font-semibold text-sm text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 transition-all duration-150 shadow-sm"
                 id="hero-whatsapp-btn"
               >
-                <MessageCircle className="w-4 h-4 text-emerald-400" />
+                <MessageCircle className="w-4 h-4 text-emerald-600" />
                 <span>Chat on WhatsApp</span>
               </a>
             </div>
 
             {/* Quick Micro-Trust Signals */}
-            <div className="flex flex-wrap items-center gap-y-2.5 gap-x-5 text-xs sm:text-sm text-slate-300 pt-3 border-t border-slate-800 w-full">
+            <div className="flex flex-wrap items-center gap-y-2.5 gap-x-5 text-xs sm:text-sm text-slate-600 pt-3 border-t border-slate-200 w-full font-medium">
               <div className="flex items-center gap-1.5">
                 <Shield className="w-4 h-4 text-[#C5A028] shrink-0" />
                 <span>Structured 21-Month Plans</span>
@@ -112,21 +112,21 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate, onOpenEnquiry }) => {
 
           {/* Right Column: Hero Visual Card with Brand Emblem & Quick Plan Catalog Preview */}
           <div className="lg:col-span-5 w-full">
-            <div className="relative rounded-lg bg-[#001226] p-5 sm:p-6 border border-[#C5A028]/30 shadow-xl shadow-black/50">
+            <div className="relative rounded-xl bg-white p-5 sm:p-6 border border-slate-200 shadow-xl shadow-slate-200/50">
               
               {/* Card Header with Brand Crest */}
-              <div className="flex items-center justify-between pb-4 border-b border-slate-800">
+              <div className="flex items-center justify-between pb-4 border-b border-slate-200">
                 <BrandLogo size="md" showManagedBy={false} />
-                <div className="px-2.5 py-1 rounded bg-[#00264d] border border-[#C5A028]/40 text-[#C5A028] font-mono text-xs font-bold">
+                <div className="px-2.5 py-1 rounded bg-slate-100 border border-slate-300 text-[#001A33] font-mono text-xs font-bold">
                   21 MONTHS
                 </div>
               </div>
 
               {/* Quick Interactive Denomination Ticker */}
               <div className="my-4">
-                <div className="text-xs uppercase tracking-wider font-semibold text-slate-400 mb-2.5 flex items-center justify-between">
+                <div className="text-xs uppercase tracking-wider font-semibold text-slate-500 mb-2.5 flex items-center justify-between">
                   <span>Available Denominations</span>
-                  <span className="text-[#C5A028] text-[11px]">Click to explore</span>
+                  <span className="text-[#C5A028] text-xs font-bold">Click to explore</span>
                 </div>
 
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
@@ -141,30 +141,30 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate, onOpenEnquiry }) => {
                     <button
                       key={idx}
                       onClick={() => onOpenEnquiry(p.label)}
-                      className="p-2.5 rounded-md bg-[#001A33] hover:bg-[#00264d] border border-slate-800 hover:border-[#C5A028]/50 text-left transition-all group cursor-pointer"
+                      className="p-2.5 rounded-md bg-slate-50 hover:bg-amber-50/60 border border-slate-200 hover:border-[#C5A028]/60 text-left transition-all group cursor-pointer shadow-sm"
                     >
-                      <div className="text-sm font-bold text-white group-hover:text-[#C5A028] transition-colors">
+                      <div className="text-sm font-bold text-[#001A33] group-hover:text-[#C5A028] transition-colors">
                         {p.label}
                       </div>
-                      <div className="text-xs text-slate-400 font-medium">{p.monthly}</div>
+                      <div className="text-xs text-slate-500 font-medium">{p.monthly}</div>
                     </button>
                   ))}
                 </div>
               </div>
 
               {/* Verified Company Credentials Box */}
-              <div className="p-3.5 rounded-md bg-[#000d1a] border border-slate-800 flex flex-col gap-2">
+              <div className="p-3.5 rounded-lg bg-slate-50 border border-slate-200 flex flex-col gap-2">
                 <div className="flex items-center justify-between text-xs sm:text-sm">
-                  <span className="text-slate-400">Corporate Identity:</span>
-                  <span className="font-mono text-slate-200 font-bold select-all">{COMPANY_DETAILS.cin}</span>
+                  <span className="text-slate-500 font-medium">Corporate Identity:</span>
+                  <span className="font-mono text-slate-900 font-bold select-all">{COMPANY_DETAILS.cin}</span>
                 </div>
                 <div className="flex items-center justify-between text-xs sm:text-sm">
-                  <span className="text-slate-400">Operational Entity:</span>
-                  <span className="text-[#C5A028] font-semibold">Managed by ELITE TURF</span>
+                  <span className="text-slate-500 font-medium">Operational Entity:</span>
+                  <span className="text-[#001A33] font-bold">Managed by ELITE TURF</span>
                 </div>
                 <div className="flex items-center justify-between text-xs sm:text-sm">
-                  <span className="text-slate-400">Headquarters:</span>
-                  <span className="text-slate-300">Mettupalayam – 641104</span>
+                  <span className="text-slate-500 font-medium">Headquarters:</span>
+                  <span className="text-slate-800 font-semibold">Mettupalayam – 641104</span>
                 </div>
               </div>
 
@@ -175,7 +175,7 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate, onOpenEnquiry }) => {
                   className="w-full py-3 rounded-md bg-[#C5A028] hover:bg-[#e0b83e] text-[#001A33] font-bold text-xs sm:text-sm uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm"
                   id="hero-card-enquire-btn"
                 >
-                  <Award className="w-4 h-4" />
+                  <Award className="w-4 h-4 text-[#001A33]" />
                   <span>Enquire for Current Group Openings</span>
                 </button>
               </div>
