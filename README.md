@@ -29,7 +29,7 @@ This repository contains the complete production-ready web application, customer
   - **Secondary Line**: `+91 9345836032`
 - **📍 Google Maps Integration**: Interactive preview and 1-click direction navigation to the ELITE TURF headquarters in Kuttaiyur, Mettupalayam.
 - **🔐 Secure Admin Portal**:
-  - Protected by server-side authentication (Password required: `EliteTurf10`).
+  - Protected by server-side authentication (configured via `ADMIN_PASSWORD` in `.env`).
   - CRM pipeline to manage customer leads (New, Contacted, Follow-up, Converted, Closed).
   - Inline follow-up notes with instant persistence.
   - WhatsApp Gateway settings manager (CallMeBot, UltraMsg, Meta Cloud API, Custom Webhooks).
@@ -71,7 +71,7 @@ Copy `.env.example` to `.env`:
 ```bash
 cp .env.example .env
 ```
-Configure any optional variables (port defaults to `3000`, admin password defaults to `EliteTurf10`).
+Configure your environment variables in `.env` (including your secure `ADMIN_PASSWORD`).
 
 ### 3. Development Server
 ```bash

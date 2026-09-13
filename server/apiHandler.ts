@@ -52,31 +52,31 @@ const DB_DIR = path.resolve(process.cwd(), 'data');
 const DB_FILE = path.resolve(DB_DIR, 'enquiries.json');
 const SETTINGS_FILE = path.resolve(DB_DIR, 'settings.json');
 
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'EliteTurf10';
 const ACTIVE_SESSIONS = new Set<string>();
 
 export function loadSettings(): WhatsAppSettings {
+  let fileSettings: Partial<WhatsAppSettings> = {};
   try {
     if (!fs.existsSync(DB_DIR)) {
       fs.mkdirSync(DB_DIR, { recursive: true });
     }
     if (fs.existsSync(SETTINGS_FILE)) {
       const content = fs.readFileSync(SETTINGS_FILE, 'utf-8');
-      return JSON.parse(content);
+      fileSettings = JSON.parse(content);
     }
   } catch (e) {
     console.error('Error loading settings:', e);
   }
   return {
-    provider: 'none',
-    callmebotApiKey1: '',
-    callmebotApiKey2: '',
-    ultramsgInstanceId: '',
-    ultramsgToken: '',
-    metaToken: '',
-    metaPhoneId: '',
-    webhookUrl: '',
-    autoOpenClient: true,
+    provider: fileSettings.provider || (process.env.WHATSAPP_PROVIDER as WhatsAppProvider) || 'none',
+    callmebotApiKey1: fileSettings.callmebotApiKey1 || process.env.CALLMEBOT_API_KEY_1 || '',
+    callmebotApiKey2: fileSettings.callmebotApiKey2 || process.env.CALLMEBOT_API_KEY_2 || '',
+    ultramsgInstanceId: fileSettings.ultramsgInstanceId || process.env.ULTRAMSG_INSTANCE_ID || '',
+    ultramsgToken: fileSettings.ultramsgToken || process.env.ULTRAMSG_TOKEN || '',
+    metaToken: fileSettings.metaToken || process.env.META_WHATSAPP_TOKEN || process.env.WHATSAPP_API_TOKEN || '',
+    metaPhoneId: fileSettings.metaPhoneId || process.env.META_PHONE_NUMBER_ID || process.env.WHATSAPP_PHONE_NUMBER_ID || '',
+    webhookUrl: fileSettings.webhookUrl || process.env.WHATSAPP_WEBHOOK_URL || '',
+    autoOpenClient: fileSettings.autoOpenClient ?? true,
   };
 }
 
@@ -391,7 +391,20 @@ export async function handleApiRequest(
   // POST /api/admin/login - Authenticate admin with password
   if (url === '/api/admin/login' && method === 'POST') {
     const { password } = bodyData || {};
-    if (password && password.trim() === ADMIN_PASSWORD) {
+    const adminPassword = process.env.ADMIN_PASSWORD;
+
+    if (!adminPassword) {
+      console.error('CRITICAL: ADMIN_PASSWORD environment variable is not set.');
+      return {
+        status: 500,
+        data: {
+          success: false,
+          error: 'Server authentication configuration error. ADMIN_PASSWORD environment variable is not set.',
+        },
+      };
+    }
+
+    if (password && password.trim() === adminPassword.trim()) {
       const token = `eg_admin_${Date.now()}_${Math.random().toString(36).substring(2, 12)}`;
       ACTIVE_SESSIONS.add(token);
       return {

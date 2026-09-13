@@ -42,6 +42,7 @@ import {
 } from '../services/enquiryService';
 import { BrandLogo } from './BrandLogo';
 import { exportEnquiriesToExcel } from '../utils/enquiryExport';
+import { loginAdmin } from '../services/adminAuthService';
 
 interface AdminDashboardModalProps {
   isOpen: boolean;
@@ -129,21 +130,23 @@ export const AdminDashboardModal: React.FC<AdminDashboardModalProps> = ({
     setTimeout(() => setToastMessage(null), 3500);
   };
 
-  const handlePinSubmit = (e: React.FormEvent) => {
+  const handlePinSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Support master PINs and owner phone numbers
-    if (
-      pinInput === '1995' ||
-      pinInput === '1234' ||
-      pinInput === '7338' ||
-      pinInput === '7338736352' ||
-      pinInput === '9345836032'
-    ) {
-      setIsAuthenticated(true);
-      setPinError('');
-      loadData();
-    } else {
-      setPinError('Incorrect PIN. (Use 1995 or 1234 for demo access)');
+    if (!pinInput.trim()) {
+      setPinError('Please enter your admin credentials.');
+      return;
+    }
+    try {
+      const result = await loginAdmin(pinInput.trim());
+      if (result.success) {
+        setIsAuthenticated(true);
+        setPinError('');
+        loadData();
+      } else {
+        setPinError(result.error || 'Incorrect password. Please try again.');
+      }
+    } catch {
+      setPinError('Authentication error. Please try again.');
     }
   };
 
@@ -284,7 +287,7 @@ export const AdminDashboardModal: React.FC<AdminDashboardModalProps> = ({
                 Admin Management Portal
               </h3>
               <p className="text-xs text-slate-400 mt-1">
-                Enter your security PIN to view enquiries and configure WhatsApp gateway.
+                Enter your admin credentials to access the management portal and settings.
               </p>
             </div>
 
@@ -297,11 +300,10 @@ export const AdminDashboardModal: React.FC<AdminDashboardModalProps> = ({
             <form onSubmit={handlePinSubmit} className="space-y-3">
               <input
                 type="password"
-                maxLength={10}
                 value={pinInput}
                 onChange={e => setPinInput(e.target.value)}
-                placeholder="Enter PIN (e.g. 1995)"
-                className="w-full text-center tracking-[0.4em] font-mono text-xl py-2.5 rounded-lg bg-[#001A33] border border-slate-700 focus:border-[#C5A028] text-white outline-none"
+                placeholder="Enter password"
+                className="w-full text-center tracking-[0.2em] font-mono text-lg py-2.5 rounded-lg bg-[#001A33] border border-slate-700 focus:border-[#C5A028] text-white outline-none"
                 autoFocus
                 id="admin-pin-input"
               />
@@ -315,7 +317,7 @@ export const AdminDashboardModal: React.FC<AdminDashboardModalProps> = ({
             </form>
 
             <div className="text-[11px] text-slate-500">
-              ELITE GROUP – SS CHIT FUNDS • Authorized Personnel Only (PIN: 1995)
+              ELITE GROUP – SS CHIT FUNDS • Authorized Personnel Only
             </div>
           </div>
         ) : (

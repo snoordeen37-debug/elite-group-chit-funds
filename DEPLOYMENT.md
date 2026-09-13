@@ -39,7 +39,7 @@ cp .env.example .env
 |---|:---:|---|---|
 | `PORT` | No | `3000` | HTTP port on which the server listens |
 | `NODE_ENV` | No | `production` | Environment mode (`production` / `development`) |
-| `ADMIN_PASSWORD` | Recommended | `EliteTurf10` | Password required to access the Admin Portal |
+| `ADMIN_PASSWORD` | Yes | - | Secure password required to access the Admin Portal (configured in `.env`) |
 | `WHATSAPP_API_TOKEN` | Optional | - | Meta WhatsApp Cloud API access token |
 | `WHATSAPP_PHONE_NUMBER_ID` | Optional | - | Meta WhatsApp Cloud API Phone Number ID |
 | `WHATSAPP_WEBHOOK_URL` | Optional | - | Custom webhook for receiving/forwarding notifications |
