@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { 
   ShieldCheck, 
   Eye, 
@@ -9,9 +10,11 @@ import {
   Users,
   Sparkles
 } from 'lucide-react';
-import { WHY_CHOOSE_ITEMS } from '../data/chitPlansData';
+import { WHY_CHOOSE_ITEMS, COMPANY_DETAILS } from '../data/chitPlansData';
 
 export const WhyChooseSection: React.FC = () => {
+  const { t } = useTranslation();
+
   const getIcon = (iconName: string) => {
     switch (iconName) {
       case 'ShieldCheck': return <ShieldCheck className="w-5 h-5 text-[#C5A028]" />;
@@ -32,13 +35,13 @@ export const WhyChooseSection: React.FC = () => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-8">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#001A33]/5 border border-[#001A33]/15 text-[#001A33] text-xs font-bold uppercase tracking-wider mb-3">
-            Core Principles & Advantages
+            {t('whyChoose.badge')}
           </div>
           <h2 className="font-['Cinzel'] text-2xl sm:text-3xl lg:text-4xl font-bold text-[#001A33] tracking-tight mb-2.5">
-            WHY CHOOSE ELITE GROUP?
+            {t('whyChoose.title')}
           </h2>
           <p className="text-slate-600 text-sm sm:text-base md:text-lg leading-relaxed">
-            Built upon principles of systematic financial discipline, open communication, and long-term customer relationships.
+            {t('whyChoose.subtitle')}
           </p>
         </div>
 
@@ -48,7 +51,7 @@ export const WhyChooseSection: React.FC = () => {
             const isFeatured = index === 0;
             return (
               <div
-                key={item.title}
+                key={index}
                 className={`rounded-xl p-5 flex flex-col justify-between transition-all group border ${
                   isFeatured 
                     ? 'bg-white border-2 border-[#C5A028] shadow-md' 
@@ -63,16 +66,16 @@ export const WhyChooseSection: React.FC = () => {
                   </div>
 
                   <h3 className="font-['Cinzel'] text-base font-bold text-slate-900 group-hover:text-[#001A33] transition-colors mb-2">
-                    {item.title}
+                    {t('data.benefits.' + (index + 1) + '.title')}
                   </h3>
 
                   <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                    {item.description}
+                    {t('data.benefits.' + (index + 1) + '.description')}
                   </p>
                 </div>
 
                 <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-medium">
-                  <span>Standard of Service</span>
+                  <span>{t('whyChoose.serviceStandard')}</span>
                   <span className="text-[#b48616] font-bold">0{index + 1}</span>
                 </div>
               </div>
@@ -86,14 +89,14 @@ export const WhyChooseSection: React.FC = () => {
                 <Headphones className="w-5 h-5" />
               </div>
               <h3 className="font-['Cinzel'] text-base font-bold text-slate-900 mb-2">
-                PERSONALIZED ASSISTANCE
+                {t('whyChoose.assistanceTitle')}
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                Connect directly with our dedicated coordinators in Mettupalayam for plan guidance and enrollment support.
+                {t('whyChoose.assistanceDesc')}
               </p>
             </div>
             <div className="mt-4 pt-3 border-t border-slate-100 text-sm font-bold text-[#b48616]">
-              +91 7338736352 / +91 9345836032
+              {COMPANY_DETAILS.phone1} / {COMPANY_DETAILS.phone2}
             </div>
           </div>
 

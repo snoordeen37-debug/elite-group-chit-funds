@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ChevronDown, HelpCircle, Sparkles, MessageCircle, Phone } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { ChevronDown, HelpCircle, MessageCircle } from 'lucide-react';
 import { FAQS, COMPANY_DETAILS } from '../data/chitPlansData';
 
 interface FaqSectionProps {
@@ -7,6 +8,7 @@ interface FaqSectionProps {
 }
 
 export const FaqSection: React.FC<FaqSectionProps> = ({ onOpenEnquiry }) => {
+  const { t } = useTranslation();
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const toggleFaq = (index: number) => {
@@ -23,19 +25,19 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onOpenEnquiry }) => {
         <div className="text-center max-w-3xl mx-auto mb-8">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#001A33]/5 border border-[#001A33]/15 text-[#001A33] text-xs font-bold uppercase tracking-wider mb-3">
             <HelpCircle className="w-3.5 h-3.5 text-[#C5A028]" />
-            Frequently Asked Questions
+            {t('faqs.badge')}
           </div>
           <h2 className="font-['Cinzel'] text-2xl sm:text-3xl lg:text-4xl font-bold text-[#001A33] tracking-tight mb-2.5">
-            FREQUENTLY ASKED QUESTIONS
+            {t('faqs.title')}
           </h2>
           <p className="text-slate-600 text-sm sm:text-base md:text-lg leading-relaxed">
-            Essential information regarding chit fund mechanics, documentation, contribution schedules, and auction procedures.
+            {t('faqs.subtitle')}
           </p>
         </div>
 
         {/* 10 FAQ Accordion Items */}
         <div className="space-y-2.5">
-          {FAQS.map((faq, index) => {
+          {FAQS.map((_, index) => {
             const isOpen = openIndex === index;
             return (
               <div
@@ -56,7 +58,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onOpenEnquiry }) => {
                     <span className="text-[#b48616] font-mono text-xs sm:text-sm font-bold">
                       {String(index + 1).padStart(2, '0')}
                     </span>
-                    <span>{faq.question}</span>
+                    <span>{t('data.faqs.' + (index + 1) + '.q')}</span>
                   </span>
                   <div className={`p-1.5 rounded-lg transition-transform duration-150 shrink-0 ml-3 ${
                     isOpen ? 'rotate-180 bg-[#001A33] text-[#C5A028]' : 'bg-slate-100 text-slate-600'
@@ -67,7 +69,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onOpenEnquiry }) => {
 
                 {isOpen && (
                   <div className="px-4 sm:px-5 pb-4 pt-1 text-slate-600 text-sm sm:text-base leading-relaxed border-t border-slate-200/70 animate-in fade-in duration-150">
-                    <p>{faq.answer}</p>
+                    <p>{t('data.faqs.' + (index + 1) + '.a')}</p>
                   </div>
                 )}
               </div>
@@ -78,9 +80,9 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onOpenEnquiry }) => {
         {/* Bottom Help Box */}
         <div className="mt-8 p-5 sm:p-6 rounded-xl bg-white border border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm">
           <div>
-            <div className="text-sm sm:text-base font-bold text-slate-900">Still have more specific questions?</div>
+            <div className="text-sm sm:text-base font-bold text-slate-900">{t('faqs.bottomQuestion')}</div>
             <div className="text-xs sm:text-sm text-slate-500 mt-0.5">
-              Contact our team directly on WhatsApp or call us during business hours.
+              {t('faqs.bottomDesc')}
             </div>
           </div>
 
@@ -93,14 +95,14 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onOpenEnquiry }) => {
               id="faq-whatsapp-btn"
             >
               <MessageCircle className="w-4 h-4" />
-              <span>Ask on WhatsApp</span>
+              <span>{t('faqs.askWhatsAppBtn')}</span>
             </a>
             <button
               onClick={onOpenEnquiry}
               className="px-5 py-2.5 rounded-lg bg-[#C5A028] hover:bg-[#b59020] text-[#001A33] text-xs sm:text-sm font-bold uppercase tracking-wider transition-all shadow-xs hover:shadow-md cursor-pointer"
               id="faq-enquire-btn"
             >
-              Send Enquiry
+              {t('faqs.sendEnquiryBtn')}
             </button>
           </div>
         </div>

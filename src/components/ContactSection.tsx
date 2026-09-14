@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { 
   Phone, 
   MapPin, 
@@ -7,12 +8,11 @@ import {
   Send, 
   CheckCircle2, 
   ShieldCheck, 
-  Clock,
-  Sparkles,
-  AlertCircle,
-  Loader2,
-  Check,
-  ExternalLink
+  Sparkles, 
+  AlertCircle, 
+  Loader2, 
+  Check, 
+  ExternalLink 
 } from 'lucide-react';
 import { COMPANY_DETAILS } from '../data/chitPlansData';
 import { EnquiryFormData } from '../types';
@@ -23,6 +23,7 @@ interface ContactSectionProps {
 }
 
 export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = '' }) => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState<EnquiryFormData>({
     fullName: '',
     mobileNumber: '',
@@ -37,10 +38,6 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
   const [submitted, setSubmitted] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
   const [directUrls, setDirectUrls] = useState<DirectWhatsAppUrls | null>(null);
-  const [whatsappLogs, setWhatsappLogs] = useState<{
-    number1: { number: string; status: string };
-    number2: { number: string; status: string };
-  } | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData(prev => ({
@@ -88,9 +85,6 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
         if (res.directWhatsAppUrls) {
           setDirectUrls(res.directWhatsAppUrls);
         }
-        if (res.whatsappDispatch) {
-          setWhatsappLogs(res.whatsappDispatch);
-        }
       } else {
         setErrorMsg(res.error || 'Could not submit enquiry. Please try again.');
       }
@@ -114,13 +108,13 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
         <div className="text-center max-w-3xl mx-auto mb-8">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#001A33]/5 border border-[#001A33]/15 text-[#001A33] text-xs font-bold uppercase tracking-wider mb-3">
             <Sparkles className="w-3.5 h-3.5 text-[#C5A028]" />
-            Official Assistance & Inquiries
+            {t('contact.badge')}
           </div>
           <h2 className="font-['Cinzel'] text-2xl sm:text-3xl lg:text-4xl font-bold text-[#001A33] tracking-tight mb-2.5">
-            Contact ELITE GROUP
+            {t('contact.title')}
           </h2>
           <p className="text-slate-600 text-sm sm:text-base md:text-lg leading-relaxed">
-            Reach out to our team for plan details, current group enrollment, or visit our office at Mettupalayam.
+            {t('contact.subtitle')}
           </p>
         </div>
 
@@ -137,16 +131,16 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
                 </div>
                 <div>
                   <h3 className="font-['Cinzel'] text-sm sm:text-base font-bold text-slate-900 uppercase tracking-wider">
-                    Direct Phone Support
+                    {t('contact.directPhoneSupport')}
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-500">Available Mon – Sat, 9:00 AM – 7:30 PM</p>
+                  <p className="text-xs sm:text-sm text-slate-500">{t('contact.availableHours')}</p>
                 </div>
               </div>
 
               <div className="space-y-2.5 text-xs sm:text-sm">
                 <div className="flex items-center justify-between p-3 rounded-lg bg-slate-50 border border-slate-200">
                   <div>
-                    <div className="text-xs text-slate-500 font-bold uppercase">Primary Line</div>
+                    <div className="text-xs text-slate-500 font-bold uppercase">{t('contact.primaryLine')}</div>
                     <a href={`tel:${COMPANY_DETAILS.phone1Clean}`} className="text-slate-900 hover:text-[#001A33] font-bold text-sm sm:text-base">
                       {COMPANY_DETAILS.phone1}
                     </a>
@@ -155,13 +149,13 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
                     href={`tel:${COMPANY_DETAILS.phone1Clean}`}
                     className="px-3 py-1.5 rounded-md bg-[#C5A028] hover:bg-[#b59020] text-[#001A33] font-bold text-xs uppercase tracking-wider shadow-xs"
                   >
-                    Call
+                    {t('contact.callBtn')}
                   </a>
                 </div>
 
                 <div className="flex items-center justify-between p-3 rounded-lg bg-slate-50 border border-slate-200">
                   <div>
-                    <div className="text-xs text-slate-500 font-bold uppercase">Secondary Line</div>
+                    <div className="text-xs text-slate-500 font-bold uppercase">{t('contact.secondaryLine')}</div>
                     <a href={`tel:${COMPANY_DETAILS.phone2Clean}`} className="text-slate-900 hover:text-[#001A33] font-bold text-sm sm:text-base">
                       {COMPANY_DETAILS.phone2}
                     </a>
@@ -170,7 +164,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
                     href={`tel:${COMPANY_DETAILS.phone2Clean}`}
                     className="px-3 py-1.5 rounded-md bg-[#C5A028] hover:bg-[#b59020] text-[#001A33] font-bold text-xs uppercase tracking-wider shadow-xs"
                   >
-                    Call
+                    {t('contact.callBtn')}
                   </a>
                 </div>
               </div>
@@ -185,9 +179,9 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
                   </div>
                   <div>
                     <h3 className="font-['Cinzel'] text-sm sm:text-base font-bold text-slate-900 uppercase tracking-wider">
-                      Office Headquarters
+                      {t('contact.officeHeadquarters')}
                     </h3>
-                    <p className="text-xs sm:text-sm text-slate-500">Direct In-Person Consultation</p>
+                    <p className="text-xs sm:text-sm text-slate-500">{t('contact.inPersonConsultation')}</p>
                   </div>
                 </div>
 
@@ -199,7 +193,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
                   id="view-google-maps-btn-header"
                 >
                   <MapPin className="w-3.5 h-3.5" />
-                  <span>View on Maps</span>
+                  <span>{t('contact.viewOnMaps')}</span>
                   <ExternalLink className="w-3 h-3 ml-0.5" />
                 </a>
               </div>
@@ -222,7 +216,6 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
 
               {/* Interactive Google Maps Preview */}
               <div className="relative rounded-lg overflow-hidden border border-slate-200 hover:border-[#C5A028]/60 transition-colors bg-slate-100 shadow-inner">
-                {/* Gold Pin Badge in top corner */}
                 <div className="absolute top-2.5 left-2.5 z-10 pointer-events-none">
                   <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/95 backdrop-blur-md border border-slate-200 text-slate-900 text-xs font-bold shadow-md">
                     <MapPin className="w-3 h-3 text-red-500 fill-red-500" />
@@ -249,7 +242,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
                 id="view-google-maps-btn"
               >
                 <MapPin className="w-4 h-4 text-[#C5A028] group-hover:text-[#001A33] transition-colors" />
-                <span>View on Google Maps</span>
+                <span>{t('contact.viewOnMaps')}</span>
                 <ExternalLink className="w-3.5 h-3.5" />
               </a>
             </div>
@@ -257,8 +250,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
             {/* Quick WhatsApp Support Card */}
             <div className="p-4 sm:p-5 rounded-xl bg-emerald-50/80 border border-emerald-200 flex items-center justify-between gap-3 shadow-xs">
               <div>
-                <div className="text-xs sm:text-sm font-bold text-emerald-800 uppercase tracking-wider">Fast Response</div>
-                <div className="text-slate-900 text-xs sm:text-sm font-semibold">Chat on WhatsApp Instantly</div>
+                <div className="text-xs sm:text-sm font-bold text-emerald-800 uppercase tracking-wider">{t('contact.fastResponse')}</div>
+                <div className="text-slate-900 text-xs sm:text-sm font-semibold">{t('contact.chatWhatsAppInstantly')}</div>
               </div>
               <a
                 href={whatsappUrl}
@@ -267,7 +260,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
                 className="px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm uppercase flex items-center gap-1.5 shadow-xs transition-colors"
               >
                 <MessageCircle className="w-4 h-4" />
-                <span>Open Chat</span>
+                <span>{t('contact.openChat')}</span>
               </a>
             </div>
 
@@ -279,10 +272,10 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
               
               <div className="mb-5 pb-3.5 border-b border-slate-100">
                 <h3 className="font-['Cinzel'] text-lg sm:text-xl font-bold text-slate-900">
-                  Send Your Plan Enquiry
+                  {t('contact.sendPlanEnquiry')}
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-500 mt-0.5">
-                  Our official team will automatically receive your request on both business lines.
+                  {t('contact.receiveBothLines')}
                 </p>
               </div>
 
@@ -294,10 +287,10 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
                   
                   <div className="space-y-1.5">
                     <h4 className="font-['Cinzel'] text-xl font-bold text-slate-900">
-                      Enquiry Registered
+                      {t('contact.enquiryRegistered')}
                     </h4>
                     <p className="text-xs sm:text-sm text-emerald-700 font-medium max-w-md mx-auto leading-relaxed">
-                      Thank you for your enquiry! Our team will contact you shortly.
+                      {t('contact.thankYouRegister')}
                     </p>
                   </div>
 
@@ -307,14 +300,14 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
                       <div className="flex items-center justify-between border-b border-slate-200 pb-2">
                         <span className="text-xs sm:text-sm font-bold text-emerald-700 flex items-center gap-1.5">
                           <MessageCircle className="w-4 h-4 text-emerald-600" />
-                          Send Instant WhatsApp Notification
+                          {t('contact.sendInstantNotification')}
                         </span>
                         <span className="text-xs uppercase font-mono px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 border border-emerald-300 font-bold">
-                          1-Click Send
+                          {t('contact.oneClickSend')}
                         </span>
                       </div>
                       <p className="text-xs sm:text-sm text-slate-600">
-                        Click below to deliver this enquiry directly to our business lines on WhatsApp:
+                        {t('contact.clickBelowNotify')}
                       </p>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                         <a
@@ -324,7 +317,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
                           className="flex items-center justify-center gap-1.5 p-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm transition-all shadow-xs"
                         >
                           <ExternalLink className="w-3.5 h-3.5" />
-                          <span>Line 1 (+91 7338736352)</span>
+                          <span>Line 1 ({COMPANY_DETAILS.phone1})</span>
                         </a>
                         <a
                           href={directUrls.line2}
@@ -333,7 +326,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
                           className="flex items-center justify-center gap-1.5 p-2.5 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-xs sm:text-sm transition-all shadow-xs"
                         >
                           <ExternalLink className="w-3.5 h-3.5" />
-                          <span>Line 2 (+91 9345836032)</span>
+                          <span>Line 2 ({COMPANY_DETAILS.phone2})</span>
                         </a>
                       </div>
                       <button
@@ -344,7 +337,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
                         className="w-full py-2.5 rounded-lg bg-white hover:bg-slate-100 border border-emerald-300 text-emerald-800 hover:text-emerald-950 font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-xs"
                       >
                         <Sparkles className="w-4 h-4 text-[#C5A028]" />
-                        <span>Send to BOTH WhatsApp Numbers</span>
+                        <span>{t('contact.sendBothWhatsApp')}</span>
                       </button>
                     </div>
                   )}
@@ -356,13 +349,13 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
                       Database Record Stored
                     </div>
                     <div className="flex items-center justify-between text-xs sm:text-sm text-slate-600">
-                      <span>Primary Line (+91 7338736352):</span>
+                      <span>Primary Line ({COMPANY_DETAILS.phone1}):</span>
                       <span className="text-emerald-700 font-bold flex items-center gap-1">
                         <Check className="w-3.5 h-3.5 text-emerald-600" /> Registered & Ready
                       </span>
                     </div>
                     <div className="flex items-center justify-between text-xs sm:text-sm text-slate-600">
-                      <span>Secondary Line (+91 9345836032):</span>
+                      <span>Secondary Line ({COMPANY_DETAILS.phone2}):</span>
                       <span className="text-emerald-700 font-bold flex items-center gap-1">
                         <Check className="w-3.5 h-3.5 text-emerald-600" /> Registered & Ready
                       </span>
@@ -386,7 +379,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
                       }}
                       className="px-6 py-2.5 rounded-lg bg-[#C5A028] hover:bg-[#b59020] text-[#001A33] text-xs font-bold uppercase tracking-wider cursor-pointer shadow-xs hover:shadow-md"
                     >
-                      Submit Another Enquiry
+                      {t('contact.sendAnotherBtn')}
                     </button>
                   </div>
                 </div>
@@ -403,14 +396,14 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
                   {/* Full Name */}
                   <div>
                     <label className="block text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-700 mb-1.5" htmlFor="field-fullName">
-                      Full Name <span className="text-[#b48616]">*</span>
+                      {t('contact.fullName')} <span className="text-[#b48616]">*</span>
                     </label>
                     <input
                       id="field-fullName"
                       name="fullName"
                       type="text"
                       required
-                      placeholder="e.g. R. Senthil Kumar"
+                      placeholder={t('contact.fullNamePlaceholder')}
                       value={formData.fullName}
                       onChange={handleChange}
                       className="w-full px-3.5 py-2.5 rounded-lg bg-white border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#C5A028] focus:ring-1 focus:ring-[#C5A028] text-sm sm:text-base shadow-xs"
@@ -421,14 +414,14 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div>
                       <label className="block text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-700 mb-1.5" htmlFor="field-mobileNumber">
-                        Mobile Number <span className="text-[#b48616]">*</span>
+                        {t('contact.mobileNumber')} <span className="text-[#b48616]">*</span>
                       </label>
                       <input
                         id="field-mobileNumber"
                         name="mobileNumber"
                         type="tel"
                         required
-                        placeholder="10-digit mobile number"
+                        placeholder={t('contact.mobilePlaceholder')}
                         value={formData.mobileNumber}
                         onChange={handleChange}
                         className="w-full px-3.5 py-2.5 rounded-lg bg-white border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#C5A028] focus:ring-1 focus:ring-[#C5A028] text-sm sm:text-base shadow-xs"
@@ -437,13 +430,13 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
 
                     <div>
                       <label className="block text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-700 mb-1.5" htmlFor="field-emailAddress">
-                        Email Address (Optional)
+                        {t('contact.email')}
                       </label>
                       <input
                         id="field-emailAddress"
                         name="emailAddress"
                         type="email"
-                        placeholder="name@example.com"
+                        placeholder={t('contact.emailPlaceholder')}
                         value={formData.emailAddress}
                         onChange={handleChange}
                         className="w-full px-3.5 py-2.5 rounded-lg bg-white border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#C5A028] focus:ring-1 focus:ring-[#C5A028] text-sm sm:text-base shadow-xs"
@@ -455,7 +448,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div>
                       <label className="block text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-700 mb-1.5" htmlFor="field-preferredChitValue">
-                        Chit Plan Interested In
+                        {t('contact.interestedPlan')}
                       </label>
                       <select
                         id="field-preferredChitValue"
@@ -475,7 +468,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
 
                     <div>
                       <label className="block text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-700 mb-1.5" htmlFor="field-preferredContactMethod">
-                        Preferred Contact Method
+                        {t('contact.preferredContact')}
                       </label>
                       <select
                         id="field-preferredContactMethod"
@@ -484,8 +477,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
                         onChange={handleChange}
                         className="w-full px-3.5 py-2.5 rounded-lg bg-white border border-slate-300 text-slate-900 focus:outline-none focus:border-[#C5A028] focus:ring-1 focus:ring-[#C5A028] text-sm sm:text-base cursor-pointer shadow-xs"
                       >
-                        <option value="WhatsApp">WhatsApp Message</option>
-                        <option value="Phone">Phone Call</option>
+                        <option value="WhatsApp">{t('contact.contactWhatsApp')}</option>
+                        <option value="Phone">{t('contact.contactPhone')}</option>
                       </select>
                     </div>
                   </div>
@@ -493,13 +486,13 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
                   {/* Message */}
                   <div>
                     <label className="block text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-700 mb-1.5" htmlFor="field-message">
-                      Message / Enquiry (Optional)
+                      {t('contact.message')}
                     </label>
                     <textarea
                       id="field-message"
                       name="message"
                       rows={3}
-                      placeholder="Ask any question about start dates, documentation, or contribution schedule..."
+                      placeholder={t('contact.messagePlaceholder')}
                       value={formData.message}
                       onChange={handleChange}
                       className="w-full px-3.5 py-2.5 rounded-lg bg-white border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#C5A028] focus:ring-1 focus:ring-[#C5A028] text-sm sm:text-base resize-none shadow-xs"
@@ -509,7 +502,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
                   {/* Automated Dual Notification Note */}
                   <div className="text-xs text-slate-500 flex items-center gap-1.5">
                     <ShieldCheck className="w-4 h-4 text-[#C5A028]" />
-                    <span>Auto-dispatches notification to both official lines (+91 7338736352 & +91 9345836032).</span>
+                    <span>Auto-dispatches notification to both official lines ({COMPANY_DETAILS.phone1} & {COMPANY_DETAILS.phone2}).</span>
                   </div>
 
                   {/* Submit Button */}
@@ -522,12 +515,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
                     {isSubmitting ? (
                       <span className="flex items-center gap-2">
                         <Loader2 className="w-4 h-4 animate-spin text-[#001A33]" />
-                        <span>Sending Dual Notification...</span>
+                        <span>{t('contact.submitting')}</span>
                       </span>
                     ) : (
                       <>
                         <Send className="w-4 h-4" />
-                        <span>SUBMIT ENQUIRY</span>
+                        <span>{t('contact.submitBtn')}</span>
                       </>
                     )}
                   </button>

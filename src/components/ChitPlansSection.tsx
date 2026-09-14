@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { 
   Table, 
   Layers, 
@@ -9,7 +10,6 @@ import {
   Info, 
   Sparkles,
   SlidersHorizontal,
-  ChevronDown,
   FileSpreadsheet
 } from 'lucide-react';
 import { 
@@ -23,6 +23,7 @@ interface ChitPlansSectionProps {
 }
 
 export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquiry }) => {
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState<'cards' | 'catalog' | 'contributions'>('cards');
   const [selectedDenomination, setSelectedDenomination] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
@@ -46,6 +47,10 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
     );
   });
 
+  const renderCellValue = (val: string) => {
+    return val === 'Company' ? t('plans.company') : val;
+  };
+
   return (
     <section className="py-12 md:py-16 bg-slate-50 relative border-t border-slate-200" id="chit-plans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -54,14 +59,13 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
         <div className="text-center max-w-3xl mx-auto mb-8">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-slate-200 shadow-sm text-[#001A33] text-xs font-bold uppercase tracking-wider mb-2.5">
             <Sparkles className="w-3.5 h-3.5 text-[#C5A028]" />
-            Official Structure Catalog
+            {t('plans.badge')}
           </div>
           <h2 className="font-['Cinzel'] text-2xl sm:text-3xl lg:text-4xl font-bold text-[#001A33] tracking-tight mb-3">
-            AVAILABLE CHIT PLANS
+            {t('plans.title')}
           </h2>
           <p className="text-slate-600 text-sm sm:text-base md:text-lg leading-relaxed">
-            Explore our complete range of structured chit fund options from ₹50,000 to ₹5,00,000. 
-            All plans feature transparent 21-installment schedules and flexible contribution modes.
+            {t('plans.subtitle')}
           </p>
         </div>
 
@@ -77,7 +81,7 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
             id="tab-interactive-cards"
           >
             <Layers className="w-4 h-4 text-[#C5A028]" />
-            <span>Interactive Plan Cards</span>
+            <span>{t('plans.tabCards')}</span>
           </button>
 
           <button
@@ -90,7 +94,7 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
             id="tab-official-catalog"
           >
             <Table className="w-4 h-4 text-[#C5A028]" />
-            <span>Full 21-Row Official Table</span>
+            <span>{t('plans.tabCatalog')}</span>
           </button>
 
           <button
@@ -103,7 +107,7 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
             id="tab-contribution-options"
           >
             <Calendar className="w-4 h-4 text-[#C5A028]" />
-            <span>Contribution Options (Daily / Weekly / Monthly)</span>
+            <span>{t('plans.tabContributions')}</span>
           </button>
         </div>
 
@@ -113,7 +117,7 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
             {/* Filter Pills */}
             <div className="flex flex-wrap items-center justify-center gap-2 pb-1">
               <span className="text-xs text-slate-500 font-semibold mr-1 flex items-center gap-1">
-                <SlidersHorizontal className="w-3.5 h-3.5 text-[#C5A028]" /> Filter Value:
+                <SlidersHorizontal className="w-3.5 h-3.5 text-[#C5A028]" /> {t('plans.filterLabel')}
               </span>
               {['all', '₹50,000', '₹1,00,000', '₹2,00,000', '₹3,00,000', '₹4,00,000', '₹5,00,000'].map((val) => (
                 <button
@@ -125,7 +129,7 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
                       : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200 shadow-sm'
                   }`}
                 >
-                  {val === 'all' ? 'All 6 Plans' : val}
+                  {val === 'all' ? t('plans.filterAll') : val}
                 </button>
               ))}
             </div>
@@ -143,7 +147,7 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
                     <div className="flex items-center justify-between pb-3.5 border-b border-slate-200 mb-3.5">
                       <div>
                         <span className="text-xs font-bold text-[#C5A028] uppercase tracking-wider">
-                          Chit Value
+                          {t('plans.totalChitValue')}
                         </span>
                         <h3 className="font-['Cinzel'] text-2xl sm:text-3xl font-bold text-[#001A33] group-hover:text-[#C5A028] transition-colors">
                           {plan.value}
@@ -161,19 +165,19 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
                     {/* Contribution Breakdown Grid */}
                     <div className="bg-slate-50 rounded-lg p-3.5 border border-slate-200 mb-4 space-y-2 text-xs sm:text-sm">
                       <div className="flex items-center justify-between">
-                        <span className="text-slate-500">Monthly Contribution:</span>
+                        <span className="text-slate-500">{t('plans.monthlyContribution')}</span>
                         <span className="font-bold text-slate-900">{plan.monthlyContribution}</span>
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="text-slate-500">Weekly Option:</span>
+                        <span className="text-slate-500">{t('plans.weeklyOption')}</span>
                         <span className="font-semibold text-slate-700">{plan.weeklyContribution}</span>
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="text-slate-500">Daily Option:</span>
+                        <span className="text-slate-500">{t('plans.dailyOption')}</span>
                         <span className="font-semibold text-slate-700">{plan.dailyContribution}</span>
                       </div>
                       <div className="pt-2 border-t border-slate-200 flex items-center justify-between">
-                        <span className="text-slate-500 font-medium">Catalog Progression:</span>
+                        <span className="text-slate-500 font-medium">{t('plans.takeHomeProgression')}</span>
                         <span className="font-mono text-[#001A33] font-bold">
                           {plan.minTakeHome} – {plan.maxTakeHome}
                         </span>
@@ -183,7 +187,7 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
                     {/* Feature Bullets */}
                     <div className="space-y-1.5 mb-5">
                       <div className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">
-                        Key Highlights:
+                        {t('plans.featuresTitle')}
                       </div>
                       {plan.features.map((feat, fIdx) => (
                         <div key={fIdx} className="flex items-start gap-2 text-xs sm:text-sm text-slate-600">
@@ -200,7 +204,7 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
                     className="w-full py-3 rounded-md bg-[#001A33] hover:bg-[#C5A028] text-white hover:text-[#001A33] border border-[#001A33] font-bold text-xs sm:text-sm uppercase tracking-wider transition-all duration-150 flex items-center justify-center gap-2 cursor-pointer shadow-sm group-hover:border-[#C5A028]"
                     id={`enquire-btn-${plan.id}`}
                   >
-                    <span>ENQUIRE ABOUT THIS PLAN</span>
+                    <span>{t('plans.enquireAboutPlan')}</span>
                     <ArrowRight className="w-4 h-4 text-[#C5A028] group-hover:text-[#001A33]" />
                   </button>
                 </div>
@@ -211,14 +215,14 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
             <div className="p-3.5 rounded-lg bg-white border border-slate-200 shadow-sm text-xs sm:text-sm text-slate-600 flex items-start gap-2.5">
               <Info className="w-4 h-4 text-[#C5A028] shrink-0 mt-0.5" />
               <div>
-                Looking for the full row-by-row installment schedule? Switch to the{' '}
+                {t('plans.helperNotePrefix')}
                 <button
                   onClick={() => setActiveTab('catalog')}
                   className="text-[#001A33] underline font-bold hover:text-[#C5A028] cursor-pointer"
                 >
-                  Full 21-Row Official Table
-                </button>{' '}
-                to examine exact take-home figures for every tier.
+                  {t('plans.tabCatalog')}
+                </button>
+                {t('plans.helperNoteSuffix')}
               </div>
             </div>
           </div>
@@ -233,10 +237,10 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
               <div>
                 <h3 className="text-sm sm:text-base font-bold text-[#001A33] flex items-center gap-2">
                   <FileSpreadsheet className="w-4 h-4 text-[#C5A028]" />
-                  Official 21-Tier Schedule
+                  {t('plans.officialScheduleTitle')}
                 </h3>
                 <p className="text-xs text-slate-500">
-                  Exact catalog records for S.NO 1 through 21 across all 6 chit values.
+                  {t('plans.officialScheduleSubtitle')}
                 </p>
               </div>
 
@@ -244,7 +248,7 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
                 <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
                 <input
                   type="text"
-                  placeholder="Search value or row..."
+                  placeholder={t('plans.searchPlaceholder')}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-full pl-8 pr-3 py-1.5 text-xs rounded-md bg-slate-50 border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#C5A028] focus:bg-white"
@@ -258,7 +262,7 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
                 <thead>
                   <tr className="bg-[#001A33] text-white border-b border-slate-300">
                     <th className="py-2.5 px-3 font-bold text-center w-16 uppercase tracking-wider sticky left-0 bg-[#001A33] z-10 text-[#C5A028]">
-                      S.NO
+                      {t('plans.tableColSNo')}
                     </th>
                     <th className="py-2.5 px-3 font-bold uppercase tracking-wider text-right">
                       ₹50,000
@@ -304,22 +308,22 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
                           {row.sNo}
                         </td>
                         <td className="py-2.5 px-3 text-right font-mono font-semibold text-slate-900">
-                          {row.plan50k}
+                          {renderCellValue(row.plan50k)}
                         </td>
                         <td className="py-2.5 px-3 text-right font-mono font-semibold text-slate-900">
-                          {row.plan100k}
+                          {renderCellValue(row.plan100k)}
                         </td>
                         <td className="py-2.5 px-3 text-right font-mono font-semibold text-slate-900">
-                          {row.plan200k}
+                          {renderCellValue(row.plan200k)}
                         </td>
                         <td className="py-2.5 px-3 text-right font-mono font-semibold text-slate-900">
-                          {row.plan300k}
+                          {renderCellValue(row.plan300k)}
                         </td>
                         <td className="py-2.5 px-3 text-right font-mono font-semibold text-slate-900">
-                          {row.plan400k}
+                          {renderCellValue(row.plan400k)}
                         </td>
                         <td className="py-2.5 px-3 text-right font-mono font-semibold text-slate-900">
-                          {row.plan500k}
+                          {renderCellValue(row.plan500k)}
                         </td>
                       </tr>
                     );
@@ -332,7 +336,7 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
             <div className="p-3.5 rounded-lg bg-white border border-slate-200 shadow-sm text-xs text-slate-600 flex items-start gap-2.5">
               <Info className="w-4 h-4 text-[#C5A028] shrink-0 mt-0.5" />
               <p>
-                <strong className="text-slate-900 font-bold">Important Note:</strong> Exact data from official catalog. Row 1 represents the initial company contribution/start cycle as per chit fund procedures. S.NO 2 through 21 illustrate the progression tiers. Subject to the subscriber agreement and auction terms.
+                <strong className="text-slate-900 font-bold">{t('plans.disclaimerImportant')}</strong> {t('plans.disclaimerText')}
               </p>
             </div>
           </div>
@@ -345,13 +349,13 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
             <div className="p-5 rounded-xl bg-white border border-slate-200 shadow-sm">
               <div className="mb-4">
                 <div className="text-xs uppercase tracking-wider text-[#C5A028] font-bold mb-1">
-                  Flexible Payment Schedules
+                  {t('plans.flexibleSchedules')}
                 </div>
                 <h3 className="font-['Cinzel'] text-xl sm:text-2xl font-bold text-[#001A33]">
-                  CHIT CONTRIBUTION OPTIONS
+                  {t('plans.contributionsTitle')}
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-600 mt-1">
-                  Choose the contribution frequency that matches your cash flow — Monthly, Weekly, or Daily across 21 installments.
+                  {t('plans.contributionsSubtitle')}
                 </p>
               </div>
 
@@ -360,12 +364,12 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
                 <table className="w-full text-left border-collapse text-xs sm:text-sm min-w-[540px]">
                   <thead>
                     <tr className="bg-[#001A33] text-white font-bold uppercase tracking-wider">
-                      <th className="py-2.5 px-3 font-bold text-center w-16 text-[#C5A028]">S.NO</th>
-                      <th className="py-2.5 px-3 font-bold">CHIT VALUE</th>
-                      <th className="py-2.5 px-3 font-bold">MONTHLY</th>
-                      <th className="py-2.5 px-3 font-bold">WEEKLY</th>
-                      <th className="py-2.5 px-3 font-bold">DAILY</th>
-                      <th className="py-2.5 px-3 font-bold text-right">ACTION</th>
+                      <th className="py-2.5 px-3 font-bold text-center w-16 text-[#C5A028]">{t('plans.tableColSNo')}</th>
+                      <th className="py-2.5 px-3 font-bold">{t('plans.totalChitValue')}</th>
+                      <th className="py-2.5 px-3 font-bold">{t('plans.monthlyCol')}</th>
+                      <th className="py-2.5 px-3 font-bold">{t('plans.weeklyCol')}</th>
+                      <th className="py-2.5 px-3 font-bold">{t('plans.dailyCol')}</th>
+                      <th className="py-2.5 px-3 font-bold text-right">{t('plans.actionCol')}</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-slate-200">
@@ -394,7 +398,7 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
                             onClick={() => onOpenEnquiry(opt.chitValue)}
                             className="px-3 py-1.5 rounded-md bg-[#C5A028] hover:bg-[#e0b83e] text-[#001A33] font-bold text-xs uppercase transition-all cursor-pointer shadow-sm"
                           >
-                            Enquire
+                            {t('plans.enquireNow')}
                           </button>
                         </td>
                       </tr>
@@ -405,7 +409,7 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
 
               {/* Note on 5 plans */}
               <div className="mt-3 text-xs text-slate-500 italic">
-                * Note: 21 installments schedule. Contact our Mettupalayam office for custom arrangements or higher ticket denominations.
+                {t('plans.flexibleNote')}
               </div>
             </div>
 

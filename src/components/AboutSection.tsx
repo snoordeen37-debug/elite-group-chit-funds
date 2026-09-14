@@ -1,11 +1,10 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { 
-  Building, 
   ShieldCheck, 
   MapPin, 
   Phone, 
   CheckCircle2, 
-  FileCheck, 
   ArrowRight,
   Landmark
 } from 'lucide-react';
@@ -18,6 +17,17 @@ interface AboutSectionProps {
 }
 
 export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenEnquiry, onNavigate }) => {
+  const { t } = useTranslation();
+
+  const commitmentCards = [
+    { title: t('about.commitments.transparencyTitle'), desc: t('about.commitments.transparencyDesc') },
+    { title: t('about.commitments.clearInfoTitle'), desc: t('about.commitments.clearInfoDesc') },
+    { title: t('about.commitments.structuredPlansTitle'), desc: t('about.commitments.structuredPlansDesc') },
+    { title: t('about.commitments.professionalServiceTitle'), desc: t('about.commitments.professionalServiceDesc') },
+    { title: t('about.commitments.communicationTitle'), desc: t('about.commitments.communicationDesc') },
+    { title: t('about.commitments.disciplineTitle'), desc: t('about.commitments.disciplineDesc') },
+  ];
+
   return (
     <section className="py-12 md:py-16 bg-slate-50 relative border-t border-slate-200" id="about">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -36,7 +46,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenEnquiry, onNav
               <div className="space-y-3">
                 <div className="p-3.5 rounded-lg bg-slate-50 border border-slate-200">
                   <div className="text-xs uppercase tracking-wider text-slate-500 font-bold mb-1">
-                    Corporate Identification Number (CIN)
+                    {t('about.cinLabel')}
                   </div>
                   <div className="font-mono text-sm sm:text-base font-bold text-slate-900 tracking-wide select-all">
                     {COMPANY_DETAILS.cin}
@@ -45,10 +55,10 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenEnquiry, onNav
 
                 <div className="p-3.5 rounded-lg bg-slate-50 border border-slate-200">
                   <div className="text-xs uppercase tracking-wider text-slate-500 font-bold mb-1">
-                    Operating Entity
+                    {t('about.operatingEntityLabel')}
                   </div>
                   <div className="text-sm sm:text-base font-bold text-[#b48616]">
-                    Managed by {COMPANY_DETAILS.managedBy}
+                    {t('about.managedByText')}
                   </div>
                   <div className="text-xs sm:text-sm text-slate-600 mt-1 flex items-start gap-1.5">
                     <MapPin className="w-4 h-4 text-[#C5A028] shrink-0 mt-0.5" />
@@ -58,7 +68,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenEnquiry, onNav
 
                 <div className="p-3.5 rounded-lg bg-slate-50 border border-slate-200">
                   <div className="text-xs uppercase tracking-wider text-slate-500 font-bold mb-1">
-                    Direct Contact Lines
+                    {t('about.directLinesLabel')}
                   </div>
                   <div className="flex flex-col gap-1.5 text-xs sm:text-sm text-slate-700">
                     <a href={`tel:${COMPANY_DETAILS.phone1Clean}`} className="hover:text-[#001A33] flex items-center gap-1.5 font-medium transition-colors">
@@ -74,7 +84,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenEnquiry, onNav
               {/* Bottom Assurance */}
               <div className="mt-4 pt-3 border-t border-slate-100 flex items-center gap-2 text-xs sm:text-sm text-slate-600">
                 <ShieldCheck className="w-4 h-4 text-[#C5A028] shrink-0" />
-                <span>Dedicated to procedural compliance and subscriber clarity</span>
+                <span>{t('about.assuranceText')}</span>
               </div>
             </div>
           </div>
@@ -84,37 +94,30 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenEnquiry, onNav
             
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#001A33]/5 border border-[#001A33]/15 text-[#001A33] text-xs font-bold uppercase tracking-wider mb-3">
               <Landmark className="w-4 h-4 text-[#C5A028]" />
-              Company Background
+              {t('about.badge')}
             </div>
 
             <h2 className="font-['Cinzel'] text-2xl sm:text-3xl lg:text-4xl font-bold text-[#001A33] tracking-tight leading-[1.2] mb-4">
-              About <span className="text-[#b48616]">ELITE GROUP</span> – SS CHIT FUNDS
+              {t('about.title')}
             </h2>
 
             <div className="space-y-3.5 text-slate-600 text-sm sm:text-base md:text-lg leading-relaxed mb-6">
               <p className="font-semibold text-slate-900">
-                ELITE GROUP – SS CHIT FUNDS provides structured chit-fund plans designed to give members a disciplined way to contribute regularly while providing access to different chit values according to their financial requirements.
+                {t('about.paragraph1')}
               </p>
               
               <p className="text-slate-600">
-                Operating in Mettupalayam under the stewardship of <strong className="text-slate-800">ELITE TURF</strong>, we believe that transparency, structured planning, and prompt customer communication form the bedrock of sustainable financial relationships.
+                {t('about.paragraph2')}
               </p>
 
               <p className="text-slate-600">
-                Whether you are looking to cultivate systematic savings habits or require timely access to capital for personal, agricultural, trade, or business aspirations, our structured 21-installment plans offer clear schedules and predictable processes.
+                {t('about.paragraph3')}
               </p>
             </div>
 
             {/* Core Commitments List */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full mb-6">
-              {[
-                { title: 'Transparency', desc: 'Clear terms and exact catalog schedules upfront.' },
-                { title: 'Clear Plan Information', desc: 'No hidden complexities or ambiguous auction rules.' },
-                { title: 'Structured Plans', desc: 'Strict 21-installment schedules for all ticket sizes.' },
-                { title: 'Professional Service', desc: 'Systematic documentation and prompt account support.' },
-                { title: 'Customer Communication', desc: 'Direct accessibility via phone, WhatsApp and office.' },
-                { title: 'Financial Discipline', desc: 'Daily, weekly, and monthly payment convenience.' },
-              ].map((item, idx) => (
+              {commitmentCards.map((item, idx) => (
                 <div key={idx} className="flex items-start gap-2.5 p-3.5 rounded-xl bg-white border border-slate-200 shadow-xs">
                   <CheckCircle2 className="w-4 h-4 text-[#C5A028] shrink-0 mt-0.5" />
                   <div>
@@ -132,7 +135,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenEnquiry, onNav
                 className="w-full sm:w-auto px-6 py-3 rounded-lg bg-[#C5A028] hover:bg-[#b59020] text-[#001A33] font-bold text-sm uppercase tracking-wider transition-all shadow-sm hover:shadow-md flex items-center justify-center gap-2 cursor-pointer"
                 id="about-enquire-btn"
               >
-                <span>Enquire With Our Team</span>
+                <span>{t('about.enquireBtn')}</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
 
@@ -141,7 +144,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenEnquiry, onNav
                 className="w-full sm:w-auto px-6 py-3 rounded-lg bg-white hover:bg-slate-100 text-slate-800 border border-slate-200 hover:border-slate-300 font-bold text-sm uppercase tracking-wider transition-all flex items-center justify-center cursor-pointer shadow-xs"
                 id="about-view-catalog-btn"
               >
-                <span>View Full Catalog</span>
+                <span>{t('about.viewCatalogBtn')}</span>
               </button>
             </div>
 

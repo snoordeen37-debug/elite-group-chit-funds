@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { ArrowRight, PhoneCall, MessageCircle, Shield, TrendingUp, Sparkles, Award } from 'lucide-react';
 import { BrandLogo } from './BrandLogo';
 import { COMPANY_DETAILS } from '../data/chitPlansData';
@@ -9,7 +10,17 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = ({ onNavigate, onOpenEnquiry }) => {
+  const { t } = useTranslation();
   const whatsappUrl = `https://wa.me/${COMPANY_DETAILS.whatsappNumber}?text=${encodeURIComponent(COMPANY_DETAILS.whatsappDefaultMsg)}`;
+
+  const quickDenominations = [
+    { label: '₹50,000', monthly: `₹2,500${t('hero.perMonth')}` },
+    { label: '₹1,00,000', monthly: `₹5,000${t('hero.perMonth')}` },
+    { label: '₹2,00,000', monthly: `₹10,000${t('hero.perMonth')}` },
+    { label: '₹3,00,000', monthly: t('hero.twentyOneInstallments') },
+    { label: '₹4,00,000', monthly: `₹15,000${t('hero.perMonth')}` },
+    { label: '₹5,00,000', monthly: `₹25,000${t('hero.perMonth')}` },
+  ];
 
   return (
     <section className="relative w-full overflow-hidden bg-gradient-to-b from-slate-100/90 via-slate-50 to-white pt-6 pb-12 md:pt-12 md:pb-16 lg:pt-14 lg:pb-20 border-b border-slate-200" id="hero-section">
@@ -38,23 +49,23 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate, onOpenEnquiry }) => {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-slate-200 shadow-sm mb-4">
               <span className="flex h-2 w-2 rounded-full bg-[#C5A028] animate-pulse"></span>
               <span className="text-xs font-bold text-[#001A33] uppercase tracking-wider">
-                ELITE GROUP • SS CHIT FUNDS
+                {t('hero.badge')}
               </span>
               <span className="text-[11px] text-slate-300 hidden sm:inline">|</span>
-              <span className="text-[11px] text-slate-600 hidden sm:inline font-medium">Mettupalayam</span>
+              <span className="text-[11px] text-slate-600 hidden sm:inline font-medium">{t('hero.location')}</span>
             </div>
 
             {/* Official Primary Heading */}
             <h1 className="font-['Cinzel'] text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#001A33] tracking-tight leading-[1.15] mb-3">
-              Trusted Chit <br className="hidden sm:block" />
+              {t('hero.titleLine1')} <br className="hidden sm:block" />
               <span className="text-[#C5A028]">
-                Investment Plans
+                {t('hero.titleLine2')}
               </span>
             </h1>
 
             {/* Supporting Text */}
             <p className="text-slate-600 text-[15px] sm:text-base md:text-lg font-normal leading-relaxed max-w-2xl mb-6">
-              Plan your finances with structured chit plans designed to meet different financial needs.
+              {t('hero.subtitle')}
             </p>
 
             {/* CTAs Row */}
@@ -65,7 +76,7 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate, onOpenEnquiry }) => {
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-md font-bold text-sm uppercase tracking-wider text-[#001A33] bg-[#C5A028] hover:bg-[#e0b83e] shadow-md transform hover:-translate-y-0.5 active:translate-y-0 transition-all duration-150 border border-[#f0c842] cursor-pointer"
                 id="hero-view-plans-btn"
               >
-                <span>View Chit Plans</span>
+                <span>{t('hero.viewPlansBtn')}</span>
                 <ArrowRight className="w-4 h-4 text-[#001A33]" />
               </button>
 
@@ -76,7 +87,7 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate, onOpenEnquiry }) => {
                 id="hero-contact-us-btn"
               >
                 <PhoneCall className="w-4 h-4 text-[#C5A028]" />
-                <span>Contact Us</span>
+                <span>{t('hero.contactUsBtn')}</span>
               </button>
 
               {/* WhatsApp CTA */}
@@ -88,7 +99,7 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate, onOpenEnquiry }) => {
                 id="hero-whatsapp-btn"
               >
                 <MessageCircle className="w-4 h-4 text-emerald-600" />
-                <span>Chat on WhatsApp</span>
+                <span>{t('hero.chatWhatsAppBtn')}</span>
               </a>
             </div>
 
@@ -96,15 +107,15 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate, onOpenEnquiry }) => {
             <div className="flex flex-wrap items-center gap-y-2.5 gap-x-5 text-xs sm:text-sm text-slate-600 pt-3 border-t border-slate-200 w-full font-medium">
               <div className="flex items-center gap-1.5">
                 <Shield className="w-4 h-4 text-[#C5A028] shrink-0" />
-                <span>Structured 21-Month Plans</span>
+                <span>{t('hero.trustSignal1')}</span>
               </div>
               <div className="flex items-center gap-1.5">
                 <TrendingUp className="w-4 h-4 text-[#C5A028] shrink-0" />
-                <span>₹50,000 to ₹5,00,000</span>
+                <span>{t('hero.trustSignalRange')}</span>
               </div>
               <div className="flex items-center gap-1.5">
                 <Sparkles className="w-4 h-4 text-[#C5A028] shrink-0" />
-                <span>Managed by Elite Turf</span>
+                <span>{t('hero.trustSignal3')}</span>
               </div>
             </div>
 
@@ -118,26 +129,19 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate, onOpenEnquiry }) => {
               <div className="flex items-center justify-between pb-4 border-b border-slate-200">
                 <BrandLogo size="md" showManagedBy={false} />
                 <div className="px-2.5 py-1 rounded bg-slate-100 border border-slate-300 text-[#001A33] font-mono text-xs font-bold">
-                  21 MONTHS
+                  {t('hero.cardBadge')}
                 </div>
               </div>
 
               {/* Quick Interactive Denomination Ticker */}
               <div className="my-4">
                 <div className="text-xs uppercase tracking-wider font-semibold text-slate-500 mb-2.5 flex items-center justify-between">
-                  <span>Available Denominations</span>
-                  <span className="text-[#C5A028] text-xs font-bold">Click to explore</span>
+                  <span>{t('hero.cardTitle')}</span>
+                  <span className="text-[#C5A028] text-xs font-bold">{t('hero.cardSubtitle')}</span>
                 </div>
 
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-                  {[
-                    { label: '₹50,000', monthly: '₹2,500/m' },
-                    { label: '₹1,00,000', monthly: '₹5,000/m' },
-                    { label: '₹2,00,000', monthly: '₹10,000/m' },
-                    { label: '₹3,00,000', monthly: '21 Installments' },
-                    { label: '₹4,00,000', monthly: '₹15,000/m' },
-                    { label: '₹5,00,000', monthly: '₹25,000/m' },
-                  ].map((p, idx) => (
+                  {quickDenominations.map((p, idx) => (
                     <button
                       key={idx}
                       onClick={() => onOpenEnquiry(p.label)}
@@ -155,16 +159,16 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate, onOpenEnquiry }) => {
               {/* Verified Company Credentials Box */}
               <div className="p-3.5 rounded-lg bg-slate-50 border border-slate-200 flex flex-col gap-2">
                 <div className="flex items-center justify-between text-xs sm:text-sm">
-                  <span className="text-slate-500 font-medium">Corporate Identity:</span>
+                  <span className="text-slate-500 font-medium">{t('hero.corpIdentity')}</span>
                   <span className="font-mono text-slate-900 font-bold select-all">{COMPANY_DETAILS.cin}</span>
                 </div>
                 <div className="flex items-center justify-between text-xs sm:text-sm">
-                  <span className="text-slate-500 font-medium">Operational Entity:</span>
-                  <span className="text-[#001A33] font-bold">Managed by ELITE TURF</span>
+                  <span className="text-slate-500 font-medium">{t('hero.operationalEntity')}</span>
+                  <span className="text-[#001A33] font-bold">{t('hero.managedBy')}</span>
                 </div>
                 <div className="flex items-center justify-between text-xs sm:text-sm">
-                  <span className="text-slate-500 font-medium">Headquarters:</span>
-                  <span className="text-slate-800 font-semibold">Mettupalayam – 641104</span>
+                  <span className="text-slate-500 font-medium">{t('hero.headquarters')}</span>
+                  <span className="text-slate-800 font-semibold">{t('hero.headquartersLocation')}</span>
                 </div>
               </div>
 
@@ -176,7 +180,7 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate, onOpenEnquiry }) => {
                   id="hero-card-enquire-btn"
                 >
                   <Award className="w-4 h-4 text-[#001A33]" />
-                  <span>Enquire for Current Group Openings</span>
+                  <span>{t('hero.cardEnquireBtn')}</span>
                 </button>
               </div>
 

@@ -1,0 +1,374 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "chitPlans": "Chit Plans",
+    "howItWorks": "How It Works",
+    "benefits": "Benefits",
+    "calculator": "Calculator",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "enquireNow": "ENQUIRE NOW",
+    "admin": "Admin",
+    "menu": "Navigation Menu",
+    "language": "Language",
+    "directSupport": "Direct Call Support:",
+    "adminLogin": "Admin Login"
+  },
+  "hero": {
+    "badge": "ELITE GROUP • SS CHIT FUNDS",
+    "location": "Mettupalayam",
+    "titleLine1": "Trusted Chit",
+    "titleLine2": "Investment Plans",
+    "subtitle": "Plan your finances with structured chit plans designed to meet different financial needs.",
+    "viewPlansBtn": "View Chit Plans",
+    "contactUsBtn": "Contact Us",
+    "chatWhatsAppBtn": "Chat on WhatsApp",
+    "trustSignal1": "Structured 21-Month Plans",
+    "trustSignal2": "₹50,00,000 Max Plan",
+    "trustSignalRange": "₹50,000 to ₹5,00,000",
+    "trustSignal3": "Managed by Elite Turf",
+    "cardBadge": "21 MONTHS",
+    "cardTitle": "Available Denominations",
+    "cardSubtitle": "Click to explore",
+    "perMonth": "/m",
+    "twentyOneInstallments": "21 Installments",
+    "corpIdentity": "Corporate Identity:",
+    "operationalEntity": "Operational Entity:",
+    "managedBy": "Managed by ELITE TURF",
+    "headquarters": "Headquarters:",
+    "headquartersLocation": "Mettupalayam – 641104",
+    "cardEnquireBtn": "Enquire for Current Group Openings"
+  },
+  "trustStrip": {
+    "company": "Company",
+    "business": "Business",
+    "cinReference": "CIN Reference",
+    "operatingEntity": "Operating Entity",
+    "verified": "Verified"
+  },
+  "plans": {
+    "badge": "Official Structure Catalog",
+    "title": "AVAILABLE CHIT PLANS",
+    "subtitle": "Explore our complete range of structured chit fund options from ₹50,000 to ₹5,00,000. All plans feature transparent 21-installment schedules and flexible contribution modes.",
+    "tabCards": "Interactive Plan Cards",
+    "tabCatalog": "Full 21-Row Official Table",
+    "tabContributions": "Contribution Options (Daily / Weekly / Monthly)",
+    "filterLabel": "Filter Value:",
+    "filterAll": "All Plans",
+    "totalChitValue": "Total Chit Value",
+    "monthly": "Monthly",
+    "weekly": "Weekly",
+    "daily": "Daily",
+    "monthlyContribution": "Monthly Contribution:",
+    "weeklyOption": "Weekly Option:",
+    "dailyOption": "Daily Option:",
+    "installments": "Installments",
+    "takeHomeProgression": "Take-Home Progression",
+    "from": "from",
+    "to": "to",
+    "featuresTitle": "Key Features & Highlights",
+    "enquireNow": "Enquire Now",
+    "enquireAboutPlan": "ENQUIRE ABOUT THIS PLAN",
+    "searchPlaceholder": "Search value or row...",
+    "showingRows": "Showing all 21 official auction progression rows",
+    "tableColSNo": "S.NO",
+    "installmentCol": "Installment",
+    "company": "Company",
+    "contributionsTitle": "CHIT CONTRIBUTION OPTIONS",
+    "contributionsSubtitle": "Choose the contribution frequency that matches your cash flow — Monthly, Weekly, or Daily across 21 installments.",
+    "dailyCol": "Daily (₹)",
+    "weeklyCol": "Weekly (₹)",
+    "monthlyCol": "Monthly (₹)",
+    "actionCol": "Action",
+    "officialScheduleTitle": "Official 21-Tier Schedule",
+    "officialScheduleSubtitle": "Exact catalog records for S.NO 1 through 21 across all 6 chit values.",
+    "flexibleSchedules": "Flexible Payment Schedules",
+    "helperNotePrefix": "Looking for the full row-by-row installment schedule? Switch to the ",
+    "helperNoteSuffix": " to examine exact take-home figures for every tier.",
+    "flexibleNote": "* Note: 21 installments schedule. Contact our Mettupalayam office for custom arrangements or higher ticket denominations.",
+    "disclaimerImportant": "Important Note:",
+    "disclaimerText": "Exact data from official catalog. Row 1 represents the initial company contribution/start cycle as per chit fund procedures. S.NO 2 through 21 illustrate the progression tiers. Subject to the subscriber agreement and auction terms."
+  },
+  "calculator": {
+    "badge": "Official Plan Explorer",
+    "title": "CHIT PLAN CALCULATOR",
+    "subtitle": "Select a chit value to review the official installment schedule, contribution modes, and catalog payout progression.",
+    "step1Label": "1. Choose Chit Denomination:",
+    "contributionCycle": "Contribution Cycle",
+    "installmentsCount": "21 Installments",
+    "monthly": "Monthly:",
+    "weekly": "Weekly:",
+    "daily": "Daily:",
+    "payoutProgression": "Catalog Take-Home Progression",
+    "estimatedRange": "Estimated Net Range",
+    "startingPayout": "Starting Payout (Month 2):",
+    "midGroupPayout": "Mid-Group Payout (Month 11):",
+    "finalInstallment": "Final Installment Gross:",
+    "benefitsTitle": "Structured Benefits",
+    "predictableReturns": "Predictable 21-installment progression",
+    "transparentAuctions": "Transparent auction procedures",
+    "localSupport": "Dedicated support in Mettupalayam",
+    "exploreCatalogBtn": "Explore Full Catalog & Apply"
+  },
+  "howItWorks": {
+    "badge": "Clear 5-Step Path",
+    "title": "HOW IT WORKS",
+    "subtitle": "A structured, disciplined process designed to help you save systematically and access funds when required.",
+    "stepLabel": "Step",
+    "proceduralClarity": "Procedural Clarity",
+    "bottomQuestion": "Have questions about subscription or auction cycles?",
+    "bottomDesc": "Our team at ELITE TURF Mettupalayam is available to guide you through every stage.",
+    "startRegistrationBtn": "Start Registration"
+  },
+  "whyChoose": {
+    "badge": "Core Principles & Advantages",
+    "title": "WHY CHOOSE ELITE GROUP?",
+    "subtitle": "Built upon principles of systematic financial discipline, open communication, and long-term customer relationships.",
+    "serviceStandard": "Standard of Service",
+    "assistanceTitle": "PERSONALIZED ASSISTANCE",
+    "assistanceDesc": "Connect directly with our dedicated coordinators in Mettupalayam for plan guidance and enrollment support."
+  },
+  "about": {
+    "badge": "Company Background",
+    "title": "About ELITE GROUP – SS CHIT FUNDS",
+    "paragraph1": "ELITE GROUP – SS CHIT FUNDS provides structured chit-fund plans designed to give members a disciplined way to contribute regularly while providing access to different chit values according to their financial requirements.",
+    "paragraph2": "Operating in Mettupalayam under the stewardship of ELITE TURF, we believe that transparency, structured planning, and prompt customer communication form the bedrock of sustainable financial relationships.",
+    "paragraph3": "Whether you are looking to cultivate systematic savings habits or require timely access to capital for personal, agricultural, trade, or business aspirations, our structured 21-installment plans offer clear schedules and predictable processes.",
+    "cinLabel": "Corporate Identification Number (CIN)",
+    "operatingEntityLabel": "Operating Entity",
+    "managedByText": "Managed by ELITE TURF",
+    "directLinesLabel": "Direct Contact Lines",
+    "assuranceText": "Dedicated to procedural compliance and subscriber clarity",
+    "commitments": {
+      "transparencyTitle": "Transparency",
+      "transparencyDesc": "Clear terms and exact catalog schedules upfront.",
+      "clearInfoTitle": "Clear Plan Information",
+      "clearInfoDesc": "No hidden complexities or ambiguous auction rules.",
+      "structuredPlansTitle": "Structured Plans",
+      "structuredPlansDesc": "Strict 21-installment schedules for all ticket sizes.",
+      "professionalServiceTitle": "Professional Service",
+      "professionalServiceDesc": "Systematic documentation and prompt account support.",
+      "communicationTitle": "Customer Communication",
+      "communicationDesc": "Direct accessibility via phone, WhatsApp and office.",
+      "disciplineTitle": "Financial Discipline",
+      "disciplineDesc": "Daily, weekly, and monthly payment convenience."
+    },
+    "enquireBtn": "Enquire With Our Team",
+    "viewCatalogBtn": "View Full Catalog"
+  },
+  "faqs": {
+    "badge": "Frequently Asked Questions",
+    "title": "FREQUENTLY ASKED QUESTIONS",
+    "subtitle": "Essential information regarding chit fund mechanics, documentation, contribution schedules, and auction procedures.",
+    "bottomQuestion": "Still have more specific questions?",
+    "bottomDesc": "Contact our team directly on WhatsApp or call us during business hours.",
+    "askWhatsAppBtn": "Ask on WhatsApp",
+    "sendEnquiryBtn": "Send Enquiry"
+  },
+  "contact": {
+    "badge": "Official Assistance & Inquiries",
+    "title": "Contact ELITE GROUP",
+    "subtitle": "Submit your chit plan enquiry or visit our official office in Mettupalayam for personalized plan consultation.",
+    "formTitle": "Send Us an Enquiry",
+    "formSubtitle": "Fill in your details below and our team will get in touch with you promptly.",
+    "fullName": "Full Name",
+    "fullNamePlaceholder": "Enter your full name",
+    "mobileNumber": "Mobile Number",
+    "mobilePlaceholder": "Enter 10-digit mobile number",
+    "email": "Email Address (Optional)",
+    "emailPlaceholder": "Enter your email address",
+    "interestedPlan": "Interested Chit Plan",
+    "preferredContact": "Preferred Contact Method",
+    "contactWhatsApp": "WhatsApp",
+    "contactPhone": "Phone Call",
+    "message": "Your Message (Optional)",
+    "messagePlaceholder": "Tell us about your requirements or specific queries...",
+    "submitBtn": "Submit Enquiry",
+    "submitting": "Submitting Enquiry...",
+    "successTitle": "Enquiry Submitted Successfully!",
+    "successMessage": "Thank you for reaching out to ELITE GROUP – SS CHIT FUNDS. Our representative will contact you shortly.",
+    "sendAnotherBtn": "Submit Another Enquiry",
+    "officeTitle": "Official Office Premises",
+    "officeDesc": "Visit our administrative office for face-to-face assistance and documentation.",
+    "businessHoursTitle": "Business Hours",
+    "businessHours": "Monday – Saturday: 9:00 AM – 7:00 PM",
+    "businessHoursSunday": "Sunday: Closed",
+    "directAssistanceTitle": "Direct Phone Consultation",
+    "directPhoneSupport": "Direct Phone Support",
+    "availableHours": "Available Mon – Sat, 9:00 AM – 7:30 PM",
+    "primaryLine": "Primary Line",
+    "secondaryLine": "Secondary Line",
+    "callBtn": "Call",
+    "officeHeadquarters": "Office Headquarters",
+    "inPersonConsultation": "Direct In-Person Consultation",
+    "viewOnMaps": "View on Google Maps",
+    "fastResponse": "Fast Response",
+    "chatWhatsAppInstantly": "Chat on WhatsApp Instantly",
+    "openChat": "Open Chat",
+    "sendPlanEnquiry": "Send Your Plan Enquiry",
+    "receiveBothLines": "Our official team will automatically receive your request on both business lines.",
+    "enquiryRegistered": "Enquiry Registered",
+    "thankYouRegister": "Thank you for your enquiry! Our team will contact you shortly.",
+    "sendInstantNotification": "Send Instant WhatsApp Notification",
+    "oneClickSend": "1-Click Send",
+    "clickBelowNotify": "Click below to deliver this enquiry directly to our business lines on WhatsApp:",
+    "sendBothWhatsApp": "Send to BOTH WhatsApp Numbers"
+  },
+  "footer": {
+    "brandDescription": "offers structured 21-installment chit fund plans designed to encourage disciplined savings and provide timely access to credit.",
+    "corpIdentity": "Corporate Identity",
+    "quickNav": "Quick Navigation",
+    "officeSupport": "Office & Support",
+    "enquireNow": "ENQUIRE NOW",
+    "statutoryDisclaimerTitle": "Statutory Disclaimer:",
+    "statutoryDisclaimerText": "Chit fund subscriptions and participation are subject to applicable terms, subscriber agreements, and regulations. ELITE GROUP – SS CHIT FUNDS does not guarantee fixed returns or speculative profit. All catalog figures are illustrative structured examples across the 21-installment duration.",
+    "copyright": "All rights reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "termsConditions": "Terms & Conditions",
+    "disclaimer": "Disclaimer",
+    "adminPortal": "Admin Portal",
+    "top": "Top"
+  },
+  "modals": {
+    "enquiry": {
+      "title": "Quick Chit Enquiry",
+      "subtitle": "Submit your interest and our team will get in touch with you promptly.",
+      "planPrompt": "Selected Plan:",
+      "customAmountLabel": "Specify Custom Amount",
+      "customAmountPlaceholder": "e.g. ₹75,000",
+      "successTitle": "Enquiry Received!",
+      "successText": "Thank you for submitting your enquiry. Our team will contact you shortly.",
+      "notifyOfficeWhatsApp": "Click to notify office directly on WhatsApp:",
+      "close": "Close"
+    },
+    "legal": {
+      "termsTitle": "Terms & Conditions",
+      "privacyTitle": "Privacy Policy",
+      "disclaimerTitle": "Legal & Regulatory Disclaimer",
+      "statutoryNotice": "Statutory Notice: Chit fund subscriptions and participation are subject to applicable terms, subscriber agreements, and regulations.",
+      "close": "Close"
+    },
+    "adminLogin": {
+      "title": "Admin Portal Access",
+      "subtitle": "Authorized personnel only. Please enter security password.",
+      "passwordLabel": "Admin Access Password",
+      "passwordPlaceholder": "Enter administrator key",
+      "loginBtn": "Authorize & Enter Portal",
+      "loggingIn": "Verifying Access...",
+      "securityNotice": "Protected administrative section. Unauthorized attempts are logged."
+    },
+    "floatingWhatsApp": {
+      "chatWithUs": "Chat With Us",
+      "tooltipText": "Quick answers about chit plans on WhatsApp",
+      "btnText": "WhatsApp Chat"
+    }
+  },
+  "data": {
+    "steps": {
+      "1": {
+        "title": "Choose Your Chit Plan",
+        "description": "Select a chit value according to your requirement.",
+        "detail": "Review available denominations ranging from ₹50,000 to ₹5,00,000 and select the plan that fits your financial goals and contribution capacity."
+      },
+      "2": {
+        "title": "Register",
+        "description": "Submit your details and complete the required process.",
+        "detail": "Provide your basic contact information, identification details, and complete standard enrollment paperwork with our team."
+      },
+      "3": {
+        "title": "Contribute Regularly",
+        "description": "Make contributions according to the applicable plan schedule.",
+        "detail": "Maintain disciplined savings through daily, weekly, or monthly contributions across the structured 21-installment period."
+      },
+      "4": {
+        "title": "Participate in the Chit Process",
+        "description": "Follow the applicable auction/draw process and terms.",
+        "detail": "Engage transparently in scheduled monthly auctions or draws as outlined in the chit agreement rules."
+      },
+      "5": {
+        "title": "Receive the Applicable Chit Amount",
+        "description": "Subject to the applicable rules, terms and conditions.",
+        "detail": "Receive the disbursed chit payout in accordance with procedural guidelines, verification, and company agreement terms."
+      }
+    },
+    "benefits": {
+      "1": {
+        "title": "TRUSTED COMPANY",
+        "description": "Professional customer-focused service backed by disciplined financial management and clear communication."
+      },
+      "2": {
+        "title": "TRANSPARENT PROCESS",
+        "description": "Clear communication about applicable plan terms, auction rules, and contribution schedules with zero hidden ambiguities."
+      },
+      "3": {
+        "title": "SECURE PROCESS",
+        "description": "Structured documentation, dedicated account handling, and systematic record keeping for every subscriber."
+      },
+      "4": {
+        "title": "FLEXIBLE OPTIONS",
+        "description": "Different chit values from ₹50,000 to ₹5,00,000 designed to accommodate varied personal and business requirements."
+      },
+      "5": {
+        "title": "CUSTOMER SUPPORT",
+        "description": "Easy and immediate access to our team through direct phone lines (+91 7338736352 / +91 9345836032) and WhatsApp."
+      },
+      "6": {
+        "title": "CLEAR INFORMATION",
+        "description": "Complete plan details, installment tables, and take-home progression schedules presented openly for informed decisions."
+      },
+      "7": {
+        "title": "CUSTOMER RELATIONSHIP",
+        "description": "A genuine focus on long-term customer service, fostering lasting relationships built on mutual respect and reliability."
+      }
+    },
+    "faqs": {
+      "1": {
+        "q": "What is a chit fund?",
+        "a": "A chit fund is a traditional Indian financial mechanism that combines regular savings with access to credit. A group of individuals agree to contribute a fixed sum regularly over a set duration into a central pool, which is then made available to members through structured auctions or draws as per the applicable terms."
+      },
+      "2": {
+        "q": "How do the chit plans work?",
+        "a": "Members enroll in a designated chit group of a specific value (e.g., ₹50,000 up to ₹5,00,000). Every member contributes their designated installment (monthly, weekly, or daily) for the fixed duration of 21 installments. Each cycle, an auction or draw is conducted to determine the chit recipient according to company terms."
+      },
+      "3": {
+        "q": "What chit values are available?",
+        "a": "ELITE GROUP – SS CHIT FUNDS provides 6 structured denominations: ₹50,000, ₹1,00,000, ₹2,00,000, ₹3,00,000, ₹4,00,000, and ₹5,00,000 with multiple contribution options tailored to individual financial plans."
+      },
+      "4": {
+        "q": "How are monthly contributions determined?",
+        "a": "Monthly contributions are based on the total chit value divided across the 21-installment schedule, along with any dividend discounts determined by the monthly auction process in accordance with the group agreement."
+      },
+      "5": {
+        "q": "What is the auction process?",
+        "a": "In each cycle, members who have not yet taken the chit amount may participate in an auction. The member bidding the acceptable discount or chosen via the established process receives the prize amount after statutory deductions and documentation verification."
+      },
+      "6": {
+        "q": "How can I join a chit plan?",
+        "a": "You can express your interest through our online enquiry form, contact us directly via phone (+91 7338736352 / +91 9345836032), reach out on WhatsApp, or visit our office at ELITE TURF, Kuttaiyur, Mettupalayam. Our team will guide you through registration."
+      },
+      "7": {
+        "q": "What documents are required?",
+        "a": "Standard enrollment requires valid government photo identity proof (such as Aadhaar Card, PAN Card, or Voter ID), address proof, passport-sized photographs, and contact verification details."
+      },
+      "8": {
+        "q": "How can I contact ELITE GROUP?",
+        "a": "You can contact us by calling +91 7338736352 or +91 9345836032, sending a WhatsApp message directly via the website widget, or writing through the online enquiry form. We are available during business hours to assist you."
+      },
+      "9": {
+        "q": "Where is the office located?",
+        "a": "Our official premises are located at ELITE TURF, Ajandha Garden, Kuttaiyur, Mettupalayam – 641104, Tamil Nadu."
+      },
+      "10": {
+        "q": "What are the applicable terms and conditions?",
+        "a": "All chit subscriptions, contributions, auctions, and prize disbursements are strictly governed by the formal subscriber agreement and the terms set out by ELITE GROUP – SS CHIT FUNDS. Participation is subject to verification and regulatory requirements."
+      }
+    }
+  },
+  "utility": {
+    "cin": "CIN:",
+    "whatsApp": "WhatsApp",
+    "english": "EN",
+    "tamil": "தமிழ்"
+  }
+}
