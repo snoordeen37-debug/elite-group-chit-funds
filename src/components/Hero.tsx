@@ -23,7 +23,7 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate, onOpenEnquiry }) => {
   ];
 
   return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-b from-slate-100/90 via-slate-50 to-white pt-6 pb-12 md:pt-12 md:pb-16 lg:pt-14 lg:pb-20 border-b border-slate-200" id="hero-section">
+    <section className="relative w-full overflow-hidden bg-gradient-to-b from-[#F7F3E9] via-[#FDFBF7] to-[#FBF8F1] pt-6 pb-12 md:pt-12 md:pb-16 lg:pt-14 lg:pb-20 border-b border-amber-200/70" id="hero-section">
       {/* Background Aesthetic Grid Pattern */}
       <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
         <svg
@@ -123,10 +123,10 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate, onOpenEnquiry }) => {
 
           {/* Right Column: Hero Visual Card with Brand Emblem & Quick Plan Catalog Preview */}
           <div className="lg:col-span-5 w-full">
-            <div className="relative rounded-xl bg-white p-5 sm:p-6 border border-slate-200 shadow-xl shadow-slate-200/50">
+            <div className="relative rounded-xl bg-white p-5 sm:p-6 border border-amber-200/80 shadow-xl shadow-amber-950/5">
               
               {/* Card Header with Brand Crest */}
-              <div className="flex items-center justify-between pb-4 border-b border-slate-200">
+              <div className="flex items-center justify-between pb-4 border-b border-amber-100">
                 <BrandLogo size="md" showManagedBy={false} />
                 <div className="px-2.5 py-1 rounded bg-slate-100 border border-slate-300 text-[#001A33] font-mono text-xs font-bold">
                   {t('hero.cardBadge')}

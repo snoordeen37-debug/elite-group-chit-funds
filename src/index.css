@@ -4,6 +4,12 @@
    ELITE GROUP – SS CHIT FUNDS • Global Responsive Typography & Polish
    ============================================================================== */
 
+:root {
+  --bg-champagne: #FDFBF7;
+  --bg-champagne-alt: #FBF8F1;
+  --border-champagne: #E8DFC8;
+}
+
 @layer base {
   html {
     font-size: 16px;
@@ -13,7 +19,7 @@
 
   body {
     font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-    background-color: #f8fafc;
+    background-color: #FDFBF7;
     color: #0f172a;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;

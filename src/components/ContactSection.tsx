@@ -101,7 +101,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
   )}`;
 
   return (
-    <section className="py-12 md:py-16 bg-slate-50 relative border-t border-slate-200" id="contact">
+    <section className="py-12 md:py-16 bg-[#FDFBF7] relative border-t border-amber-200/80" id="contact">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -124,7 +124,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
           <div className="lg:col-span-5 space-y-4">
             
             {/* Phone Contact Card */}
-            <div className="p-5 sm:p-6 rounded-xl bg-white border border-slate-200 hover:border-[#C5A028] transition-all shadow-sm">
+            <div className="p-5 sm:p-6 rounded-xl bg-white border border-amber-200/80 hover:border-[#C5A028] transition-all shadow-xs">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 rounded-lg bg-[#001A33]/5 border border-[#001A33]/10 flex items-center justify-center text-[#001A33]">
                   <Phone className="w-4 h-4" />
@@ -171,7 +171,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
             </div>
 
             {/* Office Address & Google Maps Integration Card */}
-            <div className="p-5 sm:p-6 rounded-xl bg-white border border-slate-200 hover:border-[#C5A028] transition-all shadow-sm space-y-4">
+            <div className="p-5 sm:p-6 rounded-xl bg-white border border-amber-200/80 hover:border-[#C5A028] transition-all shadow-xs space-y-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-lg bg-[#001A33]/5 border border-[#001A33]/10 flex items-center justify-center text-[#001A33]">
@@ -268,7 +268,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
 
           {/* Right Column: Interactive Enquiry Form */}
           <div className="lg:col-span-7">
-            <div className="rounded-xl bg-white border border-slate-200 p-5 sm:p-7 shadow-lg relative">
+            <div className="rounded-xl bg-white border border-amber-200/80 p-5 sm:p-7 shadow-lg relative">
               
               <div className="mb-5 pb-3.5 border-b border-slate-100">
                 <h3 className="font-['Cinzel'] text-lg sm:text-xl font-bold text-slate-900">

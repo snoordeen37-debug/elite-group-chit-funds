@@ -18,7 +18,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onOpenEnquiry }) => {
   const whatsappUrl = `https://wa.me/${COMPANY_DETAILS.whatsappNumber}?text=${encodeURIComponent(COMPANY_DETAILS.whatsappDefaultMsg)}`;
 
   return (
-    <section className="py-12 md:py-16 bg-white relative border-t border-slate-200" id="faq">
+    <section className="py-12 md:py-16 bg-[#FBF8F1] relative border-t border-amber-200/80" id="faq">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -44,8 +44,8 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onOpenEnquiry }) => {
                 key={index}
                 className={`rounded-xl transition-all border ${
                   isOpen
-                    ? 'bg-slate-50/80 border-[#C5A028] shadow-sm'
-                    : 'bg-white border-slate-200 hover:border-slate-300 shadow-xs'
+                    ? 'bg-amber-50/70 border-[#C5A028] shadow-sm'
+                    : 'bg-white border-amber-200/80 hover:border-[#C5A028] shadow-xs'
                 }`}
                 id={`faq-item-${index + 1}`}
               >
@@ -68,7 +68,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onOpenEnquiry }) => {
                 </button>
 
                 {isOpen && (
-                  <div className="px-4 sm:px-5 pb-4 pt-1 text-slate-600 text-sm sm:text-base leading-relaxed border-t border-slate-200/70 animate-in fade-in duration-150">
+                  <div className="px-4 sm:px-5 pb-4 pt-1 text-slate-600 text-sm sm:text-base leading-relaxed border-t border-amber-100 animate-in fade-in duration-150">
                     <p>{t('data.faqs.' + (index + 1) + '.a')}</p>
                   </div>
                 )}
@@ -78,7 +78,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onOpenEnquiry }) => {
         </div>
 
         {/* Bottom Help Box */}
-        <div className="mt-8 p-5 sm:p-6 rounded-xl bg-white border border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm">
+        <div className="mt-8 p-5 sm:p-6 rounded-xl bg-white border border-amber-200/80 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xs">
           <div>
             <div className="text-sm sm:text-base font-bold text-slate-900">{t('faqs.bottomQuestion')}</div>
             <div className="text-xs sm:text-sm text-slate-500 mt-0.5">

@@ -38,7 +38,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({ onOpenEnqu
   const maxTierVal = OFFICIAL_CHIT_CATALOG[20][colKey]; // Row 21
 
   return (
-    <section className="py-12 md:py-16 bg-white relative border-t border-slate-200" id="calculator">
+    <section className="py-12 md:py-16 bg-[#FBF8F1] relative border-t border-amber-200/80" id="calculator">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
@@ -56,7 +56,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({ onOpenEnqu
         </div>
 
         {/* Interactive Calculator Box */}
-        <div className="max-w-4xl mx-auto rounded-xl bg-white border border-slate-200 p-5 sm:p-7 shadow-lg">
+        <div className="max-w-4xl mx-auto rounded-xl bg-white border border-amber-200/80 p-5 sm:p-7 shadow-lg">
           
           {/* Step 1: Select Denomination */}
           <div className="mb-6">

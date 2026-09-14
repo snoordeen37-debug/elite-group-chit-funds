@@ -52,12 +52,12 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
   };
 
   return (
-    <section className="py-12 md:py-16 bg-slate-50 relative border-t border-slate-200" id="chit-plans">
+    <section className="py-12 md:py-16 bg-[#FDFBF7] relative border-t border-amber-200/80" id="chit-plans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-8">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-slate-200 shadow-sm text-[#001A33] text-xs font-bold uppercase tracking-wider mb-2.5">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-amber-200/80 shadow-xs text-[#001A33] text-xs font-bold uppercase tracking-wider mb-2.5">
             <Sparkles className="w-3.5 h-3.5 text-[#C5A028]" />
             {t('plans.badge')}
           </div>
@@ -139,7 +139,7 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
               {filteredCards.map((plan) => (
                 <div
                   key={plan.id}
-                  className="rounded-xl bg-white border border-slate-200 hover:border-[#C5A028]/60 p-5 flex flex-col justify-between transition-all duration-200 hover:shadow-lg shadow-sm group"
+                  className="rounded-xl bg-white border border-amber-200/80 hover:border-[#C5A028] p-5 flex flex-col justify-between transition-all duration-200 hover:shadow-lg shadow-xs group"
                   id={`plan-card-${plan.id}`}
                 >
                   <div>

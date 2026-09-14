@@ -29,22 +29,22 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenEnquiry, onNav
   ];
 
   return (
-    <section className="py-12 md:py-16 bg-slate-50 relative border-t border-slate-200" id="about">
+    <section className="py-12 md:py-16 bg-[#FDFBF7] relative border-t border-amber-200/80" id="about">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           
           {/* Left Column: Visual & Verification Card */}
           <div className="lg:col-span-5 order-2 lg:order-1">
-            <div className="rounded-xl bg-white border border-slate-200 p-5 sm:p-6 shadow-md relative">
+            <div className="rounded-xl bg-white border border-amber-200/80 p-5 sm:p-6 shadow-md relative">
               
-              <div className="mb-4 pb-4 border-b border-slate-100 flex items-center justify-between">
+              <div className="mb-4 pb-4 border-b border-amber-100 flex items-center justify-between">
                 <BrandLogo size="md" showManagedBy={true} managedByClassName="text-slate-600" />
               </div>
 
               {/* Verified Credentials Block */}
               <div className="space-y-3">
-                <div className="p-3.5 rounded-lg bg-slate-50 border border-slate-200">
+                <div className="p-3.5 rounded-lg bg-[#FBF8F1] border border-amber-200/70">
                   <div className="text-xs uppercase tracking-wider text-slate-500 font-bold mb-1">
                     {t('about.cinLabel')}
                   </div>
@@ -53,7 +53,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenEnquiry, onNav
                   </div>
                 </div>
 
-                <div className="p-3.5 rounded-lg bg-slate-50 border border-slate-200">
+                <div className="p-3.5 rounded-lg bg-[#FBF8F1] border border-amber-200/70">
                   <div className="text-xs uppercase tracking-wider text-slate-500 font-bold mb-1">
                     {t('about.operatingEntityLabel')}
                   </div>
@@ -66,7 +66,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenEnquiry, onNav
                   </div>
                 </div>
 
-                <div className="p-3.5 rounded-lg bg-slate-50 border border-slate-200">
+                <div className="p-3.5 rounded-lg bg-[#FBF8F1] border border-amber-200/70">
                   <div className="text-xs uppercase tracking-wider text-slate-500 font-bold mb-1">
                     {t('about.directLinesLabel')}
                   </div>
@@ -82,7 +82,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenEnquiry, onNav
               </div>
 
               {/* Bottom Assurance */}
-              <div className="mt-4 pt-3 border-t border-slate-100 flex items-center gap-2 text-xs sm:text-sm text-slate-600">
+              <div className="mt-4 pt-3 border-t border-amber-100 flex items-center gap-2 text-xs sm:text-sm text-slate-600">
                 <ShieldCheck className="w-4 h-4 text-[#C5A028] shrink-0" />
                 <span>{t('about.assuranceText')}</span>
               </div>
@@ -118,7 +118,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenEnquiry, onNav
             {/* Core Commitments List */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full mb-6">
               {commitmentCards.map((item, idx) => (
-                <div key={idx} className="flex items-start gap-2.5 p-3.5 rounded-xl bg-white border border-slate-200 shadow-xs">
+                <div key={idx} className="flex items-start gap-2.5 p-3.5 rounded-xl bg-white border border-amber-200/80 shadow-xs">
                   <CheckCircle2 className="w-4 h-4 text-[#C5A028] shrink-0 mt-0.5" />
                   <div>
                     <div className="text-sm font-bold text-slate-900">{item.title}</div>
@@ -141,7 +141,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenEnquiry, onNav
 
               <button
                 onClick={() => onNavigate('chit-plans')}
-                className="w-full sm:w-auto px-6 py-3 rounded-lg bg-white hover:bg-slate-100 text-slate-800 border border-slate-200 hover:border-slate-300 font-bold text-sm uppercase tracking-wider transition-all flex items-center justify-center cursor-pointer shadow-xs"
+                className="w-full sm:w-auto px-6 py-3 rounded-lg bg-white hover:bg-amber-50/50 text-slate-800 border border-amber-200/80 hover:border-[#C5A028] font-bold text-sm uppercase tracking-wider transition-all flex items-center justify-center cursor-pointer shadow-xs"
                 id="about-view-catalog-btn"
               >
                 <span>{t('about.viewCatalogBtn')}</span>

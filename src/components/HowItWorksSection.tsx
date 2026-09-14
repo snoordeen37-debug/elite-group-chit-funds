@@ -11,7 +11,7 @@ export const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({ onOpenEnqu
   const { t } = useTranslation();
 
   return (
-    <section className="py-12 md:py-16 bg-slate-50 relative border-t border-slate-200" id="how-it-works">
+    <section className="py-12 md:py-16 bg-[#FDFBF7] relative border-t border-amber-200/80" id="how-it-works">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -32,7 +32,7 @@ export const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({ onOpenEnqu
           {HOW_IT_WORKS_STEPS.map((step, idx) => (
             <div
               key={step.stepNumber}
-              className="rounded-xl bg-white border border-slate-200 hover:border-[#C5A028] p-5 flex flex-col justify-between transition-all hover:shadow-md group relative shadow-sm"
+              className="rounded-xl bg-white border border-amber-200/80 hover:border-[#C5A028] p-5 flex flex-col justify-between transition-all hover:shadow-md group relative shadow-xs"
               id={`step-card-${step.stepNumber}`}
             >
               <div>
@@ -41,7 +41,7 @@ export const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({ onOpenEnqu
                   <div className="w-8 h-8 rounded-lg bg-[#C5A028] text-[#001A33] font-['Cinzel'] font-black text-sm flex items-center justify-center shadow-xs">
                     {step.stepNumber}
                   </div>
-                  <span className="text-xs font-bold text-slate-700 uppercase tracking-widest bg-slate-100 px-2 py-0.5 rounded border border-slate-200">
+                  <span className="text-xs font-bold text-slate-700 uppercase tracking-widest bg-amber-50/80 px-2 py-0.5 rounded border border-amber-200/70">
                     {t('howItWorks.stepLabel')} {idx + 1}
                   </span>
                 </div>
@@ -59,7 +59,7 @@ export const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({ onOpenEnqu
                 </p>
               </div>
 
-              <div className="mt-4 pt-3 border-t border-slate-100 flex items-center gap-1.5 text-xs text-slate-500 font-medium">
+              <div className="mt-4 pt-3 border-t border-amber-100 flex items-center gap-1.5 text-xs text-slate-500 font-medium">
                 <CheckCircle2 className="w-4 h-4 text-[#C5A028]" />
                 <span>{t('howItWorks.proceduralClarity')}</span>
               </div>
@@ -68,7 +68,7 @@ export const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({ onOpenEnqu
         </div>
 
         {/* Bottom Helper Strip */}
-        <div className="mt-8 p-5 sm:p-6 rounded-xl bg-white border border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm">
+        <div className="mt-8 p-5 sm:p-6 rounded-xl bg-white border border-amber-200/80 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xs">
           <div>
             <div className="text-base sm:text-lg font-bold text-slate-900">{t('howItWorks.bottomQuestion')}</div>
             <div className="text-xs sm:text-sm text-slate-600 mt-1">

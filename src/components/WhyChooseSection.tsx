@@ -29,7 +29,7 @@ export const WhyChooseSection: React.FC = () => {
   };
 
   return (
-    <section className="py-12 md:py-16 bg-white relative border-t border-slate-200" id="benefits">
+    <section className="py-12 md:py-16 bg-[#FBF8F1] relative border-t border-amber-200/80" id="benefits">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -55,7 +55,7 @@ export const WhyChooseSection: React.FC = () => {
                 className={`rounded-xl p-5 flex flex-col justify-between transition-all group border ${
                   isFeatured 
                     ? 'bg-white border-2 border-[#C5A028] shadow-md' 
-                    : 'bg-white border-slate-200 hover:border-[#C5A028] hover:shadow-md shadow-sm'
+                    : 'bg-white border-amber-200/80 hover:border-[#C5A028] hover:shadow-md shadow-xs'
                 }`}
                 id={`benefit-card-${index + 1}`}
               >
@@ -74,7 +74,7 @@ export const WhyChooseSection: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-medium">
+                <div className="mt-4 pt-3 border-t border-amber-100 flex items-center justify-between text-xs text-slate-500 font-medium">
                   <span>{t('whyChoose.serviceStandard')}</span>
                   <span className="text-[#b48616] font-bold">0{index + 1}</span>
                 </div>
@@ -83,7 +83,7 @@ export const WhyChooseSection: React.FC = () => {
           })}
 
           {/* Quick Contact Highlight Card */}
-          <div className="rounded-xl p-5 bg-white border border-slate-200 hover:border-[#C5A028] flex flex-col justify-between shadow-sm hover:shadow-md transition-all">
+          <div className="rounded-xl p-5 bg-white border border-amber-200/80 hover:border-[#C5A028] flex flex-col justify-between shadow-xs hover:shadow-md transition-all">
             <div>
               <div className="w-10 h-10 rounded-lg bg-[#001A33]/5 border border-[#001A33]/10 flex items-center justify-center mb-3.5 text-[#001A33]">
                 <Headphones className="w-5 h-5" />
@@ -95,7 +95,7 @@ export const WhyChooseSection: React.FC = () => {
                 {t('whyChoose.assistanceDesc')}
               </p>
             </div>
-            <div className="mt-4 pt-3 border-t border-slate-100 text-sm font-bold text-[#b48616]">
+            <div className="mt-4 pt-3 border-t border-amber-100 text-sm font-bold text-[#b48616]">
               {COMPANY_DETAILS.phone1} / {COMPANY_DETAILS.phone2}
             </div>
           </div>

@@ -4,12 +4,12 @@ import { COMPANY_DETAILS } from '../data/chitPlansData';
 
 export const TrustStrip: React.FC = () => {
   return (
-    <section className="w-full bg-white border-y border-slate-200 shadow-sm relative z-20 py-3.5 px-4 sm:px-6" id="trust-strip">
+    <section className="w-full bg-[#FBF8F1] border-y border-amber-200/80 shadow-xs relative z-20 py-3.5 px-4 sm:px-6" id="trust-strip">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 items-center">
           
           {/* Item 1: Company */}
-          <div className="flex items-center gap-3 p-2.5 rounded-lg bg-slate-50 border border-slate-200 hover:border-[#C5A028]/50 transition-colors shadow-sm">
+          <div className="flex items-center gap-3 p-2.5 rounded-lg bg-white border border-amber-200/80 hover:border-[#C5A028] transition-colors shadow-xs">
             <div className="w-9 h-9 rounded-md bg-amber-50 border border-[#C5A028]/40 flex items-center justify-center shrink-0 text-[#C5A028]">
               <Building2 className="w-4 h-4" />
             </div>
@@ -20,7 +20,7 @@ export const TrustStrip: React.FC = () => {
           </div>
 
           {/* Item 2: Business & Service */}
-          <div className="flex items-center gap-3 p-2.5 rounded-lg bg-slate-50 border border-slate-200 hover:border-[#C5A028]/50 transition-colors shadow-sm">
+          <div className="flex items-center gap-3 p-2.5 rounded-lg bg-white border border-amber-200/80 hover:border-[#C5A028] transition-colors shadow-xs">
             <div className="w-9 h-9 rounded-md bg-amber-50 border border-[#C5A028]/40 flex items-center justify-center shrink-0 text-[#C5A028]">
               <Landmark className="w-4 h-4" />
             </div>
@@ -31,7 +31,7 @@ export const TrustStrip: React.FC = () => {
           </div>
 
           {/* Item 3: Corporate Identification Number */}
-          <div className="flex items-center gap-3 p-2.5 rounded-lg bg-slate-50 border border-slate-200 hover:border-[#C5A028]/50 transition-colors shadow-sm">
+          <div className="flex items-center gap-3 p-2.5 rounded-lg bg-white border border-amber-200/80 hover:border-[#C5A028] transition-colors shadow-xs">
             <div className="w-9 h-9 rounded-md bg-amber-50 border border-[#C5A028]/40 flex items-center justify-center shrink-0 text-[#C5A028]">
               <ShieldCheck className="w-4 h-4" />
             </div>
@@ -42,7 +42,7 @@ export const TrustStrip: React.FC = () => {
           </div>
 
           {/* Item 4: Managed By */}
-          <div className="flex items-center gap-3 p-2.5 rounded-lg bg-amber-50/50 border border-[#C5A028]/50 hover:bg-amber-50 transition-colors shadow-sm">
+          <div className="flex items-center gap-3 p-2.5 rounded-lg bg-amber-50/70 border border-[#C5A028]/60 hover:bg-amber-50 transition-colors shadow-xs">
             <div className="w-9 h-9 rounded-md bg-[#C5A028] flex items-center justify-center shrink-0 text-[#001A33]">
               <CheckCircle2 className="w-4 h-4 stroke-[2.5]" />
             </div>
