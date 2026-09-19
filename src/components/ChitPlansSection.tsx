@@ -245,8 +245,12 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
               </div>
 
               <div className="relative w-full sm:w-64">
-                <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+                <label htmlFor="catalog-search-input" className="sr-only">
+                  {t('plans.searchPlaceholder')}
+                </label>
+                <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" aria-hidden="true" />
                 <input
+                  id="catalog-search-input"
                   type="text"
                   placeholder={t('plans.searchPlaceholder')}
                   value={searchQuery}

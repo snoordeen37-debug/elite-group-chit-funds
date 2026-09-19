@@ -171,10 +171,10 @@ export const AdminExportModal: React.FC<AdminExportModalProps> = ({
           
           {/* Status Scope Filter */}
           <div>
-            <label className="block text-[11px] uppercase font-bold text-slate-300 tracking-wider mb-2">
+            <div id="export-status-filter-label" className="block text-[11px] uppercase font-bold text-slate-300 tracking-wider mb-2">
               1. Status Filter:
-            </label>
-            <div className="grid grid-cols-3 sm:grid-cols-6 gap-1.5">
+            </div>
+            <div role="group" aria-labelledby="export-status-filter-label" className="grid grid-cols-3 sm:grid-cols-6 gap-1.5">
               {['All', 'New', 'Contacted', 'Follow-up', 'Converted', 'Closed'].map((st) => (
                 <button
                   key={st}
@@ -194,10 +194,11 @@ export const AdminExportModal: React.FC<AdminExportModalProps> = ({
 
           {/* Chit Plan Filter */}
           <div>
-            <label className="block text-[11px] uppercase font-bold text-slate-300 tracking-wider mb-2">
+            <label htmlFor="export-plan-filter" className="block text-[11px] uppercase font-bold text-slate-300 tracking-wider mb-2">
               2. Chit Plan Value:
             </label>
             <select
+              id="export-plan-filter"
               value={planFilter}
               onChange={(e) => setPlanFilter(e.target.value)}
               className="w-full px-3 py-2 rounded-lg bg-[#001A33] border border-slate-700 text-xs text-white focus:border-[#C5A028] outline-none cursor-pointer"
@@ -214,10 +215,10 @@ export const AdminExportModal: React.FC<AdminExportModalProps> = ({
 
           {/* Date Range Presets */}
           <div>
-            <label className="block text-[11px] uppercase font-bold text-slate-300 tracking-wider mb-2">
+            <div id="export-date-range-label" className="block text-[11px] uppercase font-bold text-slate-300 tracking-wider mb-2">
               3. Date Range:
-            </label>
-            <div className="grid grid-cols-2 sm:grid-cols-5 gap-1.5 mb-2.5">
+            </div>
+            <div role="group" aria-labelledby="export-date-range-label" className="grid grid-cols-2 sm:grid-cols-5 gap-1.5 mb-2.5">
               {[
                 { id: 'all', label: 'All Time' },
                 { id: 'today', label: 'Today' },
@@ -244,8 +245,9 @@ export const AdminExportModal: React.FC<AdminExportModalProps> = ({
             {dateRangePreset === 'custom' && (
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 p-3 rounded-xl bg-[#001A33] border border-slate-800">
                 <div>
-                  <span className="block text-[10px] uppercase font-bold text-slate-400 mb-1">From Date</span>
+                  <label htmlFor="export-start-date" className="block text-[10px] uppercase font-bold text-slate-400 mb-1">From Date</label>
                   <input
+                    id="export-start-date"
                     type="date"
                     value={startDate}
                     onChange={(e) => setStartDate(e.target.value)}
@@ -253,8 +255,9 @@ export const AdminExportModal: React.FC<AdminExportModalProps> = ({
                   />
                 </div>
                 <div>
-                  <span className="block text-[10px] uppercase font-bold text-slate-400 mb-1">To Date</span>
+                  <label htmlFor="export-end-date" className="block text-[10px] uppercase font-bold text-slate-400 mb-1">To Date</label>
                   <input
+                    id="export-end-date"
                     type="date"
                     value={endDate}
                     onChange={(e) => setEndDate(e.target.value)}

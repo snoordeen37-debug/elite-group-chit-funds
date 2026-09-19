@@ -332,7 +332,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
             <form onSubmit={handleSubmit} className="space-y-4" id="chit-enquiry-form">
               {/* Full Name */}
               <div>
-                <label className="block text-xs sm:text-sm font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                <label htmlFor="enquiry-fullname-input" className="block text-xs sm:text-sm font-bold text-slate-700 uppercase tracking-wider mb-1.5">
                   Full Name <span className="text-[#b48616]">*</span>
                 </label>
                 <input
@@ -348,7 +348,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
 
               {/* Mobile Number */}
               <div>
-                <label className="block text-xs sm:text-sm font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                <label htmlFor="enquiry-mobile-input" className="block text-xs sm:text-sm font-bold text-slate-700 uppercase tracking-wider mb-1.5">
                   Mobile Number (WhatsApp) <span className="text-[#b48616]">*</span>
                 </label>
                 <div className="relative">
@@ -374,7 +374,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
 
               {/* Chit Plan Selection */}
               <div>
-                <label className="block text-xs sm:text-sm font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                <label htmlFor="enquiry-plan-select" className="block text-xs sm:text-sm font-bold text-slate-700 uppercase tracking-wider mb-1.5">
                   Chit Plan Interested In
                 </label>
                 <select
@@ -394,7 +394,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
               {/* Preferred Chit Value (or custom input if Custom is selected) */}
               {interestedPlan.includes('Custom') ? (
                 <div>
-                  <label className="block text-xs sm:text-sm font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                  <label htmlFor="enquiry-custom-value-input" className="block text-xs sm:text-sm font-bold text-slate-700 uppercase tracking-wider mb-1.5">
                     Preferred Chit Value (Custom Amount)
                   </label>
                   <input
@@ -408,7 +408,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
                 </div>
               ) : (
                 <div>
-                  <label className="block text-xs sm:text-sm font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                  <label htmlFor="enquiry-chit-value-input" className="block text-xs sm:text-sm font-bold text-slate-700 uppercase tracking-wider mb-1.5">
                     Preferred Chit Value
                   </label>
                   <input
@@ -423,7 +423,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
 
               {/* Message / Enquiry */}
               <div>
-                <label className="block text-xs sm:text-sm font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                <label htmlFor="enquiry-message-input" className="block text-xs sm:text-sm font-bold text-slate-700 uppercase tracking-wider mb-1.5">
                   Message / Enquiry <span className="text-slate-400 font-normal">(Optional)</span>
                 </label>
                 <textarea

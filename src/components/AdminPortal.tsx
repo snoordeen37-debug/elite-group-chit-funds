@@ -512,8 +512,12 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
                   
                   {/* Search Box */}
                   <div className="relative flex-1 min-w-[240px]">
+                    <label htmlFor="admin-portal-search" className="sr-only">
+                      Search enquiries
+                    </label>
                     <Search className="w-3.5 h-3.5 text-slate-500 absolute left-3 top-2.5" />
                     <input
+                      id="admin-portal-search"
                       type="text"
                       value={searchQuery}
                       onChange={e => setSearchQuery(e.target.value)}
@@ -524,8 +528,11 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
 
                   {/* Plan Filter Dropdown */}
                   <div className="flex items-center gap-1.5">
-                    <span className="text-[10px] uppercase font-bold text-slate-400">Plan:</span>
+                    <label htmlFor="admin-portal-plan-filter" className="text-[10px] uppercase font-bold text-slate-400">
+                      Plan:
+                    </label>
                     <select
+                      id="admin-portal-plan-filter"
                       value={selectedPlanFilter}
                       onChange={e => setSelectedPlanFilter(e.target.value)}
                       className="px-2.5 py-1.5 rounded-lg bg-[#001A33] border border-slate-700 text-xs text-white focus:border-[#C5A028] outline-none cursor-pointer"
@@ -542,8 +549,12 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
 
                   {/* Sort Dropdown */}
                   <div className="flex items-center gap-1.5">
+                    <label htmlFor="admin-portal-sort" className="sr-only">
+                      Sort enquiries
+                    </label>
                     <ArrowUpDown className="w-3 h-3 text-slate-400" />
                     <select
+                      id="admin-portal-sort"
                       value={sortBy}
                       onChange={e => setSortBy(e.target.value as any)}
                       className="px-2.5 py-1.5 rounded-lg bg-[#001A33] border border-slate-700 text-xs text-white focus:border-[#C5A028] outline-none cursor-pointer"
@@ -829,10 +840,11 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
                             {/* Status Dropdown & Delete */}
                             <div className="flex items-center gap-2">
                               <div>
-                                <label className="block text-[10px] uppercase font-bold text-slate-400 mb-0.5">
+                                <label htmlFor={`portal-status-select-${enq.id}`} className="block text-[10px] uppercase font-bold text-slate-400 mb-0.5">
                                   Status:
                                 </label>
                                 <select
+                                  id={`portal-status-select-${enq.id}`}
                                   value={enq.status}
                                   onChange={e => handleStatusChange(enq.id, e.target.value as EnquiryStatus)}
                                   className={`px-2.5 py-1.5 rounded-lg text-xs font-bold border cursor-pointer outline-none ${stConf.bg} ${stConf.text} ${stConf.border}`}
@@ -923,8 +935,9 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
 
                           {/* Admin Follow-up Notes */}
                           <div className="flex items-center gap-2 pt-2 border-t border-slate-800/40">
-                            <span className="text-[10px] uppercase font-bold text-slate-400 shrink-0">Admin Notes:</span>
+                            <label htmlFor={`portal-notes-${enq.id}`} className="text-[10px] uppercase font-bold text-slate-400 shrink-0">Admin Notes:</label>
                             <input
+                              id={`portal-notes-${enq.id}`}
                               type="text"
                               defaultValue={enq.adminNotes || ''}
                               onBlur={e => handleNotesChange(enq.id, e.target.value)}
@@ -968,20 +981,21 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
                 <form onSubmit={handleSaveSettings} className="space-y-5">
                   {/* Select Provider */}
                   <div>
-                    <label className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2.5">
+                    <div id="portal-provider-label" className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2.5">
                       Select Gateway Provider:
-                    </label>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5">
+                    </div>
+                    <div role="radiogroup" aria-labelledby="portal-provider-label" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5">
                       {[
                         { id: 'callmebot', name: 'CallMeBot (FREE)', desc: 'Direct WhatsApp alerts, zero credit card' },
                         { id: 'ultramsg', name: 'UltraMsg', desc: 'Scan QR with any WhatsApp phone' },
                         { id: 'meta', name: 'Meta Cloud API', desc: 'Official Facebook Business API' },
                         { id: 'none', name: '1-Click Direct Send', desc: 'Opens WhatsApp on submit (0 API keys)' },
                       ].map(p => (
-                        <div
+                        <label
                           key={p.id}
+                          htmlFor={`portal-provider-${p.id}`}
                           onClick={() => setSettings(s => ({ ...s, provider: p.id as WhatsAppProvider }))}
-                          className={`p-3.5 rounded-xl border cursor-pointer transition-all ${
+                          className={`p-3.5 rounded-xl border cursor-pointer transition-all block ${
                             settings.provider === p.id
                               ? 'bg-[#00264d] border-[#C5A028] text-white shadow-lg'
                               : 'bg-[#001A33] border-slate-800 text-slate-400 hover:text-slate-200'
@@ -990,6 +1004,7 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
                           <div className="flex items-center justify-between">
                             <span className="font-bold text-xs text-white">{p.name}</span>
                             <input
+                              id={`portal-provider-${p.id}`}
                               type="radio"
                               name="provider"
                               checked={settings.provider === p.id}
@@ -998,7 +1013,7 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
                             />
                           </div>
                           <p className="text-[11px] text-slate-400 mt-1">{p.desc}</p>
-                        </div>
+                        </label>
                       ))}
                     </div>
                   </div>
@@ -1021,10 +1036,11 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
 
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                         <div>
-                          <label className="block text-xs font-semibold text-slate-300 mb-1.5">
+                          <label htmlFor="portal-callmebot-key1" className="block text-xs font-semibold text-slate-300 mb-1.5">
                             API Key for Line 1 (+91 7338736352)
                           </label>
                           <input
+                            id="portal-callmebot-key1"
                             type="text"
                             placeholder="e.g. 481920"
                             value={settings.callmebotApiKey1 || ''}
@@ -1034,10 +1050,11 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
                         </div>
 
                         <div>
-                          <label className="block text-xs font-semibold text-slate-300 mb-1.5">
+                          <label htmlFor="portal-callmebot-key2" className="block text-xs font-semibold text-slate-300 mb-1.5">
                             API Key for Line 2 (+91 9345836032)
                           </label>
                           <input
+                            id="portal-callmebot-key2"
                             type="text"
                             placeholder="e.g. 592813"
                             value={settings.callmebotApiKey2 || ''}
@@ -1057,10 +1074,11 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
                       </p>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                         <div>
-                          <label className="block text-xs font-semibold text-slate-300 mb-1.5">
+                          <label htmlFor="portal-ultramsg-instance" className="block text-xs font-semibold text-slate-300 mb-1.5">
                             UltraMsg Instance ID
                           </label>
                           <input
+                            id="portal-ultramsg-instance"
                             type="text"
                             placeholder="e.g. instance12345"
                             value={settings.ultramsgInstanceId || ''}
@@ -1070,10 +1088,11 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
                         </div>
 
                         <div>
-                          <label className="block text-xs font-semibold text-slate-300 mb-1.5">
+                          <label htmlFor="portal-ultramsg-token" className="block text-xs font-semibold text-slate-300 mb-1.5">
                             UltraMsg Token
                           </label>
                           <input
+                            id="portal-ultramsg-token"
                             type="password"
                             placeholder="e.g. abc123xyz"
                             value={settings.ultramsgToken || ''}
@@ -1090,10 +1109,11 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
                     <div className="p-4 rounded-xl bg-[#001A33] border border-slate-800 space-y-3.5">
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                         <div>
-                          <label className="block text-xs font-semibold text-slate-300 mb-1.5">
+                          <label htmlFor="portal-meta-token" className="block text-xs font-semibold text-slate-300 mb-1.5">
                             Meta WhatsApp Token (Bearer)
                           </label>
                           <input
+                            id="portal-meta-token"
                             type="password"
                             placeholder="EAAG..."
                             value={settings.metaToken || ''}
@@ -1103,10 +1123,11 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
                         </div>
 
                         <div>
-                          <label className="block text-xs font-semibold text-slate-300 mb-1.5">
+                          <label htmlFor="portal-meta-phoneid" className="block text-xs font-semibold text-slate-300 mb-1.5">
                             Phone Number ID
                           </label>
                           <input
+                            id="portal-meta-phoneid"
                             type="text"
                             placeholder="e.g. 1092837465"
                             value={settings.metaPhoneId || ''}

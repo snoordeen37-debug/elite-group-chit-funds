@@ -60,10 +60,10 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({ onOpenEnqu
           
           {/* Step 1: Select Denomination */}
           <div className="mb-6">
-            <label className="block text-xs sm:text-sm uppercase tracking-wider font-bold text-slate-900 mb-2.5">
+            <div id="calc-denomination-label" className="block text-xs sm:text-sm uppercase tracking-wider font-bold text-slate-900 mb-2.5">
               1. Choose Chit Denomination:
-            </label>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5">
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5" role="group" aria-labelledby="calc-denomination-label">
               {['₹50,000', '₹1,00,000', '₹2,00,000', '₹3,00,000', '₹4,00,000', '₹5,00,000'].map((val) => {
                 const isSelected = selectedPlanValue === val;
                 return (

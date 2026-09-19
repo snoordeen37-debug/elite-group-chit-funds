@@ -298,6 +298,9 @@ export const AdminDashboardModal: React.FC<AdminDashboardModalProps> = ({
             )}
 
             <form onSubmit={handlePinSubmit} className="space-y-3">
+              <label htmlFor="admin-pin-input" className="sr-only">
+                Admin Password
+              </label>
               <input
                 type="password"
                 value={pinInput}
@@ -424,20 +427,21 @@ export const AdminDashboardModal: React.FC<AdminDashboardModalProps> = ({
                 <form onSubmit={handleSaveSettings} className="space-y-4">
                   {/* Select Provider */}
                   <div>
-                    <label className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">
+                    <div id="dash-delivery-label" className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">
                       Choose Delivery Method:
-                    </label>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
+                    </div>
+                    <div role="radiogroup" aria-labelledby="dash-delivery-label" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
                       {[
                         { id: 'callmebot', name: 'CallMeBot (FREE)', desc: 'Instant WhatsApp alerts, free forever' },
                         { id: 'ultramsg', name: 'UltraMsg', desc: 'Scan QR with any WhatsApp phone' },
                         { id: 'meta', name: 'Meta Cloud API', desc: 'Official Facebook Business API' },
                         { id: 'none', name: '1-Click Direct Send', desc: 'Opens WhatsApp on submit (0 API keys)' },
                       ].map(p => (
-                        <div
+                        <label
                           key={p.id}
+                          htmlFor={`dash-provider-${p.id}`}
                           onClick={() => setSettings(s => ({ ...s, provider: p.id as WhatsAppProvider }))}
-                          className={`p-3 rounded-lg border cursor-pointer transition-all ${
+                          className={`p-3 rounded-lg border cursor-pointer transition-all block ${
                             settings.provider === p.id
                               ? 'bg-[#00264d] border-[#C5A028] text-white shadow-md'
                               : 'bg-[#001226] border-slate-800 text-slate-400 hover:text-slate-200'
@@ -446,6 +450,7 @@ export const AdminDashboardModal: React.FC<AdminDashboardModalProps> = ({
                           <div className="flex items-center justify-between">
                             <span className="font-bold text-xs text-white">{p.name}</span>
                             <input
+                              id={`dash-provider-${p.id}`}
                               type="radio"
                               name="provider"
                               checked={settings.provider === p.id}
@@ -454,7 +459,7 @@ export const AdminDashboardModal: React.FC<AdminDashboardModalProps> = ({
                             />
                           </div>
                           <p className="text-[10px] text-slate-400 mt-1">{p.desc}</p>
-                        </div>
+                        </label>
                       ))}
                     </div>
                   </div>
@@ -477,10 +482,11 @@ export const AdminDashboardModal: React.FC<AdminDashboardModalProps> = ({
 
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <div>
-                          <label className="block text-xs font-semibold text-slate-300 mb-1">
+                          <label htmlFor="dash-callmebot-key1" className="block text-xs font-semibold text-slate-300 mb-1">
                             API Key for Line 1 (+91 7338736352)
                           </label>
                           <input
+                            id="dash-callmebot-key1"
                             type="text"
                             placeholder="e.g. 481920"
                             value={settings.callmebotApiKey1 || ''}
@@ -490,10 +496,11 @@ export const AdminDashboardModal: React.FC<AdminDashboardModalProps> = ({
                         </div>
 
                         <div>
-                          <label className="block text-xs font-semibold text-slate-300 mb-1">
+                          <label htmlFor="dash-callmebot-key2" className="block text-xs font-semibold text-slate-300 mb-1">
                             API Key for Line 2 (+91 9345836032)
                           </label>
                           <input
+                            id="dash-callmebot-key2"
                             type="text"
                             placeholder="e.g. 592813"
                             value={settings.callmebotApiKey2 || ''}
@@ -512,10 +519,11 @@ export const AdminDashboardModal: React.FC<AdminDashboardModalProps> = ({
                       </p>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <div>
-                          <label className="block text-xs font-semibold text-slate-300 mb-1">
+                          <label htmlFor="dash-ultramsg-instance" className="block text-xs font-semibold text-slate-300 mb-1">
                             UltraMsg Instance ID
                           </label>
                           <input
+                            id="dash-ultramsg-instance"
                             type="text"
                             placeholder="e.g. instance12345"
                             value={settings.ultramsgInstanceId || ''}
@@ -525,10 +533,11 @@ export const AdminDashboardModal: React.FC<AdminDashboardModalProps> = ({
                         </div>
 
                         <div>
-                          <label className="block text-xs font-semibold text-slate-300 mb-1">
+                          <label htmlFor="dash-ultramsg-token" className="block text-xs font-semibold text-slate-300 mb-1">
                             UltraMsg Token
                           </label>
                           <input
+                            id="dash-ultramsg-token"
                             type="password"
                             placeholder="e.g. abc123xyz"
                             value={settings.ultramsgToken || ''}
@@ -544,10 +553,11 @@ export const AdminDashboardModal: React.FC<AdminDashboardModalProps> = ({
                     <div className="p-3.5 rounded-lg bg-[#001226] border border-slate-800 space-y-3">
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <div>
-                          <label className="block text-xs font-semibold text-slate-300 mb-1">
+                          <label htmlFor="dash-meta-token" className="block text-xs font-semibold text-slate-300 mb-1">
                             Meta WhatsApp Token (Bearer)
                           </label>
                           <input
+                            id="dash-meta-token"
                             type="password"
                             placeholder="EAAG..."
                             value={settings.metaToken || ''}
@@ -557,10 +567,11 @@ export const AdminDashboardModal: React.FC<AdminDashboardModalProps> = ({
                         </div>
 
                         <div>
-                          <label className="block text-xs font-semibold text-slate-300 mb-1">
+                          <label htmlFor="dash-meta-phoneid" className="block text-xs font-semibold text-slate-300 mb-1">
                             Phone Number ID
                           </label>
                           <input
+                            id="dash-meta-phoneid"
                             type="text"
                             placeholder="e.g. 1092837465"
                             value={settings.metaPhoneId || ''}
@@ -719,8 +730,12 @@ export const AdminDashboardModal: React.FC<AdminDashboardModalProps> = ({
 
               {/* Search Box */}
               <div className="relative flex-1 sm:flex-initial sm:min-w-[240px]">
+                <label htmlFor="admin-dashboard-search" className="sr-only">
+                  Search enquiries
+                </label>
                 <Search className="w-3.5 h-3.5 text-slate-500 absolute left-3 top-2.5" />
                 <input
+                  id="admin-dashboard-search"
                   type="text"
                   value={searchQuery}
                   onChange={e => setSearchQuery(e.target.value)}
@@ -792,10 +807,11 @@ export const AdminDashboardModal: React.FC<AdminDashboardModalProps> = ({
                         {/* Status Control & Delete */}
                         <div className="flex items-center gap-2">
                           <div className="text-right">
-                            <label className="block text-[10px] uppercase font-bold text-slate-400 mb-0.5">
+                            <label htmlFor={`dash-status-select-${enq.id}`} className="block text-[10px] uppercase font-bold text-slate-400 mb-0.5">
                               Status:
                             </label>
                             <select
+                              id={`dash-status-select-${enq.id}`}
                               value={enq.status}
                               onChange={e => handleStatusChange(enq.id, e.target.value as EnquiryStatus)}
                               className={`px-2.5 py-1 rounded text-xs font-bold border cursor-pointer outline-none ${stConf.bg} ${stConf.text} ${stConf.border}`}
@@ -891,8 +907,9 @@ export const AdminDashboardModal: React.FC<AdminDashboardModalProps> = ({
 
                       {/* Admin Follow-up Notes */}
                       <div className="flex items-center gap-2 pt-1 border-t border-slate-800/40">
-                        <span className="text-[10px] uppercase font-bold text-slate-400 shrink-0">Admin Notes:</span>
+                        <label htmlFor={`dash-notes-${enq.id}`} className="text-[10px] uppercase font-bold text-slate-400 shrink-0">Admin Notes:</label>
                         <input
+                          id={`dash-notes-${enq.id}`}
                           type="text"
                           defaultValue={enq.adminNotes || ''}
                           onBlur={e => handleNotesChange(enq.id, e.target.value)}

@@ -119,7 +119,7 @@ export const AdminLoginModal: React.FC<AdminLoginModalProps> = ({
         {/* Login Form */}
         <form onSubmit={handleSubmit} className="space-y-4" id="admin-login-form">
           <div>
-            <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+            <label htmlFor="admin-password-input" className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
               Admin Password
             </label>
             <div className="relative">
