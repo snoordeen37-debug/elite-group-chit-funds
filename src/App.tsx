@@ -16,6 +16,7 @@ import { AdminLoginModal } from './components/AdminLoginModal';
 import { LegalModals } from './components/LegalModals';
 import { WhatsAppFloatingButton } from './components/WhatsAppFloatingButton';
 import { getStoredAdminToken, verifyAdminSession, logoutAdmin } from './services/adminAuthService';
+import { applySeoMetadata } from './utils/seo';
 
 export default function App() {
   const [activeSection, setActiveSection] = useState<string>('home');
@@ -50,6 +51,40 @@ export default function App() {
     };
     checkSession();
 
+    // Deep linking and SEO metadata sync on mount and back/forward navigation
+    if (typeof window !== 'undefined') {
+      const path = window.location.pathname.replace(/^\//, '');
+      const validSections = ['chit-plans', 'calculator', 'contact', 'how-it-works', 'benefits', 'about', 'faq'];
+      if (validSections.includes(path)) {
+        setActiveSection(path);
+        applySeoMetadata(path, false);
+        setTimeout(() => {
+          const element = document.getElementById(path);
+          if (element) {
+            const yOffset = -80;
+            const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+          }
+        }, 150);
+      } else {
+        applySeoMetadata('home', false);
+      }
+    }
+
+    const handlePopState = () => {
+      const path = window.location.pathname.replace(/^\//, '') || 'home';
+      setActiveSection(path);
+      applySeoMetadata(path, false);
+      const element = document.getElementById(path === 'home' ? 'hero-section' : path);
+      if (element) {
+        const yOffset = -80;
+        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    };
+
+    window.addEventListener('popstate', handlePopState);
+
     // Listen for hash changes
     const handleHashChange = () => {
       if (window.location.hash === '#admin') {
@@ -63,7 +98,10 @@ export default function App() {
     };
 
     window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+      window.removeEventListener('popstate', handlePopState);
+    };
   }, [viewMode]);
 
   const handleAdminTrigger = () => {
@@ -96,6 +134,7 @@ export default function App() {
 
   const handleNavigate = (sectionId: string) => {
     setActiveSection(sectionId);
+    applySeoMetadata(sectionId, true);
     if (viewMode === 'admin') {
       setViewMode('public');
     }
@@ -139,7 +178,7 @@ export default function App() {
       />
 
       {/* Main Content Sections */}
-      <main className="flex-1">
+      <main className="flex-1 pb-16 sm:pb-0">
         {/* Hero Section */}
         <div id="home">
           <Hero
@@ -184,8 +223,8 @@ export default function App() {
         onOpenAdmin={handleAdminTrigger}
       />
 
-      {/* Floating WhatsApp Action Button */}
-      <WhatsAppFloatingButton />
+      {/* Sticky & Floating Lead Actions (Mobile Bottom Dock + Desktop Floating Stack) */}
+      <WhatsAppFloatingButton onOpenEnquiry={handleOpenEnquiry} />
 
       {/* Lead Generation Enquiry Modal */}
       <EnquiryModal
