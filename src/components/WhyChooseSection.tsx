@@ -47,18 +47,12 @@ export const WhyChooseSection: React.FC = () => {
 
         {/* 7 Feature Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-          {WHY_CHOOSE_ITEMS.map((item, index) => {
-            const isFeatured = index === 0;
-            return (
-              <div
-                key={index}
-                className={`rounded-xl p-5 flex flex-col justify-between transition-all group border ${
-                  isFeatured 
-                    ? 'bg-white border-2 border-[#C5A028] shadow-md' 
-                    : 'bg-white border-amber-200/80 hover:border-[#C5A028] hover:shadow-md shadow-xs'
-                }`}
-                id={`benefit-card-${index + 1}`}
-              >
+          {WHY_CHOOSE_ITEMS.map((item, index) => (
+            <div
+              key={index}
+              className="rounded-xl p-5 flex flex-col justify-between transition-all group bg-white border border-amber-200/80 hover:border-[#C5A028] hover:shadow-md shadow-xs"
+              id={`benefit-card-${index + 1}`}
+            >
                 <div>
                   {/* Icon Box */}
                   <div className="w-10 h-10 rounded-lg bg-[#001A33]/5 border border-[#001A33]/10 flex items-center justify-center mb-3.5">
@@ -79,8 +73,7 @@ export const WhyChooseSection: React.FC = () => {
                   <span className="text-[#b48616] font-bold">0{index + 1}</span>
                 </div>
               </div>
-            );
-          })}
+            ))}
 
           {/* Quick Contact Highlight Card */}
           <div className="rounded-xl p-5 bg-white border border-amber-200/80 hover:border-[#C5A028] flex flex-col justify-between shadow-xs hover:shadow-md transition-all">
