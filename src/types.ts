@@ -17,6 +17,20 @@ export interface ChitContributionOption {
   numericValue: number;
 }
 
+export interface ShortTerm10MonthPlan {
+  sNo: number;
+  id: string;
+  totalPlan: string;
+  numericValue: number;
+  monthly: string;
+  weekly: string;
+  daily: string;
+  cycleDays: string;
+  duration: string;
+  tagline: string;
+  features: string[];
+}
+
 export interface ChitPlanSummary {
   id: string;
   value: string;

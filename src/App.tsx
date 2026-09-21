@@ -54,7 +54,7 @@ export default function App() {
     // Deep linking and SEO metadata sync on mount and back/forward navigation
     if (typeof window !== 'undefined') {
       const path = window.location.pathname.replace(/^\//, '');
-      const validSections = ['chit-plans', 'calculator', 'contact', 'how-it-works', 'benefits', 'about', 'faq'];
+      const validSections = ['chit-plans', '10-month-plans', 'calculator', 'contact', 'how-it-works', 'benefits', 'about', 'faq'];
       if (validSections.includes(path)) {
         setActiveSection(path);
         applySeoMetadata(path, false);

@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Calculator, ArrowRight, ShieldAlert, Sparkles, TrendingUp, Calendar, CheckCircle2, PhoneCall, Loader2, MessageCircle, ExternalLink } from 'lucide-react';
+import { Calculator, ArrowRight, ShieldAlert, Sparkles, TrendingUp, Calendar, CheckCircle2, PhoneCall, Loader2, MessageCircle, ExternalLink, Zap } from 'lucide-react';
 import { 
   OFFICIAL_CHIT_CATALOG, 
   CHIT_CONTRIBUTION_OPTIONS, 
-  CHIT_PLANS_SUMMARY 
+  CHIT_PLANS_SUMMARY,
+  CHIT_10_MONTH_PLANS
 } from '../data/chitPlansData';
 import { submitEnquiry, DirectWhatsAppUrls } from '../services/enquiryService';
 
@@ -11,7 +12,11 @@ interface CalculatorSectionProps {
   onOpenEnquiry: (plan?: string) => void;
 }
 
+const DENOMINATIONS_21 = ['₹50,000', '₹1,00,000', '₹2,00,000', '₹3,00,000', '₹4,00,000', '₹5,00,000'];
+const DENOMINATIONS_10 = ['₹10,000', '₹20,000', '₹30,000', '₹50,000', '₹1,00,000', '₹2,00,000'];
+
 export const CalculatorSection: React.FC<CalculatorSectionProps> = ({ onOpenEnquiry }) => {
+  const [selectedDuration, setSelectedDuration] = useState<'21' | '10'>('21');
   const [selectedPlanValue, setSelectedPlanValue] = useState<string>('₹1,00,000');
 
   // Quick Callback Form State
@@ -21,6 +26,21 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({ onOpenEnqu
   const [callbackSuccess, setCallbackSuccess] = useState(false);
   const [callbackError, setCallbackError] = useState<string | null>(null);
   const [callbackDirectUrls, setCallbackDirectUrls] = useState<DirectWhatsAppUrls | null>(null);
+
+  const handleDurationChange = (dur: '21' | '10') => {
+    setSelectedDuration(dur);
+    if (dur === '10') {
+      const exists = DENOMINATIONS_10.includes(selectedPlanValue);
+      if (!exists) {
+        setSelectedPlanValue('₹50,000');
+      }
+    } else {
+      const exists = DENOMINATIONS_21.includes(selectedPlanValue);
+      if (!exists) {
+        setSelectedPlanValue('₹1,00,000');
+      }
+    }
+  };
 
   const handleCallbackSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -38,15 +58,19 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({ onOpenEnqu
       return;
     }
 
+    const planLabel = selectedDuration === '10'
+      ? `${selectedPlanValue} (10-Month Plan)`
+      : `${selectedPlanValue} Chit Plan`;
+
     setIsSubmittingCallback(true);
     try {
       const res = await submitEnquiry({
         fullName: cleanName,
         mobileNumber: cleanPhone,
-        interestedPlan: `${selectedPlanValue} Chit Plan`,
+        interestedPlan: planLabel,
         preferredChitValue: selectedPlanValue,
         preferredContactMethod: 'Phone',
-        message: `Quick callback & plan details requested from Chit Calculator for ${selectedPlanValue} Chit Plan.`,
+        message: `Quick callback & plan details requested from Chit Calculator for ${planLabel}.`,
       });
 
       if (res.success || res.directWhatsAppUrls) {
@@ -72,9 +96,12 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({ onOpenEnqu
     setCallbackError(null);
   };
 
-  // Plan summary lookup
+  // 21-Month Lookups
   const currentPlan = CHIT_PLANS_SUMMARY.find(p => p.value === selectedPlanValue) || CHIT_PLANS_SUMMARY[1];
   const contributionInfo = CHIT_CONTRIBUTION_OPTIONS.find(c => c.chitValue === selectedPlanValue);
+
+  // 10-Month Lookup
+  const current10mPlan = CHIT_10_MONTH_PLANS.find(p => p.totalPlan === selectedPlanValue) || CHIT_10_MONTH_PLANS[3];
 
   // Column key in official catalog
   const getCatalogColumnKey = (val: string): keyof typeof OFFICIAL_CHIT_CATALOG[0] => {
@@ -96,6 +123,8 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({ onOpenEnqu
   const midTierVal = OFFICIAL_CHIT_CATALOG[10][colKey]; // Row 11
   const maxTierVal = OFFICIAL_CHIT_CATALOG[20][colKey]; // Row 21
 
+  const activeDenominations = selectedDuration === '10' ? DENOMINATIONS_10 : DENOMINATIONS_21;
+
   return (
     <section className="py-12 md:py-16 bg-[#FBF8F1] relative border-t border-amber-200/80" id="calculator">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -110,20 +139,79 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({ onOpenEnqu
             CHIT PLAN CALCULATOR
           </h2>
           <p className="text-slate-600 text-sm sm:text-base md:text-lg leading-relaxed">
-            Select a chit value to review the official installment schedule, contribution modes, and catalog payout progression.
+            Select a chit duration and denomination to review the official installment schedule, daily/weekly modes, and payout breakdown.
           </p>
         </div>
 
         {/* Interactive Calculator Box */}
         <div className="max-w-4xl mx-auto rounded-xl bg-white border border-amber-200/80 p-5 sm:p-7 shadow-lg">
           
-          {/* Step 1: Select Denomination */}
+          {/* Step 1: Select Duration */}
+          <div className="mb-6 pb-5 border-b border-amber-200/80">
+            <div id="calc-duration-label" className="block text-xs sm:text-sm uppercase tracking-wider font-bold text-slate-900 mb-2.5">
+              1. Select Chit Duration / Scheme:
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3" role="group" aria-labelledby="calc-duration-label">
+              <button
+                type="button"
+                onClick={() => handleDurationChange('21')}
+                className={`p-3.5 rounded-xl border-2 text-left transition-all cursor-pointer flex items-center justify-between ${
+                  selectedDuration === '21'
+                    ? 'bg-[#001A33] border-[#C5A028] text-white shadow-md'
+                    : 'bg-slate-50 border-slate-200 hover:bg-slate-100 text-slate-700'
+                }`}
+                id="calc-duration-21"
+              >
+                <div>
+                  <div className="text-sm font-bold flex items-center gap-1.5">
+                    <Calendar className={`w-4 h-4 ${selectedDuration === '21' ? 'text-[#C5A028]' : 'text-slate-500'}`} />
+                    <span>21-Month Standard Scheme</span>
+                  </div>
+                  <div className={`text-xs mt-0.5 ${selectedDuration === '21' ? 'text-slate-300' : 'text-slate-500'}`}>
+                    Auction progression, monthly dividend savings (₹50k - ₹5L)
+                  </div>
+                </div>
+                <div className={`w-3.5 h-3.5 rounded-full border-2 shrink-0 ${
+                  selectedDuration === '21' ? 'border-[#C5A028] bg-[#C5A028]' : 'border-slate-300'
+                }`} />
+              </button>
+
+              <button
+                type="button"
+                onClick={() => handleDurationChange('10')}
+                className={`p-3.5 rounded-xl border-2 text-left transition-all cursor-pointer flex items-center justify-between ${
+                  selectedDuration === '10'
+                    ? 'bg-[#001A33] border-[#C5A028] text-white shadow-md'
+                    : 'bg-amber-50/50 border-amber-300 hover:bg-amber-100/60 text-slate-700'
+                }`}
+                id="calc-duration-10"
+              >
+                <div>
+                  <div className="text-sm font-bold flex items-center gap-1.5">
+                    <Zap className={`w-4 h-4 ${selectedDuration === '10' ? 'text-[#C5A028]' : 'text-amber-600'}`} />
+                    <span>10-Month Rapid Scheme</span>
+                    <span className="px-1.5 py-0.5 rounded-full bg-[#C5A028] text-[#001A33] text-[10px] font-black uppercase tracking-wider">
+                      NEW
+                    </span>
+                  </div>
+                  <div className={`text-xs mt-0.5 ${selectedDuration === '10' ? 'text-slate-300' : 'text-slate-500'}`}>
+                    Daily (25d), weekly & monthly micro-savings (₹10k - ₹2L)
+                  </div>
+                </div>
+                <div className={`w-3.5 h-3.5 rounded-full border-2 shrink-0 ${
+                  selectedDuration === '10' ? 'border-[#C5A028] bg-[#C5A028]' : 'border-slate-300'
+                }`} />
+              </button>
+            </div>
+          </div>
+
+          {/* Step 2: Select Denomination */}
           <div className="mb-6">
             <div id="calc-denomination-label" className="block text-xs sm:text-sm uppercase tracking-wider font-bold text-slate-900 mb-2.5">
-              1. Choose Chit Denomination:
+              2. Choose Chit Denomination ({selectedDuration === '10' ? '10-Month Plans' : '21-Month Plans'}):
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5" role="group" aria-labelledby="calc-denomination-label">
-              {['₹50,000', '₹1,00,000', '₹2,00,000', '₹3,00,000', '₹4,00,000', '₹5,00,000'].map((val) => {
+              {activeDenominations.map((val) => {
                 const isSelected = selectedPlanValue === val;
                 return (
                   <button
@@ -143,74 +231,118 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({ onOpenEnqu
             </div>
           </div>
 
-          {/* Step 2: Data Display Breakdown */}
+          {/* Step 3: Data Display Breakdown */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
             
             {/* Box 1: Installment & Frequency */}
             <div className="p-4 sm:p-5 rounded-xl bg-slate-50 border border-slate-200 flex flex-col justify-between shadow-sm">
               <div>
                 <span className="text-xs font-bold uppercase tracking-wider text-slate-500">Contribution Cycle</span>
-                <div className="text-xl sm:text-2xl font-black text-slate-900 mt-1">21 Installments</div>
+                <div className="text-xl sm:text-2xl font-black text-slate-900 mt-1">
+                  {selectedDuration === '10' ? '10 Months' : '21 Installments'}
+                </div>
+                {selectedDuration === '10' && (
+                  <div className="text-xs text-amber-700 font-semibold mt-0.5">25 Days / Month Cycle</div>
+                )}
               </div>
               <div className="mt-4 pt-3 border-t border-slate-200 space-y-2 text-xs sm:text-sm">
                 <div className="flex justify-between items-center text-slate-600">
                   <span>Monthly:</span>
-                  <span className="font-bold text-[#001A33]">
-                    {contributionInfo ? contributionInfo.monthly : currentPlan.monthlyContribution}
+                  <span className="font-bold text-[#001A33] font-mono">
+                    {selectedDuration === '10'
+                      ? current10mPlan.monthly
+                      : (contributionInfo ? contributionInfo.monthly : currentPlan.monthlyContribution)}
                   </span>
                 </div>
-                {contributionInfo && (
-                  <>
-                    <div className="flex justify-between items-center text-slate-600">
-                      <span>Weekly:</span>
-                      <span className="font-mono text-slate-900 font-bold">{contributionInfo.weekly}</span>
-                    </div>
-                    <div className="flex justify-between items-center text-slate-600">
-                      <span>Daily:</span>
-                      <span className="font-mono text-slate-900 font-bold">{contributionInfo.daily}</span>
-                    </div>
-                  </>
-                )}
+                <div className="flex justify-between items-center text-slate-600">
+                  <span>Weekly:</span>
+                  <span className="font-mono text-slate-900 font-bold">
+                    {selectedDuration === '10'
+                      ? current10mPlan.weekly
+                      : (contributionInfo ? contributionInfo.weekly : 'Flexible')}
+                  </span>
+                </div>
+                <div className="flex justify-between items-center text-slate-600">
+                  <span>Daily:</span>
+                  <span className="font-mono text-amber-900 font-bold">
+                    {selectedDuration === '10'
+                      ? `${current10mPlan.daily} (25d)`
+                      : (contributionInfo ? contributionInfo.daily : 'Flexible')}
+                  </span>
+                </div>
               </div>
             </div>
 
-            {/* Box 2: Catalog Take-Home Progression */}
+            {/* Box 2: Catalog Take-Home or Short-Term Liquidity */}
             <div className="p-4 sm:p-5 rounded-xl bg-slate-50 border border-slate-200 flex flex-col justify-between shadow-sm">
-              <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-slate-500">Catalog Take-Home Range</span>
-                <div className="text-lg sm:text-xl font-black text-[#001A33] mt-1 font-mono">
-                  {currentPlan.minTakeHome} – {currentPlan.maxTakeHome}
-                </div>
-              </div>
-              <div className="mt-4 pt-3 border-t border-slate-200 text-xs sm:text-sm text-slate-600 space-y-2">
-                <div className="flex justify-between items-center">
-                  <span>Row 2 (Starting tier):</span>
-                  <span className="font-mono text-slate-900 font-bold">{minTierVal}</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span>Row 11 (Mid-cycle):</span>
-                  <span className="font-mono text-slate-900 font-bold">{midTierVal}</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span>Row 21 (Final tier):</span>
-                  <span className="font-mono text-[#b48616] font-black">{maxTierVal}</span>
-                </div>
-              </div>
+              {selectedDuration === '21' ? (
+                <>
+                  <div>
+                    <span className="text-xs font-bold uppercase tracking-wider text-slate-500">Catalog Take-Home Range</span>
+                    <div className="text-lg sm:text-xl font-black text-[#001A33] mt-1 font-mono">
+                      {currentPlan.minTakeHome} – {currentPlan.maxTakeHome}
+                    </div>
+                  </div>
+                  <div className="mt-4 pt-3 border-t border-slate-200 text-xs sm:text-sm text-slate-600 space-y-2">
+                    <div className="flex justify-between items-center">
+                      <span>Row 2 (Starting tier):</span>
+                      <span className="font-mono text-slate-900 font-bold">{minTierVal}</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span>Row 11 (Mid-cycle):</span>
+                      <span className="font-mono text-slate-900 font-bold">{midTierVal}</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span>Row 21 (Final tier):</span>
+                      <span className="font-mono text-[#b48616] font-black">{maxTierVal}</span>
+                    </div>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div>
+                    <span className="text-xs font-bold uppercase tracking-wider text-slate-500">Target Chit Pool</span>
+                    <div className="text-lg sm:text-xl font-black text-[#001A33] mt-1 font-mono">
+                      {current10mPlan.totalPlan} Scheme
+                    </div>
+                  </div>
+                  <div className="mt-4 pt-3 border-t border-slate-200 text-xs sm:text-sm text-slate-600 space-y-2">
+                    <div className="flex justify-between items-center">
+                      <span>Duration:</span>
+                      <span className="font-mono text-slate-900 font-bold">10 Months</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span>Daily Cycle:</span>
+                      <span className="font-mono text-slate-900 font-bold">{current10mPlan.cycleDays}</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span>Turnaround:</span>
+                      <span className="font-mono text-[#b48616] font-black">Under 1 Year</span>
+                    </div>
+                  </div>
+                </>
+              )}
             </div>
 
             {/* Box 3: Action & Group Status */}
             <div className="p-4 sm:p-5 rounded-xl bg-slate-50 border border-slate-200 flex flex-col justify-between shadow-sm">
               <div>
                 <span className="text-xs font-bold uppercase tracking-wider text-slate-500">Selected Plan</span>
-                <div className="text-xl sm:text-2xl font-black text-slate-900 mt-1">{selectedPlanValue} Chit</div>
+                <div className="text-xl sm:text-2xl font-black text-slate-900 mt-1">
+                  {selectedPlanValue} {selectedDuration === '10' ? '(10M)' : 'Chit'}
+                </div>
               </div>
               <div className="mt-4">
                 <button
-                  onClick={() => onOpenEnquiry(selectedPlanValue)}
+                  onClick={() => onOpenEnquiry(
+                    selectedDuration === '10'
+                      ? `${selectedPlanValue} (10-Month Plan)`
+                      : selectedPlanValue
+                  )}
                   className="w-full py-3 rounded-lg bg-[#C5A028] hover:bg-[#b59020] text-[#001A33] font-bold text-xs sm:text-sm uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm hover:shadow-md"
                   id="calc-enquire-btn"
                 >
-                  <span>Enquire This Plan</span>
+                  <span>{selectedDuration === '10' ? 'Enquire 10-Month Plan' : 'Enquire This Plan'}</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
@@ -218,35 +350,66 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({ onOpenEnqu
 
           </div>
 
-          {/* Tier Sample Breakdown Visual Strip */}
-          <div className="bg-slate-50 p-4 sm:p-5 rounded-xl border border-slate-200 mb-6 shadow-sm">
-            <div className="flex items-center justify-between mb-3">
-              <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-900 flex items-center gap-1.5">
-                <TrendingUp className="w-4 h-4 text-[#C5A028]" />
-                Official Progression Sample for {selectedPlanValue}
-              </span>
-              <span className="text-xs text-[#b48616] font-bold font-mono">S.NO 2 → 21</span>
-            </div>
+          {/* Sample Breakdown Visual Strip */}
+          {selectedDuration === '21' ? (
+            <div className="bg-slate-50 p-4 sm:p-5 rounded-xl border border-slate-200 mb-6 shadow-sm">
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-900 flex items-center gap-1.5">
+                  <TrendingUp className="w-4 h-4 text-[#C5A028]" />
+                  Official Progression Sample for {selectedPlanValue}
+                </span>
+                <span className="text-xs text-[#b48616] font-bold font-mono">S.NO 2 → 21</span>
+              </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-xs">
-              <div className="p-3 rounded-lg bg-white border border-slate-200 shadow-xs">
-                <div className="text-slate-500 text-xs font-medium">Tier S.NO 2</div>
-                <div className="text-sm sm:text-base font-bold text-slate-900 font-mono mt-0.5">{OFFICIAL_CHIT_CATALOG[1][colKey]}</div>
-              </div>
-              <div className="p-2.5 sm:p-3 rounded-lg bg-white border border-slate-200 shadow-xs">
-                <div className="text-slate-500 text-xs font-medium">Tier S.NO 7</div>
-                <div className="text-sm sm:text-base font-bold text-slate-900 font-mono mt-0.5">{OFFICIAL_CHIT_CATALOG[6][colKey]}</div>
-              </div>
-              <div className="p-2.5 sm:p-3 rounded-lg bg-white border border-slate-200 shadow-xs">
-                <div className="text-slate-500 text-xs font-medium">Tier S.NO 13</div>
-                <div className="text-sm sm:text-base font-bold text-slate-900 font-mono mt-0.5">{OFFICIAL_CHIT_CATALOG[12][colKey]}</div>
-              </div>
-              <div className="p-2.5 sm:p-3 rounded-lg bg-white border border-slate-200 shadow-xs">
-                <div className="text-slate-500 text-xs font-medium">Tier S.NO 21</div>
-                <div className="text-sm sm:text-base font-bold text-[#b48616] font-mono mt-0.5">{OFFICIAL_CHIT_CATALOG[20][colKey]}</div>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-xs">
+                <div className="p-3 rounded-lg bg-white border border-slate-200 shadow-xs">
+                  <div className="text-slate-500 text-xs font-medium">Tier S.NO 2</div>
+                  <div className="text-sm sm:text-base font-bold text-slate-900 font-mono mt-0.5">{OFFICIAL_CHIT_CATALOG[1][colKey]}</div>
+                </div>
+                <div className="p-2.5 sm:p-3 rounded-lg bg-white border border-slate-200 shadow-xs">
+                  <div className="text-slate-500 text-xs font-medium">Tier S.NO 7</div>
+                  <div className="text-sm sm:text-base font-bold text-slate-900 font-mono mt-0.5">{OFFICIAL_CHIT_CATALOG[6][colKey]}</div>
+                </div>
+                <div className="p-2.5 sm:p-3 rounded-lg bg-white border border-slate-200 shadow-xs">
+                  <div className="text-slate-500 text-xs font-medium">Tier S.NO 13</div>
+                  <div className="text-sm sm:text-base font-bold text-slate-900 font-mono mt-0.5">{OFFICIAL_CHIT_CATALOG[12][colKey]}</div>
+                </div>
+                <div className="p-2.5 sm:p-3 rounded-lg bg-white border border-slate-200 shadow-xs">
+                  <div className="text-slate-500 text-xs font-medium">Tier S.NO 21</div>
+                  <div className="text-sm sm:text-base font-bold text-[#b48616] font-mono mt-0.5">{OFFICIAL_CHIT_CATALOG[20][colKey]}</div>
+                </div>
               </div>
             </div>
-          </div>
+          ) : (
+            <div className="bg-amber-50/40 p-4 sm:p-5 rounded-xl border border-amber-200 mb-6 shadow-sm">
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-900 flex items-center gap-1.5">
+                  <Sparkles className="w-4 h-4 text-[#C5A028]" />
+                  10-Month Savings Breakdown for {selectedPlanValue}
+                </span>
+                <span className="text-xs text-[#b48616] font-bold font-mono">10 MONTH HORIZON</span>
+              </div>
+
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-xs">
+                <div className="p-3 rounded-lg bg-white border border-amber-200/80 shadow-xs">
+                  <div className="text-slate-500 text-xs font-medium">Daily Deposit (25d)</div>
+                  <div className="text-sm sm:text-base font-bold text-amber-900 font-mono mt-0.5">{current10mPlan.daily}</div>
+                </div>
+                <div className="p-2.5 sm:p-3 rounded-lg bg-white border border-amber-200/80 shadow-xs">
+                  <div className="text-slate-500 text-xs font-medium">Weekly Deposit</div>
+                  <div className="text-sm sm:text-base font-bold text-slate-900 font-mono mt-0.5">{current10mPlan.weekly}</div>
+                </div>
+                <div className="p-2.5 sm:p-3 rounded-lg bg-white border border-amber-200/80 shadow-xs">
+                  <div className="text-slate-500 text-xs font-medium">Monthly Installment</div>
+                  <div className="text-sm sm:text-base font-bold text-[#001A33] font-mono mt-0.5">{current10mPlan.monthly}</div>
+                </div>
+                <div className="p-2.5 sm:p-3 rounded-lg bg-white border border-amber-200/80 shadow-xs">
+                  <div className="text-slate-500 text-xs font-medium">Total Chit Plan</div>
+                  <div className="text-sm sm:text-base font-bold text-[#b48616] font-mono mt-0.5">{current10mPlan.totalPlan}</div>
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* MANDATORY PROMINENT DISCLAIMER */}
           <div className="p-4 rounded-xl bg-amber-50/80 border border-amber-200 text-xs sm:text-sm text-amber-950 flex items-start gap-3">
@@ -279,7 +442,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({ onOpenEnqu
                       Request Callback / Get Full Plan Details
                     </h3>
                     <p className="text-xs sm:text-sm text-slate-600 mt-1 max-w-xl leading-relaxed">
-                      Enter your name and mobile number to receive the complete 21-installment auction progression, dividend calculations, and priority slot booking for the <strong className="text-slate-900 font-bold">{selectedPlanValue} Chit Plan</strong>.
+                      Enter your name and mobile number to receive the complete {selectedDuration === '10' ? '10-month rapid savings schedule, daily deposit breakdown' : '21-installment auction progression, dividend calculations'}, and priority slot booking for the <strong className="text-slate-900 font-bold">{selectedPlanValue} {selectedDuration === '10' ? '(10-Month Plan)' : 'Chit Plan'}</strong>.
                     </p>
                   </div>
 
@@ -287,7 +450,9 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({ onOpenEnqu
                   <div className="shrink-0 p-3 sm:p-4 rounded-xl bg-white border border-amber-200 shadow-sm text-center md:text-right">
                     <span className="text-[10px] uppercase font-bold text-slate-500 block">Selected Scheme</span>
                     <span className="text-lg sm:text-xl font-black text-[#001A33] font-mono">{selectedPlanValue}</span>
-                    <span className="text-[11px] text-emerald-700 font-bold block mt-0.5">21-Month Cycle</span>
+                    <span className="text-[11px] text-emerald-700 font-bold block mt-0.5">
+                      {selectedDuration === '10' ? '10-Month Cycle (25d)' : '21-Month Cycle'}
+                    </span>
                   </div>
                 </div>
 

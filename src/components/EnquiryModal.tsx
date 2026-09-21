@@ -25,13 +25,22 @@ interface EnquiryModalProps {
 }
 
 const CHIT_PLAN_OPTIONS = [
-  { label: '₹50,000 Plan (₹2,500/month • 21 Months)', value: '₹50,000', amount: '₹50,000' },
-  { label: '₹1,00,000 Plan (₹5,000/month • 21 Months)', value: '₹1,00,000', amount: '₹1,00,000' },
-  { label: '₹2,00,000 Plan (₹10,000/month • 21 Months)', value: '₹2,00,000', amount: '₹2,00,000' },
-  { label: '₹3,00,000 Plan (₹12,000-₹15,000/month • 21 Months)', value: '₹3,00,000', amount: '₹3,00,000' },
-  { label: '₹4,00,000 Plan (₹15,000/month • 21 Months)', value: '₹4,00,000', amount: '₹4,00,000' },
-  { label: '₹5,00,000 Plan (₹25,000/month • 21 Months)', value: '₹5,00,000', amount: '₹5,00,000' },
-  { label: 'Custom / Other Chit Value', value: 'Custom', amount: 'Custom' },
+  // 10-Month Short-Term Schemes (NEW)
+  { group: '10-Month Short-Term Schemes (NEW)', label: '₹10,000 Plan (₹1,000/mo • ₹40/day • 10 Months)', value: '₹10,000 (10-Month Plan)', amount: '₹10,000' },
+  { group: '10-Month Short-Term Schemes (NEW)', label: '₹20,000 Plan (₹2,000/mo • ₹80/day • 10 Months)', value: '₹20,000 (10-Month Plan)', amount: '₹20,000' },
+  { group: '10-Month Short-Term Schemes (NEW)', label: '₹30,000 Plan (₹3,000/mo • ₹120/day • 10 Months)', value: '₹30,000 (10-Month Plan)', amount: '₹30,000' },
+  { group: '10-Month Short-Term Schemes (NEW)', label: '₹50,000 Plan (₹5,000/mo • ₹200/day • 10 Months)', value: '₹50,000 (10-Month Plan)', amount: '₹50,000' },
+  { group: '10-Month Short-Term Schemes (NEW)', label: '₹1,00,000 Plan (₹10,000/mo • ₹400/day • 10 Months)', value: '₹1,00,000 (10-Month Plan)', amount: '₹1,00,000' },
+  { group: '10-Month Short-Term Schemes (NEW)', label: '₹2,00,000 Plan (₹20,000/mo • ₹800/day • 10 Months)', value: '₹2,00,000 (10-Month Plan)', amount: '₹2,00,000' },
+
+  // 21-Month Standard Schemes
+  { group: '21-Month Standard Schemes', label: '₹50,000 Plan (₹2,500/month • 21 Months)', value: '₹50,000 Plan (21 Months)', amount: '₹50,000' },
+  { group: '21-Month Standard Schemes', label: '₹1,00,000 Plan (₹5,000/month • 21 Months)', value: '₹1,00,000 Plan (21 Months)', amount: '₹1,00,000' },
+  { group: '21-Month Standard Schemes', label: '₹2,00,000 Plan (₹10,000/month • 21 Months)', value: '₹2,00,000 Plan (21 Months)', amount: '₹2,00,000' },
+  { group: '21-Month Standard Schemes', label: '₹3,00,000 Plan (₹12,000-₹15,000/month • 21 Months)', value: '₹3,00,000 Plan (21 Months)', amount: '₹3,00,000' },
+  { group: '21-Month Standard Schemes', label: '₹4,00,000 Plan (₹15,000/month • 21 Months)', value: '₹4,00,000 Plan (21 Months)', amount: '₹4,00,000' },
+  { group: '21-Month Standard Schemes', label: '₹5,00,000 Plan (₹25,000/month • 21 Months)', value: '₹5,00,000 Plan (21 Months)', amount: '₹5,00,000' },
+  { group: 'Other', label: 'Custom / Other Chit Value', value: 'Custom', amount: 'Custom' },
 ];
 
 export const EnquiryModal: React.FC<EnquiryModalProps> = ({
@@ -59,7 +68,13 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
 
   useEffect(() => {
     if (initialPlan) {
-      const match = CHIT_PLAN_OPTIONS.find(p => p.amount === initialPlan || p.label.includes(initialPlan));
+      const match = CHIT_PLAN_OPTIONS.find(p => 
+        p.value === initialPlan || 
+        p.label === initialPlan || 
+        p.amount === initialPlan || 
+        p.label.includes(initialPlan) ||
+        p.value.includes(initialPlan)
+      );
       if (match) {
         setInterestedPlan(match.label);
         setPreferredChitValue(match.amount);
@@ -383,11 +398,27 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
                   className="w-full px-3.5 py-2.5 rounded-lg bg-white border border-slate-300 text-slate-900 focus:outline-none focus:border-[#C5A028] focus:ring-1 focus:ring-[#C5A028] text-sm transition-colors cursor-pointer shadow-xs"
                   id="enquiry-plan-select"
                 >
-                  {CHIT_PLAN_OPTIONS.map((plan, idx) => (
-                    <option key={idx} value={plan.label}>
-                      {plan.label}
-                    </option>
-                  ))}
+                  <optgroup label="10-Month Short-Term Schemes (NEW)">
+                    {CHIT_PLAN_OPTIONS.filter(p => p.group === '10-Month Short-Term Schemes (NEW)').map((plan, idx) => (
+                      <option key={`10m-${idx}`} value={plan.label}>
+                        {plan.label}
+                      </option>
+                    ))}
+                  </optgroup>
+                  <optgroup label="21-Month Standard Schemes">
+                    {CHIT_PLAN_OPTIONS.filter(p => p.group === '21-Month Standard Schemes').map((plan, idx) => (
+                      <option key={`21m-${idx}`} value={plan.label}>
+                        {plan.label}
+                      </option>
+                    ))}
+                  </optgroup>
+                  <optgroup label="Other">
+                    {CHIT_PLAN_OPTIONS.filter(p => p.group === 'Other').map((plan, idx) => (
+                      <option key={`other-${idx}`} value={plan.label}>
+                        {plan.label}
+                      </option>
+                    ))}
+                  </optgroup>
                 </select>
               </div>
 

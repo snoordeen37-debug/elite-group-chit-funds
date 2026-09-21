@@ -14,7 +14,15 @@
   <!-- Chit Plans & Denominations Catalog -->
   <url>
     <loc>https://ss-chit-funds.com/chit-plans</loc>
-    <lastmod>2026-09-19</lastmod>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 10-Month Short-Term Plans -->
+  <url>
+    <loc>https://ss-chit-funds.com/10-month-plans</loc>
+    <lastmod>2026-09-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
