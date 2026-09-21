@@ -46,13 +46,15 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate, onOpenEnquiry }) => {
           <div className="lg:col-span-7 flex flex-col items-start text-left">
             
             {/* Top Verified Brand Tag */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-slate-200 shadow-sm mb-4">
-              <span className="flex h-2 w-2 rounded-full bg-[#C5A028] animate-pulse"></span>
-              <span className="text-xs font-bold text-[#001A33] uppercase tracking-wider">
+            <div className="w-fit max-w-full inline-flex items-center gap-3 sm:gap-4 px-4 py-2 rounded-full bg-white border border-amber-300 shadow-sm mb-5 flex-wrap sm:flex-nowrap">
+              <span className="flex h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full bg-[#C5A028] animate-pulse shrink-0 ring-4 ring-[#C5A028]/20"></span>
+              <span className="font-bold text-sm sm:text-base text-[#001A33] tracking-wide whitespace-nowrap uppercase">
                 {t('hero.badge')}
               </span>
-              <span className="text-[11px] text-slate-300 hidden sm:inline">|</span>
-              <span className="text-[11px] text-slate-600 hidden sm:inline font-medium">{t('hero.location')}</span>
+              <span className="hidden sm:inline-block w-px h-4 bg-amber-300 shrink-0" />
+              <span className="text-xs sm:text-sm text-slate-600 font-medium whitespace-nowrap">
+                {t('hero.location')}
+              </span>
             </div>
 
             {/* Official Primary Heading */}
