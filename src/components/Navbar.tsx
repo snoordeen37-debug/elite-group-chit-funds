@@ -132,7 +132,14 @@ export const Navbar: React.FC<NavbarProps> = ({
             id="nav-logo-btn"
             aria-label={`${BRAND_NAME} Home`}
           >
-            <BrandLogo size="md" showManagedBy={false} />
+            <BrandLogo 
+              size="nav" 
+              showManagedBy={false} 
+              imgClassName="h-12 sm:h-14 w-auto brightness-110 contrast-105"
+              imgStyle={{
+                filter: 'drop-shadow(0px 1px 4px rgba(255, 215, 0, 0.45)) drop-shadow(0 0 1.5px rgba(255, 255, 255, 0.85)) drop-shadow(0 2px 8px rgba(0, 0, 0, 0.6))',
+              }}
+            />
           </button>
 
           {/* Desktop Navigation Links */}
@@ -225,7 +232,7 @@ export const Navbar: React.FC<NavbarProps> = ({
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
         <div
-          className="lg:hidden fixed inset-x-0 top-[60px] sm:top-[98px] bottom-0 bg-[#001226]/98 backdrop-blur-xl border-b border-slate-800 z-50 flex flex-col justify-between overflow-y-auto p-5 animate-in fade-in slide-in-from-top-4 duration-200"
+          className="lg:hidden fixed inset-x-0 top-[68px] sm:top-[104px] bottom-0 bg-[#001226]/98 backdrop-blur-xl border-b border-slate-800 z-50 flex flex-col justify-between overflow-y-auto p-5 animate-in fade-in slide-in-from-top-4 duration-200"
           id="mobile-drawer-menu"
         >
           <div className="flex flex-col gap-3">
