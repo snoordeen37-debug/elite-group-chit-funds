@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Calculator, ArrowRight, ShieldAlert, Sparkles, TrendingUp, Calendar, CheckCircle2, PhoneCall, Loader2, MessageCircle, ExternalLink, Zap } from 'lucide-react';
 import { 
   OFFICIAL_CHIT_CATALOG, 
@@ -17,6 +18,7 @@ const DENOMINATIONS_21 = ['₹50,000', '₹1,00,000', '₹2,00,000', '₹3,00,00
 const DENOMINATIONS_10 = ['₹10,000', '₹20,000', '₹30,000', '₹50,000', '₹1,00,000', '₹2,00,000'];
 
 export const CalculatorSection: React.FC<CalculatorSectionProps> = ({ onOpenEnquiry }) => {
+  const { t } = useTranslation();
   const [selectedDuration, setSelectedDuration] = useState<'21' | '10'>('21');
   const [selectedPlanValue, setSelectedPlanValue] = useState<string>('₹1,00,000');
 
@@ -208,13 +210,13 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({ onOpenEnqu
                 <div>
                   <div className="text-sm font-bold flex items-center gap-1.5">
                     <Zap className={`w-4 h-4 ${selectedDuration === '10' ? 'text-[#C5A028]' : 'text-amber-600'}`} />
-                    <span>10-Month Rapid Scheme</span>
+                    <span>{t('calculator.tenMonthDuration', '10-Month Rapid Scheme')}</span>
                     <span className="px-1.5 py-0.5 rounded-full bg-[#C5A028] text-[#001A33] text-[10px] font-black uppercase tracking-wider">
-                      NEW
+                      {t('plans.tenMonth.newBadge', 'NEW')}
                     </span>
                   </div>
                   <div className={`text-xs mt-0.5 ${selectedDuration === '10' ? 'text-slate-300' : 'text-slate-500'}`}>
-                    Daily (25d), weekly & monthly micro-savings (₹10k - ₹2L)
+                    {t('calculator.tenMonthSubtitle', 'Daily (25d), weekly & monthly micro-savings (₹10k - ₹2L)')}
                   </div>
                 </div>
                 <div className={`w-3.5 h-3.5 rounded-full border-2 shrink-0 ${
@@ -320,26 +322,28 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({ onOpenEnqu
               ) : (
                 <>
                   <div>
-                    <span className="text-xs font-bold uppercase tracking-wider text-slate-500">Official Tier Payout Range</span>
+                    <span className="text-xs font-bold uppercase tracking-wider text-slate-500">
+                      {t('calculator.tenMonthTakeHome', 'Official Tier Payout Range')}
+                    </span>
                     <div className="text-lg sm:text-xl font-black text-[#001A33] mt-1 font-mono">
                       ₹{minTier10m} – ₹{maxTier10m}
                     </div>
                   </div>
                   <div className="mt-4 pt-3 border-t border-slate-200 text-xs sm:text-sm text-slate-600 space-y-2">
                     <div className="flex justify-between items-center">
-                      <span>Month 1:</span>
-                      <span className="font-mono text-slate-500 font-bold">Company Chit</span>
+                      <span>{t('plans.tenMonth.month1Company', 'Month 1: Company Chit')}</span>
+                      <span className="font-mono text-slate-500 font-bold">{t('plans.company', 'Company')}</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span>Month 2 (Starting):</span>
+                      <span>{t('calculator.startingMonth2', 'Month 2 (Starting):')}</span>
                       <span className="font-mono text-slate-900 font-bold">₹{minTier10m}</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span>Month 6 (Mid-cycle):</span>
+                      <span>{t('calculator.midCycleMonth6', 'Month 6 (Mid-cycle):')}</span>
                       <span className="font-mono text-slate-900 font-bold">₹{midTier10m}</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span>Month 10 (Final Bonus):</span>
+                      <span>{t('calculator.finalMonth10', 'Month 10 (Final Bonus):')}</span>
                       <span className="font-mono text-[#b48616] font-black">₹{maxTier10m}</span>
                     </div>
                   </div>
@@ -365,7 +369,11 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({ onOpenEnqu
                   className="w-full py-3 rounded-lg bg-[#C5A028] hover:bg-[#b59020] text-[#001A33] font-bold text-xs sm:text-sm uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm hover:shadow-md"
                   id="calc-enquire-btn"
                 >
-                  <span>{selectedDuration === '10' ? 'Enquire 10-Month Plan' : 'Enquire This Plan'}</span>
+                  <span>
+                    {selectedDuration === '10'
+                      ? t('calculator.enquireTenMonth', 'Enquire 10-Month Plan')
+                      : 'Enquire This Plan'}
+                  </span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
@@ -408,13 +416,13 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({ onOpenEnqu
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
                 <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-900 flex items-center gap-1.5">
                   <TrendingUp className="w-4 h-4 text-[#C5A028]" />
-                  10-Month Tier Progression for {selectedPlanValue} Scheme
+                  {t('calculator.tenMonthProgression', { val: selectedPlanValue, defaultValue: `10-Month Tier Progression for ${selectedPlanValue} Scheme` })}
                 </span>
                 <a
                   href="#table-10-month-breakdown"
                   className="text-xs text-[#b48616] hover:text-[#8c670d] font-bold underline flex items-center gap-1 shrink-0"
                 >
-                  <span>View Full Month-by-Month Schedule</span>
+                  <span>{t('calculator.viewFullTenMonthSchedule', 'View Full Month-by-Month Schedule')}</span>
                   <ExternalLink className="w-3 h-3" />
                 </a>
               </div>
@@ -441,9 +449,9 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({ onOpenEnqu
 
               {/* Deposit Frequency Bar */}
               <div className="flex flex-wrap items-center justify-between gap-2 pt-2.5 border-t border-amber-200/60 text-[11px] sm:text-xs text-slate-600">
-                <span>Daily (25d): <strong className="text-amber-900 font-mono font-bold">{current10mPlan.daily}</strong></span>
-                <span>Weekly: <strong className="text-slate-900 font-mono font-bold">{current10mPlan.weekly}</strong></span>
-                <span>Monthly: <strong className="text-[#001A33] font-mono font-bold">{current10mPlan.monthly}</strong></span>
+                <span>{t('plans.tenMonth.daily', 'Daily')} (25d): <strong className="text-amber-900 font-mono font-bold">{current10mPlan.daily}</strong></span>
+                <span>{t('plans.tenMonth.weekly', 'Weekly')}: <strong className="text-slate-900 font-mono font-bold">{current10mPlan.weekly}</strong></span>
+                <span>{t('plans.tenMonth.monthly', 'Monthly')}: <strong className="text-[#001A33] font-mono font-bold">{current10mPlan.monthly}</strong></span>
                 <span>Total Pool: <strong className="text-[#b48616] font-mono font-black">{current10mPlan.totalPlan}</strong></span>
               </div>
             </div>

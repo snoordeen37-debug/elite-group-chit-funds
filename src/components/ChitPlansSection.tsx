@@ -110,9 +110,9 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
             id="tab-10-month-plans"
           >
             <Zap className="w-4 h-4 text-[#C5A028] fill-current" />
-            <span>10-Month Plans</span>
+            <span>{t('plans.tenMonth.tabLabel', '10-Month Plans')}</span>
             <span className="px-1.5 py-0.5 rounded-full bg-[#C5A028] text-[#001A33] text-[10px] font-black uppercase tracking-wider">
-              NEW
+              {t('plans.tenMonth.newBadge', 'NEW')}
             </span>
           </button>
 
@@ -127,7 +127,7 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
             id="tab-interactive-cards"
           >
             <Layers className="w-4 h-4 text-[#C5A028]" />
-            <span>21-Month Cards</span>
+            <span>{t('plans.tabCards', '21-Month Cards')}</span>
           </button>
 
           {/* TAB: 21-Row Catalog */}
@@ -141,7 +141,7 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
             id="tab-official-catalog"
           >
             <Table className="w-4 h-4 text-[#C5A028]" />
-            <span>21-Tier Catalog</span>
+            <span>{t('plans.tabCatalog', '21-Tier Catalog')}</span>
           </button>
 
           {/* TAB: 21-Month Contributions */}
@@ -155,7 +155,7 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
             id="tab-contribution-options"
           >
             <Calendar className="w-4 h-4 text-[#C5A028]" />
-            <span>21-Month Modes</span>
+            <span>{t('plans.tabContributions', '21-Month Modes')}</span>
           </button>
         </div>
 
@@ -169,25 +169,25 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
                 <div>
                   <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#C5A028]/15 border border-[#C5A028]/30 text-[#001A33] text-xs font-bold uppercase tracking-wider mb-2">
                     <Zap className="w-3.5 h-3.5 text-[#C5A028] fill-current" />
-                    <span>Rapid Short-Term Savings</span>
+                    <span>{t('plans.tenMonth.badge', 'Rapid Short-Term Savings')}</span>
                   </div>
                   <h3 className="font-['Cinzel'] text-xl sm:text-2xl lg:text-3xl font-bold text-[#001A33]">
-                    10-Month High-Velocity Chit Plans
+                    {t('plans.tenMonth.title', '10-Month High-Velocity Chit Plans')}
                   </h3>
                   <p className="text-slate-600 text-xs sm:text-sm md:text-base mt-1.5 max-w-2xl leading-relaxed">
-                    Designed for swift accumulation and rapid liquidity. Pick from 6 structured plans with daily (25-day cycle), weekly, or monthly contributions. Complete your scheme in under a year.
+                    {t('plans.tenMonth.subtitle', 'Designed for swift accumulation and rapid liquidity. Pick from 6 structured plans with daily (25-day cycle), weekly, or monthly contributions. Complete your scheme in under a year.')}
                   </p>
                 </div>
 
                 {/* Highlights grid */}
                 <div className="grid grid-cols-2 gap-2.5 sm:gap-3 shrink-0">
                   <div className="px-3.5 py-2 rounded-xl bg-white border border-amber-200/80 shadow-xs text-center">
-                    <div className="text-xs text-slate-500 font-semibold">Duration</div>
-                    <div className="text-base font-black text-[#001A33]">10 Months</div>
+                    <div className="text-xs text-slate-500 font-semibold">{t('plans.tenMonth.duration', 'Duration')}</div>
+                    <div className="text-base font-black text-[#001A33]">{t('plans.tenMonth.durationValue', '10 Months')}</div>
                   </div>
                   <div className="px-3.5 py-2 rounded-xl bg-white border border-amber-200/80 shadow-xs text-center">
-                    <div className="text-xs text-slate-500 font-semibold">Daily Cycle</div>
-                    <div className="text-base font-black text-[#C5A028]">25 Days</div>
+                    <div className="text-xs text-slate-500 font-semibold">{t('plans.tenMonth.dailyCycle', 'Daily Cycle')}</div>
+                    <div className="text-base font-black text-[#C5A028]">{t('plans.tenMonth.dailyCycleValue', '25 Days')}</div>
                   </div>
                 </div>
               </div>
@@ -198,14 +198,14 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
                 <div>
                   <span className="text-xs uppercase tracking-wider text-[#C5A028] font-bold">
-                    Official Denomination Schedule
+                    {t('plans.tenMonth.officialScheduleBadge', 'Official Denomination Schedule')}
                   </span>
                   <h4 className="font-['Cinzel'] text-lg sm:text-xl font-bold text-[#001A33]">
-                    10-Month Plans Comparison Table
+                    {t('plans.tenMonth.comparisonTitle', '10-Month Plans Comparison Table')}
                   </h4>
                 </div>
                 <div className="text-xs text-slate-500 italic">
-                  * Daily amount is based on a standard 25-day monthly collection cycle
+                  {t('plans.tenMonth.dailyCycleFootnote', '* Daily amount is based on a standard 25-day monthly collection cycle')}
                 </div>
               </div>
 
@@ -213,13 +213,13 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
                 <table className="w-full text-left border-collapse text-xs sm:text-sm min-w-[620px]">
                   <thead>
                     <tr className="bg-[#001A33] text-white font-bold uppercase tracking-wider text-xs">
-                      <th className="py-3 px-3 text-center w-14 text-[#C5A028]">S.No</th>
-                      <th className="py-3 px-4">Total Chit Plan</th>
-                      <th className="py-3 px-4">Monthly (10 Mos)</th>
-                      <th className="py-3 px-4">Weekly</th>
-                      <th className="py-3 px-4">Daily (25 Days)</th>
-                      <th className="py-3 px-3 text-center">Duration</th>
-                      <th className="py-3 px-4 text-right">Action</th>
+                      <th className="py-3 px-3 text-center w-14 text-[#C5A028]">{t('plans.tenMonth.tableColSNo', 'S.No')}</th>
+                      <th className="py-3 px-4">{t('plans.tenMonth.tableColPlan', 'Total Chit Plan')}</th>
+                      <th className="py-3 px-4">{t('plans.tenMonth.tableColMonthly', 'Monthly (10 Mos)')}</th>
+                      <th className="py-3 px-4">{t('plans.tenMonth.tableColWeekly', 'Weekly')}</th>
+                      <th className="py-3 px-4">{t('plans.tenMonth.tableColDaily', 'Daily (25 Days)')}</th>
+                      <th className="py-3 px-3 text-center">{t('plans.tenMonth.tableColDuration', 'Duration')}</th>
+                      <th className="py-3 px-4 text-right">{t('plans.tenMonth.tableColAction', 'Action')}</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-slate-200">
@@ -248,14 +248,14 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
                           </span>
                         </td>
                         <td className="py-3 px-3 text-center text-xs text-slate-600 font-medium">
-                          {plan.duration}
+                          {t('plans.tenMonth.durationValue', '10 Months')}
                         </td>
                         <td className="py-3 px-4 text-right">
                           <button
                             onClick={() => onOpenEnquiry(`${plan.totalPlan} (10-Month Plan)`)}
                             className="px-3 py-1.5 rounded-md bg-[#C5A028] hover:bg-[#b59020] text-[#001A33] font-bold text-xs uppercase transition-all cursor-pointer shadow-xs hover:shadow"
                           >
-                            Enquire Now
+                            {t('plans.tenMonth.enquireNow', 'Enquire Now')}
                           </button>
                         </td>
                       </tr>
@@ -271,19 +271,19 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
                 <div>
                   <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#C5A028]/15 text-[#001A33] text-[11px] font-bold uppercase tracking-wider mb-1">
                     <FileSpreadsheet className="w-3.5 h-3.5 text-[#C5A028]" />
-                    <span>Official Month-by-Month Progression</span>
+                    <span>{t('plans.tenMonth.breakdownBadge', 'Official Month-by-Month Progression')}</span>
                   </div>
                   <h4 className="font-['Cinzel'] text-lg sm:text-xl font-bold text-[#001A33]">
-                    10-Month Tier Breakdown & Payout Schedule
+                    {t('plans.tenMonth.breakdownTitle', '10-Month Tier Breakdown & Payout Schedule')}
                   </h4>
                   <p className="text-xs sm:text-sm text-slate-600 mt-0.5">
-                    Official auction progression schedule across all 10 monthly cycles for all 6 short-term denominations.
+                    {t('plans.tenMonth.breakdownSubtitle', 'Official auction progression schedule across all 10 monthly cycles for all 6 short-term denominations.')}
                   </p>
                 </div>
                 <div className="text-xs text-slate-500 bg-amber-50/60 p-2.5 rounded-lg border border-amber-200/60 shrink-0">
-                  <div className="font-semibold text-slate-700">📌 Cycle Structure:</div>
-                  <div>• Month 1: Company Chit</div>
-                  <div>• Month 10: Final Payout with Bonus</div>
+                  <div className="font-semibold text-slate-700">{t('plans.tenMonth.cycleStructure', '📌 Cycle Structure:')}</div>
+                  <div>{t('plans.tenMonth.month1Company', '• Month 1: Company Chit')}</div>
+                  <div>{t('plans.tenMonth.month10Final', '• Month 10: Final Payout with Bonus')}</div>
                 </div>
               </div>
 
@@ -292,7 +292,7 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
                   <thead>
                     <tr className="bg-[#001A33] text-white font-bold uppercase tracking-wider text-xs border-b border-slate-300">
                       <th scope="col" className="py-3 px-3 text-center w-16 text-[#C5A028] sticky left-0 bg-[#001A33] z-10">
-                        S.NO
+                        {t('plans.tenMonth.tableColSNo', 'S.NO')}
                       </th>
                       <th scope="col" className="py-3 px-3 font-bold text-center">
                         <div>10,000</div>
@@ -319,7 +319,7 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
                         <div className="text-[10px] text-slate-300 font-normal">₹20k/mo</div>
                       </th>
                       <th scope="col" className="py-3 px-4 text-right">
-                        Enquire
+                        {t('plans.tenMonth.tableColAction', 'Enquire')}
                       </th>
                     </tr>
                   </thead>
@@ -348,7 +348,7 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
                             {row.sNo}
                             {isFinalRow && (
                               <span className="block text-[9px] uppercase tracking-wider text-[#b48616] font-black">
-                                Final
+                                {t('plans.tenMonth.finalBadge', 'Final')}
                               </span>
                             )}
                           </td>
@@ -427,7 +427,7 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
                                   : 'bg-[#C5A028] text-[#001A33] hover:bg-[#b59020]'
                               }`}
                             >
-                              Enquire
+                              {t('plans.tenMonth.enquireMonth', 'Enquire')}
                             </button>
                           </td>
                         </tr>
@@ -440,10 +440,10 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
               {/* Table Footer Helper Note */}
               <div className="mt-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs text-slate-500">
                 <div>
-                  <span className="font-semibold text-slate-700">Auction Range:</span> Bids advance from Month 2 up to the maximum maturity bonus at Month 10.
+                  <span className="font-semibold text-slate-700">{t('plans.tenMonth.auctionRange', 'Auction Range:')}</span> {t('plans.tenMonth.auctionRangeText', 'Bids advance from Month 2 up to the maximum maturity bonus at Month 10.')}
                 </div>
                 <div className="italic">
-                  * Terms governed under subscriber agreement and Chit Funds Act 1982.
+                  {t('plans.tenMonth.statutoryTerms', '* Terms governed under subscriber agreement and Chit Funds Act 1982.')}
                 </div>
               </div>
             </div>
@@ -453,95 +453,103 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
               <div className="flex items-center justify-between mb-4">
                 <div>
                   <span className="text-xs uppercase tracking-wider text-[#C5A028] font-bold">
-                    Plan Overview
+                    {t('plans.tenMonth.cardsOverviewBadge', 'Plan Overview')}
                   </span>
                   <h4 className="font-['Cinzel'] text-lg sm:text-xl font-bold text-[#001A33]">
-                    10-Month Plan Cards
+                    {t('plans.tenMonth.cardsSectionTitle', '10-Month Plan Cards')}
                   </h4>
                 </div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-                {CHIT_10_MONTH_PLANS.map((plan) => (
-                  <div
-                    key={plan.id}
-                    className="rounded-xl bg-white border border-amber-200/90 hover:border-[#C5A028] p-5 flex flex-col justify-between transition-all duration-200 hover:shadow-lg shadow-xs group"
-                    id={`card-${plan.id}`}
-                  >
-                    <div>
-                      {/* Top Header */}
-                      <div className="flex items-center justify-between pb-3 border-b border-slate-200 mb-3">
-                        <div>
-                          <span className="text-[11px] font-bold text-[#C5A028] uppercase tracking-wider">
-                            Total Chit Plan
-                          </span>
-                          <h3 className="font-['Cinzel'] text-2xl sm:text-3xl font-bold text-[#001A33] group-hover:text-[#C5A028] transition-colors">
-                            {plan.totalPlan}
-                          </h3>
-                        </div>
-                        <div className="px-2.5 py-1 rounded bg-[#001A33] text-[#C5A028] text-xs font-bold uppercase tracking-wider">
-                          10 Months
-                        </div>
-                      </div>
+                {CHIT_10_MONTH_PLANS.map((plan) => {
+                  const planTagline = t(`plans.tenMonth.items.${plan.id}.tagline`, { defaultValue: plan.tagline });
+                  const planFeaturesRaw = t(`plans.tenMonth.items.${plan.id}.features`, { returnObjects: true, defaultValue: plan.features });
+                  const planFeatures = Array.isArray(planFeaturesRaw) ? planFeaturesRaw : plan.features;
 
-                      <p className="text-xs sm:text-sm text-slate-600 italic mb-4 min-h-[36px] leading-relaxed">
-                        "{plan.tagline}"
-                      </p>
-
-                      {/* Contribution breakdown */}
-                      <div className="bg-amber-50/40 rounded-lg p-3.5 border border-amber-200/80 mb-4 space-y-2 text-xs sm:text-sm">
-                        <div className="flex items-center justify-between">
-                          <span className="text-slate-600 font-medium">Monthly:</span>
-                          <span className="font-bold text-[#001A33] font-mono text-sm">{plan.monthly}</span>
-                        </div>
-                        <div className="flex items-center justify-between">
-                          <span className="text-slate-600 font-medium">Weekly:</span>
-                          <span className="font-semibold text-slate-800 font-mono">{plan.weekly}</span>
-                        </div>
-                        <div className="flex items-center justify-between">
-                          <span className="text-slate-600 font-medium">Daily ({plan.cycleDays}):</span>
-                          <span className="font-bold text-amber-900 font-mono">{plan.daily}</span>
-                        </div>
-                      </div>
-
-                      {/* Feature Bullet Points */}
-                      <div className="space-y-2 mb-5">
-                        <div className="text-[11px] font-bold uppercase tracking-wider text-slate-400">
-                          Key Features
-                        </div>
-                        {plan.features.map((feat, fIdx) => (
-                          <div key={fIdx} className="flex items-start gap-2 text-xs text-slate-700">
-                            <CheckCircle className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
-                            <span>{feat}</span>
+                  return (
+                    <div
+                      key={plan.id}
+                      className="rounded-xl bg-white border border-amber-200/90 hover:border-[#C5A028] p-5 flex flex-col justify-between transition-all duration-200 hover:shadow-lg shadow-xs group"
+                      id={`card-${plan.id}`}
+                    >
+                      <div>
+                        {/* Top Header */}
+                        <div className="flex items-center justify-between pb-3 border-b border-slate-200 mb-3">
+                          <div>
+                            <span className="text-[11px] font-bold text-[#C5A028] uppercase tracking-wider">
+                              {t('plans.tenMonth.totalChitPlan', 'Total Chit Plan')}
+                            </span>
+                            <h3 className="font-['Cinzel'] text-2xl sm:text-3xl font-bold text-[#001A33] group-hover:text-[#C5A028] transition-colors">
+                              {plan.totalPlan}
+                            </h3>
                           </div>
-                        ))}
+                          <div className="px-2.5 py-1 rounded bg-[#001A33] text-[#C5A028] text-xs font-bold uppercase tracking-wider">
+                            {t('plans.tenMonth.durationValue', '10 Months')}
+                          </div>
+                        </div>
+
+                        <p className="text-xs sm:text-sm text-slate-600 italic mb-4 min-h-[36px] leading-relaxed">
+                          "{planTagline}"
+                        </p>
+
+                        {/* Contribution breakdown */}
+                        <div className="bg-amber-50/40 rounded-lg p-3.5 border border-amber-200/80 mb-4 space-y-2 text-xs sm:text-sm">
+                          <div className="flex items-center justify-between">
+                            <span className="text-slate-600 font-medium">{t('plans.tenMonth.monthlyLabel', 'Monthly:')}</span>
+                            <span className="font-bold text-[#001A33] font-mono text-sm">{plan.monthly}</span>
+                          </div>
+                          <div className="flex items-center justify-between">
+                            <span className="text-slate-600 font-medium">{t('plans.tenMonth.weeklyLabel', 'Weekly:')}</span>
+                            <span className="font-semibold text-slate-800 font-mono">{plan.weekly}</span>
+                          </div>
+                          <div className="flex items-center justify-between">
+                            <span className="text-slate-600 font-medium">
+                              {t('plans.tenMonth.dailyLabel', { cycleDays: plan.cycleDays, defaultValue: `Daily (${plan.cycleDays}):` })}
+                            </span>
+                            <span className="font-bold text-amber-900 font-mono">{plan.daily}</span>
+                          </div>
+                        </div>
+
+                        {/* Feature Bullet Points */}
+                        <div className="space-y-2 mb-5">
+                          <div className="text-[11px] font-bold uppercase tracking-wider text-slate-400">
+                            {t('plans.tenMonth.keyFeatures', 'Key Features')}
+                          </div>
+                          {planFeatures.map((feat, fIdx) => (
+                            <div key={fIdx} className="flex items-start gap-2 text-xs text-slate-700">
+                              <CheckCircle className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                              <span>{feat}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Card Actions */}
+                      <div className="pt-3 border-t border-slate-100 flex gap-2">
+                        <button
+                          onClick={() => onOpenEnquiry(`${plan.totalPlan} (10-Month Plan)`)}
+                          className="flex-1 py-2.5 px-3 rounded-lg bg-[#001A33] hover:bg-[#00284d] text-[#C5A028] font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-xs"
+                        >
+                          <span>{t('plans.tenMonth.enquirePlan', 'Enquire Plan')}</span>
+                          <ArrowRight className="w-3.5 h-3.5" />
+                        </button>
+                        <a
+                          href="#calculator"
+                          onClick={() => {
+                            const el = document.getElementById('calculator');
+                            if (el) el.scrollIntoView({ behavior: 'smooth' });
+                          }}
+                          className="py-2.5 px-3 rounded-lg bg-amber-50 hover:bg-amber-100 border border-amber-300 text-[#001A33] font-bold text-xs uppercase transition-all flex items-center justify-center gap-1 cursor-pointer"
+                          title="Calculate this plan"
+                        >
+                          <CalcIcon className="w-3.5 h-3.5 text-[#C5A028]" />
+                          <span>{t('plans.tenMonth.calc', 'Calc')}</span>
+                        </a>
                       </div>
                     </div>
-
-                    {/* Card Actions */}
-                    <div className="pt-3 border-t border-slate-100 flex gap-2">
-                      <button
-                        onClick={() => onOpenEnquiry(`${plan.totalPlan} (10-Month Plan)`)}
-                        className="flex-1 py-2.5 px-3 rounded-lg bg-[#001A33] hover:bg-[#00284d] text-[#C5A028] font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-xs"
-                      >
-                        <span>Enquire Plan</span>
-                        <ArrowRight className="w-3.5 h-3.5" />
-                      </button>
-                      <a
-                        href="#calculator"
-                        onClick={() => {
-                          const el = document.getElementById('calculator');
-                          if (el) el.scrollIntoView({ behavior: 'smooth' });
-                        }}
-                        className="py-2.5 px-3 rounded-lg bg-amber-50 hover:bg-amber-100 border border-amber-300 text-[#001A33] font-bold text-xs uppercase transition-all flex items-center justify-center gap-1 cursor-pointer"
-                        title="Calculate this plan"
-                      >
-                        <CalcIcon className="w-3.5 h-3.5 text-[#C5A028]" />
-                        <span>Calc</span>
-                      </a>
-                    </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
 
