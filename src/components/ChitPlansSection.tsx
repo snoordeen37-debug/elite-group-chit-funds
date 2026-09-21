@@ -21,7 +21,8 @@ import {
   OFFICIAL_CHIT_CATALOG, 
   CHIT_CONTRIBUTION_OPTIONS, 
   CHIT_PLANS_SUMMARY,
-  CHIT_10_MONTH_PLANS 
+  CHIT_10_MONTH_PLANS,
+  OFFICIAL_10_MONTH_TIER_CATALOG 
 } from '../data/chitPlansData';
 
 interface ChitPlansSectionProps {
@@ -41,6 +42,7 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
   const [selectedDenomination, setSelectedDenomination] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [highlightedRow, setHighlightedRow] = useState<number | null>(null);
+  const [highlighted10mRow, setHighlighted10mRow] = useState<number | null>(null);
 
   useEffect(() => {
     const handleHash = () => {
@@ -260,6 +262,189 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
                     ))}
                   </tbody>
                 </table>
+              </div>
+            </div>
+
+            {/* FULL MONTH-BY-MONTH TIER BREAKDOWN TABLE (NEW) */}
+            <div className="rounded-2xl bg-white border border-amber-200/80 p-4 sm:p-6 shadow-sm" id="table-10-month-breakdown">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4 pb-3 border-b border-amber-100">
+                <div>
+                  <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#C5A028]/15 text-[#001A33] text-[11px] font-bold uppercase tracking-wider mb-1">
+                    <FileSpreadsheet className="w-3.5 h-3.5 text-[#C5A028]" />
+                    <span>Official Month-by-Month Progression</span>
+                  </div>
+                  <h4 className="font-['Cinzel'] text-lg sm:text-xl font-bold text-[#001A33]">
+                    10-Month Tier Breakdown & Payout Schedule
+                  </h4>
+                  <p className="text-xs sm:text-sm text-slate-600 mt-0.5">
+                    Official auction progression schedule across all 10 monthly cycles for all 6 short-term denominations.
+                  </p>
+                </div>
+                <div className="text-xs text-slate-500 bg-amber-50/60 p-2.5 rounded-lg border border-amber-200/60 shrink-0">
+                  <div className="font-semibold text-slate-700">📌 Cycle Structure:</div>
+                  <div>• Month 1: Company Chit</div>
+                  <div>• Month 10: Final Payout with Bonus</div>
+                </div>
+              </div>
+
+              <div className="overflow-x-auto rounded-xl border border-slate-200">
+                <table className="w-full text-left border-collapse min-w-[760px] text-xs sm:text-sm" aria-label="10-Month Tier Breakdown Table">
+                  <thead>
+                    <tr className="bg-[#001A33] text-white font-bold uppercase tracking-wider text-xs border-b border-slate-300">
+                      <th scope="col" className="py-3 px-3 text-center w-16 text-[#C5A028] sticky left-0 bg-[#001A33] z-10">
+                        S.NO
+                      </th>
+                      <th scope="col" className="py-3 px-3 font-bold text-center">
+                        <div>10,000</div>
+                        <div className="text-[10px] text-slate-300 font-normal">₹1k/mo</div>
+                      </th>
+                      <th scope="col" className="py-3 px-3 font-bold text-center">
+                        <div>20,000</div>
+                        <div className="text-[10px] text-slate-300 font-normal">₹2k/mo</div>
+                      </th>
+                      <th scope="col" className="py-3 px-3 font-bold text-center">
+                        <div>30,000</div>
+                        <div className="text-[10px] text-slate-300 font-normal">₹3k/mo</div>
+                      </th>
+                      <th scope="col" className="py-3 px-3 font-bold text-center">
+                        <div>50,000</div>
+                        <div className="text-[10px] text-slate-300 font-normal">₹5k/mo</div>
+                      </th>
+                      <th scope="col" className="py-3 px-3 font-bold text-center">
+                        <div>100,000</div>
+                        <div className="text-[10px] text-slate-300 font-normal">₹10k/mo</div>
+                      </th>
+                      <th scope="col" className="py-3 px-3 font-bold text-center">
+                        <div>200,000</div>
+                        <div className="text-[10px] text-slate-300 font-normal">₹20k/mo</div>
+                      </th>
+                      <th scope="col" className="py-3 px-4 text-right">
+                        Enquire
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-200">
+                    {OFFICIAL_10_MONTH_TIER_CATALOG.map((row, idx) => {
+                      const isCompanyRow = row.sNo === 1;
+                      const isFinalRow = row.sNo === 10;
+                      const isHovered = highlighted10mRow === row.sNo;
+
+                      return (
+                        <tr
+                          key={row.sNo}
+                          onMouseEnter={() => setHighlighted10mRow(row.sNo)}
+                          onMouseLeave={() => setHighlighted10mRow(null)}
+                          className={`transition-colors ${
+                            isFinalRow
+                              ? 'bg-amber-50/90 font-bold border-t-2 border-amber-300'
+                              : isHovered
+                              ? 'bg-amber-50/60'
+                              : idx % 2 === 0
+                              ? 'bg-slate-50/70'
+                              : 'bg-white'
+                          }`}
+                        >
+                          <td className="py-3 px-3 text-center font-mono font-bold text-[#001A33] sticky left-0 bg-inherit z-10 border-r border-slate-200">
+                            {row.sNo}
+                            {isFinalRow && (
+                              <span className="block text-[9px] uppercase tracking-wider text-[#b48616] font-black">
+                                Final
+                              </span>
+                            )}
+                          </td>
+                          <td className="py-3 px-3 text-center font-mono text-xs sm:text-sm">
+                            {isCompanyRow ? (
+                              <span className="px-2 py-0.5 rounded bg-slate-200/80 text-slate-700 text-xs font-semibold">
+                                {renderCellValue(row.plan10k)}
+                              </span>
+                            ) : (
+                              <span className={isFinalRow ? 'font-black text-[#b48616]' : 'font-bold text-slate-900'}>
+                                {row.plan10k}
+                              </span>
+                            )}
+                          </td>
+                          <td className="py-3 px-3 text-center font-mono text-xs sm:text-sm">
+                            {isCompanyRow ? (
+                              <span className="px-2 py-0.5 rounded bg-slate-200/80 text-slate-700 text-xs font-semibold">
+                                {renderCellValue(row.plan20k)}
+                              </span>
+                            ) : (
+                              <span className={isFinalRow ? 'font-black text-[#b48616]' : 'font-bold text-slate-900'}>
+                                {row.plan20k}
+                              </span>
+                            )}
+                          </td>
+                          <td className="py-3 px-3 text-center font-mono text-xs sm:text-sm">
+                            {isCompanyRow ? (
+                              <span className="px-2 py-0.5 rounded bg-slate-200/80 text-slate-700 text-xs font-semibold">
+                                {renderCellValue(row.plan30k)}
+                              </span>
+                            ) : (
+                              <span className={isFinalRow ? 'font-black text-[#b48616]' : 'font-bold text-slate-900'}>
+                                {row.plan30k}
+                              </span>
+                            )}
+                          </td>
+                          <td className="py-3 px-3 text-center font-mono text-xs sm:text-sm">
+                            {isCompanyRow ? (
+                              <span className="px-2 py-0.5 rounded bg-slate-200/80 text-slate-700 text-xs font-semibold">
+                                {renderCellValue(row.plan50k)}
+                              </span>
+                            ) : (
+                              <span className={isFinalRow ? 'font-black text-[#b48616]' : 'font-bold text-slate-900'}>
+                                {row.plan50k}
+                              </span>
+                            )}
+                          </td>
+                          <td className="py-3 px-3 text-center font-mono text-xs sm:text-sm">
+                            {isCompanyRow ? (
+                              <span className="px-2 py-0.5 rounded bg-slate-200/80 text-slate-700 text-xs font-semibold">
+                                {renderCellValue(row.plan100k)}
+                              </span>
+                            ) : (
+                              <span className={isFinalRow ? 'font-black text-[#b48616]' : 'font-bold text-slate-900'}>
+                                {row.plan100k}
+                              </span>
+                            )}
+                          </td>
+                          <td className="py-3 px-3 text-center font-mono text-xs sm:text-sm">
+                            {isCompanyRow ? (
+                              <span className="px-2 py-0.5 rounded bg-slate-200/80 text-slate-700 text-xs font-semibold">
+                                {renderCellValue(row.plan200k)}
+                              </span>
+                            ) : (
+                              <span className={isFinalRow ? 'font-black text-[#b48616]' : 'font-bold text-slate-900'}>
+                                {row.plan200k}
+                              </span>
+                            )}
+                          </td>
+                          <td className="py-3 px-4 text-right">
+                            <button
+                              onClick={() => onOpenEnquiry(`10-Month Plan (Month ${row.sNo})`)}
+                              className={`px-2.5 py-1 rounded text-[11px] font-bold uppercase transition-all cursor-pointer shadow-xs ${
+                                isFinalRow
+                                  ? 'bg-[#001A33] text-[#C5A028] hover:bg-[#00284d]'
+                                  : 'bg-[#C5A028] text-[#001A33] hover:bg-[#b59020]'
+                              }`}
+                            >
+                              Enquire
+                            </button>
+                          </td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
+
+              {/* Table Footer Helper Note */}
+              <div className="mt-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs text-slate-500">
+                <div>
+                  <span className="font-semibold text-slate-700">Auction Range:</span> Bids advance from Month 2 up to the maximum maturity bonus at Month 10.
+                </div>
+                <div className="italic">
+                  * Terms governed under subscriber agreement and Chit Funds Act 1982.
+                </div>
               </div>
             </div>
 

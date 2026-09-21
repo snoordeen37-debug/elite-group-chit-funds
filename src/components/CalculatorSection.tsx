@@ -4,7 +4,8 @@ import {
   OFFICIAL_CHIT_CATALOG, 
   CHIT_CONTRIBUTION_OPTIONS, 
   CHIT_PLANS_SUMMARY,
-  CHIT_10_MONTH_PLANS
+  CHIT_10_MONTH_PLANS,
+  OFFICIAL_10_MONTH_TIER_CATALOG
 } from '../data/chitPlansData';
 import { submitEnquiry, DirectWhatsAppUrls } from '../services/enquiryService';
 
@@ -116,12 +117,30 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({ onOpenEnqu
     }
   };
 
+  const get10mCatalogColumnKey = (val: string): 'plan10k' | 'plan20k' | 'plan30k' | 'plan50k' | 'plan100k' | 'plan200k' => {
+    switch (val) {
+      case '₹10,000': return 'plan10k';
+      case '₹20,000': return 'plan20k';
+      case '₹30,000': return 'plan30k';
+      case '₹50,000': return 'plan50k';
+      case '₹1,00,000': return 'plan100k';
+      case '₹2,00,000': return 'plan200k';
+      default: return 'plan50k';
+    }
+  };
+
   const colKey = getCatalogColumnKey(selectedPlanValue);
 
   // Extract catalog sample progression milestones: Row 2 (Min auction), Row 11 (Mid-tier), Row 21 (Final tier)
   const minTierVal = OFFICIAL_CHIT_CATALOG[1][colKey]; // Row 2
   const midTierVal = OFFICIAL_CHIT_CATALOG[10][colKey]; // Row 11
   const maxTierVal = OFFICIAL_CHIT_CATALOG[20][colKey]; // Row 21
+
+  // Extract 10-month catalog tier milestones: Row 2 (Month 2), Row 6 (Month 6), Row 10 (Month 10 final payout)
+  const colKey10m = get10mCatalogColumnKey(selectedPlanValue);
+  const minTier10m = OFFICIAL_10_MONTH_TIER_CATALOG[1][colKey10m]; // Row 2 (Month 2)
+  const midTier10m = OFFICIAL_10_MONTH_TIER_CATALOG[5][colKey10m]; // Row 6 (Month 6)
+  const maxTier10m = OFFICIAL_10_MONTH_TIER_CATALOG[9][colKey10m]; // Row 10 (Month 10 Final)
 
   const activeDenominations = selectedDuration === '10' ? DENOMINATIONS_10 : DENOMINATIONS_21;
 
@@ -133,13 +152,13 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({ onOpenEnqu
         <div className="text-center max-w-3xl mx-auto mb-8">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#001A33]/5 border border-[#001A33]/15 text-[#001A33] text-xs font-bold uppercase tracking-wider mb-3">
             <Calculator className="w-3.5 h-3.5 text-[#C5A028]" />
-            Official Plan Explorer
+            Monthly Dividend Calculation & Official Schedule
           </div>
           <h2 className="font-['Cinzel'] text-2xl sm:text-3xl font-bold text-[#001A33] tracking-tight mb-2.5">
-            CHIT PLAN CALCULATOR
+            CHIT PLAN CALCULATOR & MONTHLY DIVIDEND ESTIMATOR
           </h2>
           <p className="text-slate-600 text-sm sm:text-base md:text-lg leading-relaxed">
-            Select a chit duration and denomination to review the official installment schedule, daily/weekly modes, and payout breakdown.
+            Calculate your monthly chit savings scheme returns for ₹50,000 to ₹5,00,000 chit plans in Tamil Nadu. Review official 21-month structured chit schemes & 10-month plans compliant with the Chit Funds Act 1982 by SS Chit Funds Mettupalayam.
           </p>
         </div>
 
@@ -301,23 +320,27 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({ onOpenEnqu
               ) : (
                 <>
                   <div>
-                    <span className="text-xs font-bold uppercase tracking-wider text-slate-500">Target Chit Pool</span>
+                    <span className="text-xs font-bold uppercase tracking-wider text-slate-500">Official Tier Payout Range</span>
                     <div className="text-lg sm:text-xl font-black text-[#001A33] mt-1 font-mono">
-                      {current10mPlan.totalPlan} Scheme
+                      ₹{minTier10m} – ₹{maxTier10m}
                     </div>
                   </div>
                   <div className="mt-4 pt-3 border-t border-slate-200 text-xs sm:text-sm text-slate-600 space-y-2">
                     <div className="flex justify-between items-center">
-                      <span>Duration:</span>
-                      <span className="font-mono text-slate-900 font-bold">10 Months</span>
+                      <span>Month 1:</span>
+                      <span className="font-mono text-slate-500 font-bold">Company Chit</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span>Daily Cycle:</span>
-                      <span className="font-mono text-slate-900 font-bold">{current10mPlan.cycleDays}</span>
+                      <span>Month 2 (Starting):</span>
+                      <span className="font-mono text-slate-900 font-bold">₹{minTier10m}</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span>Turnaround:</span>
-                      <span className="font-mono text-[#b48616] font-black">Under 1 Year</span>
+                      <span>Month 6 (Mid-cycle):</span>
+                      <span className="font-mono text-slate-900 font-bold">₹{midTier10m}</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span>Month 10 (Final Bonus):</span>
+                      <span className="font-mono text-[#b48616] font-black">₹{maxTier10m}</span>
                     </div>
                   </div>
                 </>
@@ -382,31 +405,46 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({ onOpenEnqu
             </div>
           ) : (
             <div className="bg-amber-50/40 p-4 sm:p-5 rounded-xl border border-amber-200 mb-6 shadow-sm">
-              <div className="flex items-center justify-between mb-3">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
                 <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-900 flex items-center gap-1.5">
-                  <Sparkles className="w-4 h-4 text-[#C5A028]" />
-                  10-Month Savings Breakdown for {selectedPlanValue}
+                  <TrendingUp className="w-4 h-4 text-[#C5A028]" />
+                  10-Month Tier Progression for {selectedPlanValue} Scheme
                 </span>
-                <span className="text-xs text-[#b48616] font-bold font-mono">10 MONTH HORIZON</span>
+                <a
+                  href="#table-10-month-breakdown"
+                  className="text-xs text-[#b48616] hover:text-[#8c670d] font-bold underline flex items-center gap-1 shrink-0"
+                >
+                  <span>View Full Month-by-Month Schedule</span>
+                  <ExternalLink className="w-3 h-3" />
+                </a>
               </div>
 
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-xs">
+              {/* Official Payout Progression Milestones */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-xs mb-3">
                 <div className="p-3 rounded-lg bg-white border border-amber-200/80 shadow-xs">
-                  <div className="text-slate-500 text-xs font-medium">Daily Deposit (25d)</div>
-                  <div className="text-sm sm:text-base font-bold text-amber-900 font-mono mt-0.5">{current10mPlan.daily}</div>
+                  <div className="text-slate-500 text-xs font-medium">Month 2 (Starting)</div>
+                  <div className="text-sm sm:text-base font-bold text-slate-900 font-mono mt-0.5">₹{minTier10m}</div>
                 </div>
                 <div className="p-2.5 sm:p-3 rounded-lg bg-white border border-amber-200/80 shadow-xs">
-                  <div className="text-slate-500 text-xs font-medium">Weekly Deposit</div>
-                  <div className="text-sm sm:text-base font-bold text-slate-900 font-mono mt-0.5">{current10mPlan.weekly}</div>
+                  <div className="text-slate-500 text-xs font-medium">Month 5 (Mid-tier)</div>
+                  <div className="text-sm sm:text-base font-bold text-slate-900 font-mono mt-0.5">₹{OFFICIAL_10_MONTH_TIER_CATALOG[4][colKey10m]}</div>
                 </div>
                 <div className="p-2.5 sm:p-3 rounded-lg bg-white border border-amber-200/80 shadow-xs">
-                  <div className="text-slate-500 text-xs font-medium">Monthly Installment</div>
-                  <div className="text-sm sm:text-base font-bold text-[#001A33] font-mono mt-0.5">{current10mPlan.monthly}</div>
+                  <div className="text-slate-500 text-xs font-medium">Month 8 (Late tier)</div>
+                  <div className="text-sm sm:text-base font-bold text-slate-900 font-mono mt-0.5">₹{OFFICIAL_10_MONTH_TIER_CATALOG[7][colKey10m]}</div>
                 </div>
                 <div className="p-2.5 sm:p-3 rounded-lg bg-white border border-amber-200/80 shadow-xs">
-                  <div className="text-slate-500 text-xs font-medium">Total Chit Plan</div>
-                  <div className="text-sm sm:text-base font-bold text-[#b48616] font-mono mt-0.5">{current10mPlan.totalPlan}</div>
+                  <div className="text-slate-500 text-xs font-medium">Month 10 (Final Bonus)</div>
+                  <div className="text-sm sm:text-base font-bold text-[#b48616] font-mono mt-0.5">₹{maxTier10m}</div>
                 </div>
+              </div>
+
+              {/* Deposit Frequency Bar */}
+              <div className="flex flex-wrap items-center justify-between gap-2 pt-2.5 border-t border-amber-200/60 text-[11px] sm:text-xs text-slate-600">
+                <span>Daily (25d): <strong className="text-amber-900 font-mono font-bold">{current10mPlan.daily}</strong></span>
+                <span>Weekly: <strong className="text-slate-900 font-mono font-bold">{current10mPlan.weekly}</strong></span>
+                <span>Monthly: <strong className="text-[#001A33] font-mono font-bold">{current10mPlan.monthly}</strong></span>
+                <span>Total Pool: <strong className="text-[#b48616] font-mono font-black">{current10mPlan.totalPlan}</strong></span>
               </div>
             </div>
           )}

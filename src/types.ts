@@ -31,6 +31,16 @@ export interface ShortTerm10MonthPlan {
   features: string[];
 }
 
+export interface ShortTerm10MonthTierRow {
+  sNo: number;
+  plan10k: string;
+  plan20k: string;
+  plan30k: string;
+  plan50k: string;
+  plan100k: string;
+  plan200k: string;
+}
+
 export interface ChitPlanSummary {
   id: string;
   value: string;
