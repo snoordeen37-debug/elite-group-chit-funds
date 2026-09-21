@@ -230,19 +230,19 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
                           idx % 2 === 0 ? 'bg-slate-50/70' : 'bg-white'
                         }`}
                       >
-                        <td className="py-3 px-3 text-center font-mono font-bold text-[#001A33]">
+                        <td className="py-3 px-3 text-center font-sans tabular-nums font-bold text-[#001A33]">
                           {plan.sNo}
                         </td>
-                        <td className="py-3 px-4 font-bold text-slate-900 text-sm sm:text-base">
+                        <td className="py-3 px-4 font-bold text-slate-900 text-sm sm:text-base font-sans tabular-nums">
                           {plan.totalPlan}
                         </td>
-                        <td className="py-3 px-4 font-black text-[#001A33] font-mono">
+                        <td className="py-3 px-4 font-black text-[#001A33] font-sans tabular-nums">
                           {plan.monthly}
                         </td>
-                        <td className="py-3 px-4 font-semibold text-slate-800 font-mono">
+                        <td className="py-3 px-4 font-semibold text-slate-800 font-sans tabular-nums">
                           {plan.weekly}
                         </td>
-                        <td className="py-3 px-4 font-semibold text-slate-800 font-mono">
+                        <td className="py-3 px-4 font-semibold text-slate-800 font-sans tabular-nums">
                           <span className="px-2 py-0.5 rounded bg-amber-100/70 text-amber-950 font-bold">
                             {plan.daily}
                           </span>
@@ -288,42 +288,42 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
               </div>
 
               <div className="overflow-x-auto rounded-xl border border-slate-200">
-                <table className="w-full text-left border-collapse min-w-[760px] text-xs sm:text-sm" aria-label="10-Month Tier Breakdown Table">
+                <table className="w-full text-left border-collapse min-w-[760px] text-xs sm:text-sm font-sans" aria-label="10-Month Tier Breakdown Table">
                   <thead>
-                    <tr className="bg-[#001A33] text-white font-bold uppercase tracking-wider text-xs border-b border-slate-300">
-                      <th scope="col" className="py-3 px-3 text-center w-16 text-[#C5A028] sticky left-0 bg-[#001A33] z-10">
+                    <tr className="bg-[#001A33] text-white font-bold uppercase tracking-wider text-xs border-b border-slate-300 font-sans">
+                      <th scope="col" className="py-3 px-3 text-center w-16 text-[#C5A028] sticky left-0 bg-[#001A33] z-10 font-sans tabular-nums font-bold">
                         {t('plans.tenMonth.tableColSNo', 'S.NO')}
                       </th>
-                      <th scope="col" className="py-3 px-3 font-bold text-center">
-                        <div>10,000</div>
+                      <th scope="col" className="py-3 px-3 font-bold text-center font-sans tabular-nums">
+                        <div className="font-bold tracking-normal">10,000</div>
                         <div className="text-[10px] text-slate-300 font-normal">₹1k/mo</div>
                       </th>
-                      <th scope="col" className="py-3 px-3 font-bold text-center">
-                        <div>20,000</div>
+                      <th scope="col" className="py-3 px-3 font-bold text-center font-sans tabular-nums">
+                        <div className="font-bold tracking-normal">20,000</div>
                         <div className="text-[10px] text-slate-300 font-normal">₹2k/mo</div>
                       </th>
-                      <th scope="col" className="py-3 px-3 font-bold text-center">
-                        <div>30,000</div>
+                      <th scope="col" className="py-3 px-3 font-bold text-center font-sans tabular-nums">
+                        <div className="font-bold tracking-normal">30,000</div>
                         <div className="text-[10px] text-slate-300 font-normal">₹3k/mo</div>
                       </th>
-                      <th scope="col" className="py-3 px-3 font-bold text-center">
-                        <div>50,000</div>
+                      <th scope="col" className="py-3 px-3 font-bold text-center font-sans tabular-nums">
+                        <div className="font-bold tracking-normal">50,000</div>
                         <div className="text-[10px] text-slate-300 font-normal">₹5k/mo</div>
                       </th>
-                      <th scope="col" className="py-3 px-3 font-bold text-center">
-                        <div>100,000</div>
+                      <th scope="col" className="py-3 px-3 font-bold text-center font-sans tabular-nums">
+                        <div className="font-bold tracking-normal">100,000</div>
                         <div className="text-[10px] text-slate-300 font-normal">₹10k/mo</div>
                       </th>
-                      <th scope="col" className="py-3 px-3 font-bold text-center">
-                        <div>200,000</div>
+                      <th scope="col" className="py-3 px-3 font-bold text-center font-sans tabular-nums">
+                        <div className="font-bold tracking-normal">200,000</div>
                         <div className="text-[10px] text-slate-300 font-normal">₹20k/mo</div>
                       </th>
-                      <th scope="col" className="py-3 px-4 text-right">
+                      <th scope="col" className="py-3 px-4 text-right font-sans font-bold">
                         {t('plans.tenMonth.tableColAction', 'Enquire')}
                       </th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-slate-200">
+                  <tbody className="divide-y divide-slate-200 font-sans">
                     {OFFICIAL_10_MONTH_TIER_CATALOG.map((row, idx) => {
                       const isCompanyRow = row.sNo === 1;
                       const isFinalRow = row.sNo === 10;
@@ -344,7 +344,7 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
                               : 'bg-white'
                           }`}
                         >
-                          <td className="py-3 px-3 text-center font-mono font-bold text-[#001A33] sticky left-0 bg-inherit z-10 border-r border-slate-200">
+                          <td className="py-3 px-3 text-center font-sans tabular-nums font-bold text-[#001A33] sticky left-0 bg-inherit z-10 border-r border-slate-200">
                             {row.sNo}
                             {isFinalRow && (
                               <span className="block text-[9px] uppercase tracking-wider text-[#b48616] font-black">
@@ -352,68 +352,68 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
                               </span>
                             )}
                           </td>
-                          <td className="py-3 px-3 text-center font-mono text-xs sm:text-sm">
+                          <td className="py-3 px-3 text-center font-sans tabular-nums text-xs sm:text-sm">
                             {isCompanyRow ? (
                               <span className="px-2 py-0.5 rounded bg-slate-200/80 text-slate-700 text-xs font-semibold">
                                 {renderCellValue(row.plan10k)}
                               </span>
                             ) : (
-                              <span className={isFinalRow ? 'font-black text-[#b48616]' : 'font-bold text-slate-900'}>
+                              <span className={isFinalRow ? 'font-black text-[#b48616]' : 'font-semibold text-slate-900'}>
                                 {row.plan10k}
                               </span>
                             )}
                           </td>
-                          <td className="py-3 px-3 text-center font-mono text-xs sm:text-sm">
+                          <td className="py-3 px-3 text-center font-sans tabular-nums text-xs sm:text-sm">
                             {isCompanyRow ? (
                               <span className="px-2 py-0.5 rounded bg-slate-200/80 text-slate-700 text-xs font-semibold">
                                 {renderCellValue(row.plan20k)}
                               </span>
                             ) : (
-                              <span className={isFinalRow ? 'font-black text-[#b48616]' : 'font-bold text-slate-900'}>
+                              <span className={isFinalRow ? 'font-black text-[#b48616]' : 'font-semibold text-slate-900'}>
                                 {row.plan20k}
                               </span>
                             )}
                           </td>
-                          <td className="py-3 px-3 text-center font-mono text-xs sm:text-sm">
+                          <td className="py-3 px-3 text-center font-sans tabular-nums text-xs sm:text-sm">
                             {isCompanyRow ? (
                               <span className="px-2 py-0.5 rounded bg-slate-200/80 text-slate-700 text-xs font-semibold">
                                 {renderCellValue(row.plan30k)}
                               </span>
                             ) : (
-                              <span className={isFinalRow ? 'font-black text-[#b48616]' : 'font-bold text-slate-900'}>
+                              <span className={isFinalRow ? 'font-black text-[#b48616]' : 'font-semibold text-slate-900'}>
                                 {row.plan30k}
                               </span>
                             )}
                           </td>
-                          <td className="py-3 px-3 text-center font-mono text-xs sm:text-sm">
+                          <td className="py-3 px-3 text-center font-sans tabular-nums text-xs sm:text-sm">
                             {isCompanyRow ? (
                               <span className="px-2 py-0.5 rounded bg-slate-200/80 text-slate-700 text-xs font-semibold">
                                 {renderCellValue(row.plan50k)}
                               </span>
                             ) : (
-                              <span className={isFinalRow ? 'font-black text-[#b48616]' : 'font-bold text-slate-900'}>
+                              <span className={isFinalRow ? 'font-black text-[#b48616]' : 'font-semibold text-slate-900'}>
                                 {row.plan50k}
                               </span>
                             )}
                           </td>
-                          <td className="py-3 px-3 text-center font-mono text-xs sm:text-sm">
+                          <td className="py-3 px-3 text-center font-sans tabular-nums text-xs sm:text-sm">
                             {isCompanyRow ? (
                               <span className="px-2 py-0.5 rounded bg-slate-200/80 text-slate-700 text-xs font-semibold">
                                 {renderCellValue(row.plan100k)}
                               </span>
                             ) : (
-                              <span className={isFinalRow ? 'font-black text-[#b48616]' : 'font-bold text-slate-900'}>
+                              <span className={isFinalRow ? 'font-black text-[#b48616]' : 'font-semibold text-slate-900'}>
                                 {row.plan100k}
                               </span>
                             )}
                           </td>
-                          <td className="py-3 px-3 text-center font-mono text-xs sm:text-sm">
+                          <td className="py-3 px-3 text-center font-sans tabular-nums text-xs sm:text-sm">
                             {isCompanyRow ? (
                               <span className="px-2 py-0.5 rounded bg-slate-200/80 text-slate-700 text-xs font-semibold">
                                 {renderCellValue(row.plan200k)}
                               </span>
                             ) : (
-                              <span className={isFinalRow ? 'font-black text-[#b48616]' : 'font-bold text-slate-900'}>
+                              <span className={isFinalRow ? 'font-black text-[#b48616]' : 'font-semibold text-slate-900'}>
                                 {row.plan200k}
                               </span>
                             )}
@@ -497,17 +497,17 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
                         <div className="bg-amber-50/40 rounded-lg p-3.5 border border-amber-200/80 mb-4 space-y-2 text-xs sm:text-sm">
                           <div className="flex items-center justify-between">
                             <span className="text-slate-600 font-medium">{t('plans.tenMonth.monthlyLabel', 'Monthly:')}</span>
-                            <span className="font-bold text-[#001A33] font-mono text-sm">{plan.monthly}</span>
+                            <span className="font-bold text-[#001A33] font-sans tabular-nums text-sm">{plan.monthly}</span>
                           </div>
                           <div className="flex items-center justify-between">
                             <span className="text-slate-600 font-medium">{t('plans.tenMonth.weeklyLabel', 'Weekly:')}</span>
-                            <span className="font-semibold text-slate-800 font-mono">{plan.weekly}</span>
+                            <span className="font-semibold text-slate-800 font-sans tabular-nums">{plan.weekly}</span>
                           </div>
                           <div className="flex items-center justify-between">
                             <span className="text-slate-600 font-medium">
                               {t('plans.tenMonth.dailyLabel', { cycleDays: plan.cycleDays, defaultValue: `Daily (${plan.cycleDays}):` })}
                             </span>
-                            <span className="font-bold text-amber-900 font-mono">{plan.daily}</span>
+                            <span className="font-bold text-amber-900 font-sans tabular-nums">{plan.daily}</span>
                           </div>
                         </div>
 
@@ -753,25 +753,25 @@ export const ChitPlansSection: React.FC<ChitPlansSectionProps> = ({ onOpenEnquir
                             : 'bg-white text-slate-800'
                         }`}
                       >
-                        <td className="py-2.5 px-3 font-mono font-bold text-center text-[#001A33] sticky left-0 bg-inherit border-r border-slate-200">
+                        <td className="py-2.5 px-3 font-sans tabular-nums font-bold text-center text-[#001A33] sticky left-0 bg-inherit border-r border-slate-200">
                           {row.sNo}
                         </td>
-                        <td className="py-2.5 px-3 text-right font-mono font-semibold text-slate-900">
+                        <td className="py-2.5 px-3 text-right font-sans tabular-nums font-semibold text-slate-900">
                           {renderCellValue(row.plan50k)}
                         </td>
-                        <td className="py-2.5 px-3 text-right font-mono font-semibold text-slate-900">
+                        <td className="py-2.5 px-3 text-right font-sans tabular-nums font-semibold text-slate-900">
                           {renderCellValue(row.plan100k)}
                         </td>
-                        <td className="py-2.5 px-3 text-right font-mono font-semibold text-slate-900">
+                        <td className="py-2.5 px-3 text-right font-sans tabular-nums font-semibold text-slate-900">
                           {renderCellValue(row.plan200k)}
                         </td>
-                        <td className="py-2.5 px-3 text-right font-mono font-semibold text-slate-900">
+                        <td className="py-2.5 px-3 text-right font-sans tabular-nums font-semibold text-slate-900">
                           {renderCellValue(row.plan300k)}
                         </td>
-                        <td className="py-2.5 px-3 text-right font-mono font-semibold text-slate-900">
+                        <td className="py-2.5 px-3 text-right font-sans tabular-nums font-semibold text-slate-900">
                           {renderCellValue(row.plan400k)}
                         </td>
-                        <td className="py-2.5 px-3 text-right font-mono font-semibold text-slate-900">
+                        <td className="py-2.5 px-3 text-right font-sans tabular-nums font-semibold text-slate-900">
                           {renderCellValue(row.plan500k)}
                         </td>
                       </tr>
