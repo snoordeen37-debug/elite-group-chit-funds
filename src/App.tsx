@@ -202,7 +202,7 @@ export default function App() {
         {/* Why Choose ELITE GROUP (7 Core Values) */}
         <WhyChooseSection />
 
-        {/* About ELITE GROUP – SS CHIT FUNDS */}
+        {/* About ELITE GROUP – SS CHIT FUNDS PVT LTD */}
         <AboutSection
           onOpenEnquiry={() => handleOpenEnquiry()}
           onNavigate={handleNavigate}

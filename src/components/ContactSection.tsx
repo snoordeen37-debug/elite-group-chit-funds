@@ -96,7 +96,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPlan = ''
 
   const whatsappUrl = `https://wa.me/${COMPANY_DETAILS.whatsappNumber}?text=${encodeURIComponent(
     formData.fullName 
-      ? `Hello ELITE GROUP SS CHIT FUNDS, My name is ${formData.fullName}. I would like to know more about the ${formData.preferredChitValue} chit plan.`
+      ? `Hello ELITE GROUP SS CHIT FUNDS PVT LTD, My name is ${formData.fullName}. I would like to know more about the ${formData.preferredChitValue} chit plan.`
       : COMPANY_DETAILS.whatsappDefaultMsg
   )}`;
 

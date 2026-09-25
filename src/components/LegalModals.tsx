@@ -55,7 +55,7 @@ export const LegalModals: React.FC<LegalModalProps> = ({ type, onClose }) => {
 
               <h4 className="font-bold text-slate-900 text-sm sm:text-base">2. No Guaranteed Returns or Profits</h4>
               <p>
-                ELITE GROUP – SS CHIT FUNDS does not offer guaranteed speculative profits or fixed investment return promises. Chit funds are structured rotating savings and credit instruments governed by periodic member contributions and procedural auctions.
+                ELITE GROUP – SS CHIT FUNDS PVT LTD does not offer guaranteed speculative profits or fixed investment return promises. Chit funds are structured rotating savings and credit instruments governed by periodic member contributions and procedural auctions.
               </p>
 
               <h4 className="font-bold text-slate-900 text-sm sm:text-base">3. Company & Corporate Identity</h4>
@@ -69,7 +69,7 @@ export const LegalModals: React.FC<LegalModalProps> = ({ type, onClose }) => {
             <>
               <h4 className="font-bold text-slate-900 text-sm sm:text-base">1. Membership & Enrollment</h4>
               <p>
-                Enrollment into any chit fund group offered by ELITE GROUP – SS CHIT FUNDS is subject to document verification (valid identity proof, address proof, photograph) and acceptance of the formal subscriber agreement.
+                Enrollment into any chit fund group offered by ELITE GROUP – SS CHIT FUNDS PVT LTD is subject to document verification (valid identity proof, address proof, photograph) and acceptance of the formal subscriber agreement.
               </p>
 
               <h4 className="font-bold text-slate-900 text-sm sm:text-base">2. Contribution Discipline</h4>

@@ -173,7 +173,7 @@ export const AdminLoginModal: React.FC<AdminLoginModalProps> = ({
         {/* Corporate Legal Note */}
         <div className="mt-6 pt-4 border-t border-slate-100 text-center text-[10px] text-slate-500 flex items-center justify-center gap-1.5">
           <Building2 className="w-3 h-3 text-[#C5A028]" />
-          <span>ELITE GROUP – SS CHIT FUNDS • Management Console</span>
+          <span>ELITE GROUP – SS CHIT FUNDS PVT LTD • Management Console</span>
         </div>
       </div>
     </div>

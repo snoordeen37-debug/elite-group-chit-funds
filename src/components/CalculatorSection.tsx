@@ -160,7 +160,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({ onOpenEnqu
             {t('calculator.heroTitle', 'CHIT PLAN CALCULATOR & MONTHLY DIVIDEND ESTIMATOR')}
           </h2>
           <p className="text-slate-600 text-sm sm:text-base md:text-lg leading-relaxed">
-            {t('calculator.heroSubtitle', 'Calculate your monthly chit savings scheme returns for ₹50,000 to ₹5,00,000 chit plans in Tamil Nadu. Review official 21-month structured chit schemes & 10-month plans compliant with the Chit Funds Act 1982 by SS Chit Funds Mettupalayam.')}
+            {t('calculator.heroSubtitle', 'Calculate your monthly chit savings scheme returns for ₹50,000 to ₹5,00,000 chit plans in Tamil Nadu. Review official 21-month structured chit schemes & 10-month plans compliant with the Chit Funds Act 1982 by SS Chit Funds Pvt Ltd Mettupalayam.')}
           </p>
         </div>
 

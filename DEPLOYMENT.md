@@ -1,6 +1,6 @@
-# Production Deployment Guide: ELITE GROUP – SS CHIT FUNDS
+# Production Deployment Guide: ELITE GROUP – SS CHIT FUNDS PVT LTD
 
-This document covers everything required to deploy, configure, and maintain the **ELITE GROUP – SS CHIT FUNDS** website and management platform in a production environment.
+This document covers everything required to deploy, configure, and maintain the **ELITE GROUP – SS CHIT FUNDS PVT LTD** website and management platform in a production environment.
 
 ---
 

@@ -1,4 +1,4 @@
-# Multi-stage production build for ELITE GROUP – SS CHIT FUNDS
+# Multi-stage production build for ELITE GROUP – SS CHIT FUNDS PVT LTD
 
 # --- Stage 1: Build Frontend Assets ---
 FROM node:20-alpine AS builder

@@ -93,7 +93,7 @@ export async function exportEnquiriesToExcel(
   reportSubtitle: string = 'All Enquiries'
 ): Promise<void> {
   const workbook = new ExcelJS.Workbook();
-  workbook.creator = 'ELITE GROUP – SS CHIT FUNDS';
+  workbook.creator = 'ELITE GROUP – SS CHIT FUNDS PVT LTD';
   workbook.lastModifiedBy = 'Elite Turf Admin';
   workbook.created = new Date();
   workbook.modified = new Date();
@@ -106,7 +106,7 @@ export async function exportEnquiriesToExcel(
   // Title Row 1: Brand Title
   worksheet.mergeCells('A1:K1');
   const titleRow1 = worksheet.getCell('A1');
-  titleRow1.value = 'ELITE GROUP – SS CHIT FUNDS';
+  titleRow1.value = 'ELITE GROUP – SS CHIT FUNDS PVT LTD';
   titleRow1.font = { name: 'Arial', size: 16, bold: true, color: { argb: 'FFC5A028' } };
   titleRow1.fill = {
     type: 'pattern',

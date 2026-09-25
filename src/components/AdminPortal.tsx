@@ -634,7 +634,7 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
                             const forwardLine1 = `https://api.whatsapp.com/send?phone=917338736352&text=${encodeURIComponent(formattedMsg)}`;
                             const forwardLine2 = `https://api.whatsapp.com/send?phone=919345836032&text=${encodeURIComponent(formattedMsg)}`;
                             const waCustomerUrl = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(
-                              `Hello ${enq.fullName}, greetings from ELITE GROUP – SS CHIT FUNDS regarding your enquiry for the ${enq.interestedPlan} chit plan.`
+                              `Hello ${enq.fullName}, greetings from ELITE GROUP – SS CHIT FUNDS PVT LTD regarding your enquiry for the ${enq.interestedPlan} chit plan.`
                             )}`;
 
                             return (
@@ -789,7 +789,7 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
                       const formattedPhone = formatExportPhone(enq.mobileNumber);
                       const formattedDate = formatExportDateTime(enq.createdAt);
                       const waCustomerUrl = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(
-                        `Hello ${enq.fullName}, greetings from ELITE GROUP – SS CHIT FUNDS regarding your enquiry for the ${enq.interestedPlan} chit plan.`
+                        `Hello ${enq.fullName}, greetings from ELITE GROUP – SS CHIT FUNDS PVT LTD regarding your enquiry for the ${enq.interestedPlan} chit plan.`
                       )}`;
                       const stConf = STATUS_CONFIG[enq.status] || STATUS_CONFIG.New;
 

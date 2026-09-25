@@ -75,7 +75,7 @@ app.get('*', (req, res) => {
 // Start Server
 const server = app.listen(PORT, () => {
   console.log(`====================================================`);
-  console.log(`  ELITE GROUP – SS CHIT FUNDS Production Server`);
+  console.log(`  ELITE GROUP – SS CHIT FUNDS PVT LTD Production Server`);
   console.log(`  Listening on: http://localhost:${PORT}`);
   console.log(`  Environment:  ${process.env.NODE_ENV || 'production'}`);
   console.log(`====================================================`);

@@ -303,7 +303,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
 
               <div className="pt-2 border-t border-slate-200 text-xs text-slate-500 flex items-center gap-1.5">
                 <Building2 className="w-3.5 h-3.5 text-[#C5A028]" />
-                <span>ELITE GROUP – SS CHIT FUNDS (Managed by ELITE TURF)</span>
+                <span>ELITE GROUP – SS CHIT FUNDS PVT LTD (Managed by ELITE TURF)</span>
               </div>
             </div>
 

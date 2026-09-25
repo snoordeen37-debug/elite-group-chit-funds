@@ -120,14 +120,14 @@ export const Footer: React.FC<FooterProps> = ({
         {/* Middle Compliance / Disclaimer Bar */}
         <div className="py-4 border-b border-slate-800 text-xs text-slate-400 leading-relaxed space-y-1">
           <p>
-            <strong className="text-slate-300">Statutory Disclaimer:</strong> Chit fund subscriptions and participation are subject to applicable terms, subscriber agreements, and regulations. ELITE GROUP – SS CHIT FUNDS does not guarantee fixed returns or speculative profit. All catalog figures are illustrative structured examples across the 21-installment duration.
+            <strong className="text-slate-300">Statutory Disclaimer:</strong> Chit fund subscriptions and participation are subject to applicable terms, subscriber agreements, and regulations. ELITE GROUP – SS CHIT FUNDS PVT LTD does not guarantee fixed returns or speculative profit. All catalog figures are illustrative structured examples across the 21-installment duration.
           </p>
         </div>
 
         {/* Bottom Copyright & Legal Links */}
         <div className="pt-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-400">
           <div className="text-center sm:text-left">
-            © {new Date().getFullYear()} <strong className="text-slate-300">ELITE GROUP – SS CHIT FUNDS</strong>. All rights reserved.
+            © {new Date().getFullYear()} <strong className="text-slate-300">ELITE GROUP – SS CHIT FUNDS PVT LTD</strong>. All rights reserved.
             <span className="block sm:inline sm:ml-2 text-slate-500">CIN: {COMPANY_DETAILS.cin}</span>
           </div>
 

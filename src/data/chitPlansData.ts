@@ -11,8 +11,8 @@ import {
 
 export const COMPANY_DETAILS = {
   companyName: 'ELITE GROUP',
-  businessName: 'SS CHIT FUNDS',
-  fullBrandName: 'ELITE GROUP – SS CHIT FUNDS',
+  businessName: 'SS CHIT FUNDS PVT LTD',
+  fullBrandName: 'ELITE GROUP – SS CHIT FUNDS PVT LTD',
   tagline: 'Trusted Chit Investment Plans',
   cin: 'U72900MH1995PLC095642',
   managedBy: 'ELITE TURF',
@@ -24,7 +24,7 @@ export const COMPANY_DETAILS = {
   officeAddress: 'ELITE TURF, Ajandha Garden, Kuttaiyur, Mettupalayam – 641104',
   locationCity: 'Mettupalayam',
   pincode: '641104',
-  whatsappDefaultMsg: 'Hello ELITE GROUP SS CHIT FUNDS, I would like to know more about your chit plans.',
+  whatsappDefaultMsg: 'Hello ELITE GROUP SS CHIT FUNDS PVT LTD, I would like to know more about your chit plans.',
 };
 
 /**
@@ -689,7 +689,7 @@ export const FAQS: FAQItem[] = [
   },
   {
     question: 'What chit values are available?',
-    answer: 'ELITE GROUP – SS CHIT FUNDS provides 6 structured denominations: ₹50,000, ₹1,00,000, ₹2,00,000, ₹3,00,000, ₹4,00,000, and ₹5,00,000 with multiple contribution options tailored to individual financial plans.',
+    answer: 'ELITE GROUP – SS CHIT FUNDS PVT LTD provides 6 structured denominations: ₹50,000, ₹1,00,000, ₹2,00,000, ₹3,00,000, ₹4,00,000, and ₹5,00,000 with multiple contribution options tailored to individual financial plans.',
     category: 'Plans',
   },
   {
@@ -724,7 +724,7 @@ export const FAQS: FAQItem[] = [
   },
   {
     question: 'What are the applicable terms and conditions?',
-    answer: 'All chit subscriptions, contributions, auctions, and prize disbursements are strictly governed by the formal subscriber agreement and the terms set out by ELITE GROUP – SS CHIT FUNDS. Participation is subject to verification and regulatory requirements.',
+    answer: 'All chit subscriptions, contributions, auctions, and prize disbursements are strictly governed by the formal subscriber agreement and the terms set out by ELITE GROUP – SS CHIT FUNDS PVT LTD. Participation is subject to verification and regulatory requirements.',
     category: 'Legal',
   },
 ];

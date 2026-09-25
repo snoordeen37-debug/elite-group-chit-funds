@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Hardcoded brand name constant - strictly locked to English (bypasses i18n translation)
-export const BRAND_NAME = 'ELITE GROUP SS CHIT FUNDS';
+export const BRAND_NAME = 'ELITE GROUP SS CHIT FUNDS PVT LTD';
 
 export interface BrandLogoProps {
   variant?: 'full' | 'compact' | 'emblem';
@@ -50,7 +50,7 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
       <div className="relative flex items-center">
         <img
           src="/logo.png"
-          alt="ELITE GROUP SS CHIT FUNDS - Trusted Chit Investment Plans"
+          alt="ELITE GROUP SS CHIT FUNDS PVT LTD - Trusted Chit Investment Plans"
           title={BRAND_NAME}
           className={`${sizeClasses[size]} w-auto object-contain transition-all duration-200 group-hover:scale-[1.02] ${defaultImgClasses} ${imgClassName}`}
           style={{

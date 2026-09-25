@@ -1,4 +1,4 @@
-# ELITE GROUP – SS CHIT FUNDS
+# ELITE GROUP – SS CHIT FUNDS PVT LTD
 
 > **Trusted Chit Investment Plans | Managed by ELITE TURF**  
 > CIN: U72900MH1995PLC095642 • Kuttaiyur, Mettupalayam – 641104
@@ -13,7 +13,7 @@
 
 ## 🏛️ Overview
 
-**ELITE GROUP – SS CHIT FUNDS** provides structured, transparent chit-fund investment plans designed to help members save and borrow with discipline. Managed by **ELITE TURF**, based in Mettupalayam, Tamil Nadu.
+**ELITE GROUP – SS CHIT FUNDS PVT LTD** provides structured, transparent chit-fund investment plans designed to help members save and borrow with discipline. Managed by **ELITE TURF**, based in Mettupalayam, Tamil Nadu.
 
 This repository contains the complete production-ready web application, customer lead capture system, interactive financial calculators, Google Maps integration, dual WhatsApp business notification engine, and a password-protected Administrator CRM portal with Excel (.xlsx) and CSV export capabilities.
 

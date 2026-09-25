@@ -320,7 +320,7 @@ export const AdminDashboardModal: React.FC<AdminDashboardModalProps> = ({
             </form>
 
             <div className="text-[11px] text-slate-500">
-              ELITE GROUP – SS CHIT FUNDS • Authorized Personnel Only
+              ELITE GROUP – SS CHIT FUNDS PVT LTD • Authorized Personnel Only
             </div>
           </div>
         ) : (
@@ -756,7 +756,7 @@ export const AdminDashboardModal: React.FC<AdminDashboardModalProps> = ({
                 enquiries.map(enq => {
                   const cleanPhone = enq.mobileNumber.replace(/[^0-9]/g, '');
                   const waCustomerUrl = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(
-                    `Hello ${enq.fullName}, greetings from ELITE GROUP – SS CHIT FUNDS regarding your enquiry for the ${enq.interestedPlan} chit plan.`
+                    `Hello ${enq.fullName}, greetings from ELITE GROUP – SS CHIT FUNDS PVT LTD regarding your enquiry for the ${enq.interestedPlan} chit plan.`
                   )}`;
 
                   const stConf = STATUS_CONFIG[enq.status] || STATUS_CONFIG.New;
@@ -926,7 +926,7 @@ export const AdminDashboardModal: React.FC<AdminDashboardModalProps> = ({
             {/* Footer Status Bar */}
             <div className="pt-2 border-t border-slate-800 flex items-center justify-between text-[11px] text-slate-500 shrink-0">
               <span>Showing <strong>{enquiries.length}</strong> enquiries</span>
-              <span>ELITE GROUP SS CHIT FUNDS Management System • Mettupalayam</span>
+              <span>ELITE GROUP SS CHIT FUNDS PVT LTD Management System • Mettupalayam</span>
             </div>
           </div>
         )}

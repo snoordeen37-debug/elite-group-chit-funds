@@ -38,7 +38,7 @@ export const WhatsAppFloatingButton: React.FC<WhatsAppFloatingButtonProps> = ({ 
           rel="noopener noreferrer"
           className="flex-1 py-3 px-3 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] active:scale-[0.98] text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 shadow-md shadow-emerald-600/25 transition-all border border-emerald-400/40"
           id="mobile-sticky-whatsapp-btn"
-          aria-label="Chat with ELITE GROUP SS CHIT FUNDS on WhatsApp"
+          aria-label="Chat with ELITE GROUP SS CHIT FUNDS PVT LTD on WhatsApp"
         >
           <MessageCircle className="w-4 h-4 text-white shrink-0 fill-current" />
           <span>WhatsApp Chat</span>
@@ -89,7 +89,7 @@ export const WhatsAppFloatingButton: React.FC<WhatsAppFloatingButtonProps> = ({ 
           target="_blank"
           rel="noopener noreferrer"
           className="group flex items-center gap-2 px-4 py-2.5 bg-[#25D366] hover:bg-[#20bd5a] text-white rounded-full shadow-lg border border-emerald-400/40 font-bold text-xs uppercase tracking-wider transition-all duration-150 hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 shadow-emerald-600/25"
-          aria-label="Chat with ELITE GROUP SS CHIT FUNDS on WhatsApp"
+          aria-label="Chat with ELITE GROUP SS CHIT FUNDS PVT LTD on WhatsApp"
           id="floating-whatsapp-btn"
         >
           <span className="relative flex h-2 w-2 shrink-0">

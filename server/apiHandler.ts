@@ -160,7 +160,7 @@ function saveDb(records: EnquiryRecord[]): void {
 }
 
 /**
- * Formats the exact notification message required for ELITE GROUP SS CHIT FUNDS
+ * Formats the exact notification message required for ELITE GROUP SS CHIT FUNDS PVT LTD
  */
 export function formatWhatsAppMessage(data: {
   fullName: string;
